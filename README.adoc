@@ -1,0 +1,106 @@
+== My NixOS Configurations
+
+*_This repository contains my NixOS systems, dotfiles and devlopment sandboxes configurations!_*
+
+I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for WMs and servers. 
+
+=== Features
+
+* Configuration of OSX environement personal and for work via `nix-darwin`
+* Configuration of my dotfiles via `home-manager`
+* Styling of the different programs with `stylix`
+* Configuration of development sanboxes via `devenv`
+* All configurations are _flake_ based
+
+*TODO*
+
+* [ ] Integrate secrets with `agenix`
+* [ ] Remove `firefox-bin` overlay when package is fixed on darwin
+* [ ] Create `steampipe` module for `home-manager` similar to awscli with plugins and a configuration generated
+* [ ] Create `rio` module for`stylix` when package and moodule are released
+* [ ] Tweak the amber theme with a proper `base16 scheme` and a `benguiat` patched nerd font 
+
+=== Installation
+
+. (darwin) Install Xcode Command Line Tool
+[source,bash]
+----
+  code-select --install
+----
+
+. (darwin) Install rosetta
+[source,bash]
+----
+  softwareupdate --install-rosetta --agree-to-license
+----
+
+. Install Nix, restart your shell
+[source,bash]
+----
+  sh <(curl -L https://nixos.org/nix/install) --daemon
+----
+
+=== Cookbook
+
+* (darwin) Update and switch a system to the target configuration
+[source,bash]
+----
+  nix flake update
+  darwin-rebuild switch --flake .#marcbook-0x01   
+----
+
+* Start a development sandbox 
+[source,bash]
+----
+  nix develop --impure .#rust-stable
+----
+
+* Cleanup old generations (keep the current and last two)
+[source,bash]
+----
+  sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +3
+----
+
+* Launch maually a garbage collection 
+[source,bash]
+----
+  nix-store --gc
+----
+
+* Optimize manually the store (avoid on darwin, it can create a mess with links)
+[source,bash]
+----
+  nix store optimise
+----
+
+* Check for vulnerabilites of the system
+[source,bash]
+----
+vulnix --system
+----
+
+=== Contributing
+
+I don't claim to be an expert at Nix, so there are certainly improvements that could be made.
+
+Feel free to suggest them! 
+
+=== Acknowledgements
+
+Big thanks to all those great projects and the Nix maintainers.
+
+* https://nixos.org/[nixOS ecosystem] and the awesome https://github.com/nix-community[nix community]
+* https://github.com/nix-community/NUR[NUR] for those package that need to be build from source
+* http://daiderd.com/nix-darwin/[nix-darwin] bringing the fun to OSX
+* https://github.com/nix-community/home-manager[home-manager] enabling to manage all the user environment
+* https://github.com/danth/stylix[stylix] for easy ricing
+* https://devenv.sh/[deven.sh] harmonizing the development environments
+* https://github.com/ryantm/agenix[agenix] to decrypt `age` secrets as part of the build/switch 
+
+=== License
+
+link:./LICENSE[MIT]
+
+=== Authors
+
+https://github.com/marc-0x01[@marc-0x01]
