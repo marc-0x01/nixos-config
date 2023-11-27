@@ -17,8 +17,7 @@ I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for
 * [ ] Integrate secrets with `agenix`
 * [ ] Remove `firefox-bin` overlay when package is fixed on darwin
 * [ ] Create `steampipe` module for `home-manager` similar to awscli with plugins and a configuration generated
-* [ ] Create `rio` module for`stylix` when package and moodule are released
-* [ ] Tweak the amber theme with a proper `base16 scheme` and a `benguiat` patched nerd font 
+* [ ] Create `rio` module for`stylix`, rio will be released in 23.11
 
 === Installation
 
