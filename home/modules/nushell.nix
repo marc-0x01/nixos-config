@@ -78,6 +78,7 @@
       $env.NIX_SSL_CERT_FILE = '/etc/ssl/certs/ca-certificates.crt'
       $env.NIX_USER_PROFILE_DIR = $"/nix/var/nix/profiles/per-user/($env.USER)"
       $env.NIX_USER_CONF_FILES = $"/Users/($env.USER)/Devel/nix-config"
+      $env.NIX_USER_CONF_REPOSITORY = $"github:/marc-0x01/nixos-config"
       $env.TERMINFO_DIRS = $"/Users/($env.USER)/.nix-profile/share/terminfo:/etc/profiles/per-user/($env.USER)/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo"
       # XDG Base directories
       #$env.XDG_CONFIG_DIRS = $"/Users/($env.USER)/.nix-profile/etc/xdg:/etc/profiles/per-user/($env.USER)/etc/xdg:/run/current-system/sw/etc/xdg:/nix/var/nix/profiles/default/etc/xdg"
@@ -133,11 +134,11 @@
       gla = "git la";
       gui = "lazygit";
       # Development sandboxes
-      nixdev = "nix develop --impure $'($env.NIX_USER_CONF_FILES)#nix'";
-      rsdev = "nix develop --impure $'($env.NIX_USER_CONF_FILES)#rust-stable'";
-      pydev = "nix develop --impure $'($env.NIX_USER_CONF_FILES)#python-stable'";
-      jsdev = "nix develop --impure $'($env.NIX_USER_CONF_FILES)#javascript-stable'";
-      tfdev = "nix develop --impure $'($env.NIX_USER_CONF_FILES)#terraform-stable'";
+      nixdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#nix'";
+      rsdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#rust-stable'";
+      pydev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#python-stable'";
+      jsdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#javascript-stable'";
+      tfdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#terraform-stable'";
     }; 
   };
 
