@@ -52,6 +52,8 @@ I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for
 [source,bash]
 ----
   nix develop --impure .#rust-stable
+  # or remotely
+  nix develop --impure github:/marc-0x01/nixos-config#rust-stable  
 ----
 
 * Cleanup old generations (keep the current and last two)
@@ -75,7 +77,7 @@ I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for
 * Check for vulnerabilites of the system
 [source,bash]
 ----
-vulnix --system
+  vulnix --system
 ----
 
 === Contributing
