@@ -13,6 +13,11 @@
         isDefault = true;
         settings = {
           "general.smoothScroll" = true;
+          "browser.startup.blankWindow" = true;
+          "browser.newtabpage.enabled" = false;
+          "browser.tabs.tabmanager.enabled" = false;
+          "browser.toolbars.bookmarks.visibility" = "never";
+          "browser.compactmode.show" = true;
         };
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           duckduckgo-privacy-essentials
@@ -21,7 +26,7 @@
         ];
         bookmarks = [
           {
-            name = "Toolbba";
+            name = "Toolbar";
             toolbar = true;
             bookmarks = [
               {
@@ -60,7 +65,8 @@
         };
         # Extra profile settings
         extraConfig = ''
-          user_pref("app.update.silent", true);
+          user_pref("update_notifications.enabled", false);
+          user_pref("extensions.pocket.enabled", false);
           user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
           user_pref("full-screen-api.ignore-widgets", true);
           user_pref("media.ffmpeg.vaapi.enabled", true);
