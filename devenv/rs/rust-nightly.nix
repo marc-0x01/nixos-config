@@ -1,6 +1,58 @@
-# Rust Development
-
 { pkgs, lib, ... }: {
+
+  name = "Rust Development Sandbox";
+
+  # Enable devcontainer support
+  # Note: features are not used and replaced by devenv
+  devcontainer = {
+    enable = true;
+    settings = {
+      customizations = {
+        vscode = {
+          settings = {
+            # Standard
+            update.showReleaseNotes = false;
+            window.commandCenter = false;
+            workbench.colorTheme = "GitHub Dark Default";
+            workbench.preferredDarkColorTheme = "GitHub Dark Default";
+            workbench.preferredLightColorTheme = "GitHub Light Default";
+            workbench.preferredHighContrastColorTheme = "GitHub Dark High Contrast";
+            workbench.preferredHighContrastLightColorTheme = "GitHub Light High Contrast";
+            editor.formatOnSave = true;
+            editor.formatOnPaste = true;
+            editor.minimap.autohide = true;
+            vim.mouseSelectionGoesIntoVisualMode = false;
+          };
+          extensions = [
+            # Standard
+            "github.github-vscode-theme"
+            "github.codespaces"
+            "github.copilot"
+            "github.copilot-chat"
+            "scodevim.vim"
+            "mkhl.direnv"
+            # Stack specific
+            "rust-lang.rust-analyzer"
+            "vadimcn.vscode-lldb" #debugger
+          ]; 
+        };
+        codespaces = {
+          "openFiles" = [
+            # Open README at launch
+            "README.md"
+          ];
+        };
+      };
+      # Capacity requested for devcontainer
+      hostRequirements = {
+        cpus = 8;
+        memory = "8gb";
+        storage = "32gb";
+      };
+      # Optional: Secret asked when starting the de devcontainer
+      secrets = {};
+    };
+  };
 
   # Enable starship for a better prompt
   # Will load a project starship.toml
@@ -10,7 +62,9 @@
   };
 
   # Common packages for developers
+  difftastic.enable = true;
   packages = with pkgs; [ 
+    # Standard
     git
     gh
     jq
@@ -54,7 +108,7 @@
   # Can be used as aliases, built your own lightsaber
   scripts = {
     # Install cargo addons
-    dev-install.exec = ''
+    setup.exec = ''
       cargo install cargo-generate  # Project templates
       cargo install cargo-outdated  # Renovate deps
       cargo install cargo-readme    # Readme generation
@@ -62,22 +116,30 @@
       cargo install cargo-audit     # Vulnerability check
     '';
     # Workflow shortcuts
-    dev-init.exec = ''
+    new.exec = ''
+      printf "\033[1m%s\033[0m\n" "Create New Project"
+      printf " ! Organisation: "
+      read -r my_orga
+      printf " ! Repository Name: "
+      read -r my_repo_name
+      printf " ✓ Creating a new repo \033[3m%s\033[0m in organisation \033[3m%s\033[0m based on template \033[3m%s\033[0m!\n" "''${my_repo_name}" "''${my_orga}" "''${DEVENV_STACK}-template" 
+      gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-template.git"
+    '';
+    init.exec = ''
       cargo init
     '';
-    dev-run.exec = ''
+    run.exec = ''
+      cargo fmt
       cargo run
     '';
-    dev-format.exec = ''
+    build.exec = ''
       cargo fmt
-    '';
-    dev-build.exec = ''
       cargo build
     '';
-    dev-test.exec = ''
+    test.exec = ''
       cargo test
     '';
-   dev-clean.exec = ''
+   clean.exec = ''
       cargo clean
     ''; 
   };
