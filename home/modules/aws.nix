@@ -2,8 +2,6 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
-  # The home-manager module is not yet in 23.05, using and overlay
-
   programs.awscli = {
     enable = true;
     # Default configuration file

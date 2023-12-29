@@ -5,6 +5,10 @@
   stylix = {
     # Theme apps by default
     autoEnable = true;
+    targets = {
+      # Exception due to bug on ruby ffi
+      gnome.enable = false;
+    };
     # Wallpaper!
     image = ./assets/wallpapers/monochrome1-5k-2880x1800.jpg;
     # Monochrome and dark

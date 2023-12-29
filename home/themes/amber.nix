@@ -5,6 +5,10 @@
   stylix = {
     # Theme apps by default
     autoEnable = true;
+    targets = {
+      # Exception due to bug on ruby ffi
+      gnome.enable = false;
+    };
     # Wallpaper!
     image = pkgs.fetchurl {
       url = "https://images7.alphacoders.com/883/883131.jpg";

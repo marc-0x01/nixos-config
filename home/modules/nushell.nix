@@ -6,7 +6,7 @@
     enable = true;
     configFile.text = ''
       # Nushell Config File
-      let-env config = {
+      $env.config = {
         show_banner: false
         use_ansi_coloring: true
         bracketed_paste: true
@@ -18,9 +18,6 @@
         }
         rm: {
           always_trash: false
-        }
-        cd: {
-          abbreviations: false
         }
         cursor_shape: {
           vi_insert: blink_block

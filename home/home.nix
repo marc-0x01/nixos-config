@@ -17,7 +17,7 @@
   home-manager.users.mguillen = {
 
     # State Version, used for backward compatibility
-    home.stateVersion = "23.05";
+    home.stateVersion = "23.11";
 
     # Let Home Manager install and manage itself
     programs.home-manager.enable = true;
@@ -72,11 +72,10 @@
       nix-index.enable = true;    # Nix locator (nix-inidex)
       k9s.enable = true;          # Cluster Management
       taskwarrior.enable = true;  # Task management (task)
-      # Not in official release yet, managed as overlays
       ripgrep.enable = true;      # Better grep (rg)
       thefuck.enable = true;      # Correct latest command (fuck)
-      # Currently broken
-      # rio.enable = true;          # Rust/WebGPU Terminal (rio) - For testing
+      # Testing
+      rio.enable = true;          # Rust/WebGPU Terminal (rio) - alacritty replacement ?
     };
 
     # Extra packages or not yet in home-manager

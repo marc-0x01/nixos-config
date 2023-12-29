@@ -10,7 +10,7 @@
 
     # Used by the core system config
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-23.05";
+      url = "github:NixOS/nixpkgs/nixos-23.11";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -34,13 +34,13 @@
 
     # Used by home-manager, well to manages home
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Used for styling apps, Uniix Porn
     stylix = {
-      url = "github:danth/stylix/release-23.05";
+      url = "github:danth/stylix/master";
     }; 
 
     # Used by devenv for development environments
