@@ -16,8 +16,8 @@
           "browser.startup.blankWindow" = true;
           "browser.newtabpage.enabled" = false;
           "browser.tabs.tabmanager.enabled" = false;
+          "browser.tabs.firefox-view" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
-          "browser.compactmode.show" = true;
         };
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           duckduckgo-privacy-essentials
