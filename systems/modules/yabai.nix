@@ -1,13 +1,10 @@
 # yabai: Tiling window management for the Mac
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
-  
-  # Yabai is quite buggy right now
-  # It is crashing when switching window focus
 
   services.yabai = {
-    enable = false; 
-    enableScriptingAddition = false;
+    enable = true; 
+    enableScriptingAddition = true;
     # Standard config
     config = {
       # Layout
