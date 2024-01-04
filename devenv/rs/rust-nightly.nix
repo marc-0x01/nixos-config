@@ -33,7 +33,8 @@
             "mkhl.direnv"
             # Stack specific
             "rust-lang.rust-analyzer"
-            "vadimcn.vscode-lldb" #debugger
+            "serayuzgur.crates"   # Dependency management and reviews
+            "vadimcn.vscode-lldb" # Debugger
           ]; 
         };
         codespaces = {
@@ -112,6 +113,7 @@
       cargo install cargo-generate  # Project templates
       cargo install cargo-outdated  # Renovate deps
       cargo install cargo-readme    # Readme generation
+      cargo install cargo-crev      # Code reviews
       cargo install cargo-license   # License compliance
       cargo install cargo-audit     # Vulnerability check
     '';
