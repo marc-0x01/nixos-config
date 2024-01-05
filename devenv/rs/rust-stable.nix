@@ -50,7 +50,7 @@
         memory = "8gb";
         storage = "32gb";
       };
-      # Optional: Secret asked when starting the de devcontainer
+      # Optional: Secret asked when starting the devcontainer
       secrets = {};
     };
   };
@@ -118,6 +118,15 @@
       cargo install cargo-audit     # Vulnerability check
     '';
     # Workflow shortcuts
+    new.exec = ''
+      printf "\033[1m%s\033[0m\n" "Create New Project"
+      printf " ! Organisation: "
+      read -r my_orga
+      printf " ! Repository Name: "
+      read -r my_repo_name
+      printf " ✓ Creating a new repo \033[3m%s\033[0m in organisation \033[3m%s\033[0m based on template \033[3m%s\033[0m!\n" "''${my_repo_name}" "''${my_orga}" "''${DEVENV_STACK}-template" 
+      gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-template.git"
+    '';
     init.exec = ''
       cargo init
     '';
@@ -132,7 +141,7 @@
     test.exec = ''
       cargo test
     '';
-   clean.exec = ''
+    clean.exec = ''
       cargo clean
     ''; 
   };

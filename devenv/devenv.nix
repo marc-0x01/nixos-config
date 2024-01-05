@@ -1,6 +1,6 @@
 { pkgs, lib, ... }: {
 
-  name = "Terraform Development Sandbox ";
+  name = "{{stack}} Development Sandbox/Environment";
 
   # Enable devcontainer support
   # Note: features are not used and replaced by devenv
@@ -32,8 +32,7 @@
             "scodevim.vim"
             "mkhl.direnv"
             # Stack specific
-            "hashicorp.terraform"
-            "golang.go"
+            # ...
           ]; 
         };
         codespaces = {
@@ -58,7 +57,7 @@
   # Will load a project starship.toml
   starship = {
     enable = true;
-    config.enable = false;
+    config.enable = true;
   };
 
   # Common packages for developers
@@ -69,23 +68,22 @@
     gh
     jq
     # Stack specific
-    awscli2
-    terragrunt
-    localstack
-    graphviz    # Used to inspect the graph
-  ];
+  ] ++ lib.optionals pkgs.stdenv.isDarwin (with pkgs.darwin.apple_sdk; [
+    # Rerquired for {{stack}} on darwin only
+    # ...
+  ]);
 
-  # Toolchain: Terraform
-  # Golang for test and custom providers
+  # Toolchain: {{stack}}
   languages = {
-    terraform.enable = true;
-    go.enable = true;
+    # {{stack}} = {
+    #    enable = true;
+    #    # options...
+    #};
   };
-  
-  # Pre-commit hooks: Terraform
+
+  # Pre-commit hooks: {{stack}}
   pre-commit.hooks = {
-    terraform-format.enable = true; # formatter
-    tflint.enable = true;           # linter
+    # <hook>.enable = true;
   };
 
   # Additional services (attached resources)
@@ -95,10 +93,7 @@
   # Environment variables
   dotenv.enable = false;
   env = {
-    DEVENV_STACK = "terraform";
-    # Localstack, set your token and activate pro feature
-    LOCALSTACK_AUTH_TOKEN = "";
-    ACTIVATE_PRO = 0;
+    DEVENV_STACK = "{{stack}}";
   };
  
   # Special hosts
@@ -107,47 +102,30 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Terraform Stack
-  # Can be used as aliases
+  # Scripts: Rust Stack
+  # Can be used as aliases, built your own lightsaber
   scripts = {
+    # Install global addons
+    setup.exec = ''
+    '';
     # Workflow shortcuts
-    new.exec = ''
-      printf "\033[1m%s\033[0m\n" "Create New Project"
-      printf " ! Organisation: "
-      read -r my_orga
-      printf " ! Repository Name: "
-      read -r my_repo_name
-      printf " ✓ Creating a new repo \033[3m%s\033[0m in organisation \033[3m%s\033[0m based on template \033[3m%s\033[0m!\n" "''${my_repo_name}" "''${my_orga}" "''${DEVENV_STACK}-template" 
-      gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-template.git"
-    '';
     init.exec = ''
-      localstack start
-      terraform init
     '';
-    update.exec = ''
-      terraform init
+    run.exec = ''
     '';
-    plan.exec = ''
-      terrafrom get
-      terraform fmt
-      terraform validate
-      terraform plan
+    build.exec = ''
     '';
-    inspect.exec = ''
-      terraform graph | dot -Tsvg > depedency.svg
+    test.exec = ''
+    '';
+    clean.exec = ''
     ''; 
-    apply.exec = ''
-      terraform apply
-    '';
   };
 
   # Startup commands
   enterShell = ''
     clear
-    echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
-    printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
-    printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
-    printf "Localstack v%s\n\n" `localstack --version`
+    echo "【ツ】Welcome to your {{stack}} (stable) Sandbox!"
+    # Print version here
   '';
 
 }

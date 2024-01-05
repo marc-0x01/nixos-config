@@ -50,7 +50,7 @@
         memory = "8gb";
         storage = "32gb";
       };
-      # Optional: Secret asked when starting the de devcontainer
+      # Optional: Secret asked when starting the devcontainer
       secrets = {};
     };
   };
