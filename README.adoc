@@ -1,39 +1,39 @@
 == My NixOS Configurations
 
-*_This repository contains my NixOS systems, dotfiles and devlopment sandboxes configurations!_*
+*_This repository contains my NixOS 💻 systems, 🏠 dotfiles and 🚀 devlopment sandboxes configurations!_*
 
-I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for WMs and servers. 
+-> I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS* for WMs and servers. 
 
 === Features
 
-* Configuration of OSX environement personal and for work via `nix-darwin`
-* Configuration of my dotfiles via `home-manager`
-* Styling of the different programs with `stylix`
-* Configuration of development sanboxes via `devenv`
-* All configurations are _flake_ based
+*  Configuration of OSX environements for personal and work contexts via `nix-darwin`
+* 🏠 Configuration of my dotfiles via `home-manager`
+* ✨ Styling of the different programs with `stylix`
+* 🚀 Configuration of development sanboxes via `devenv`
+* 🧩 All configurations are `flake` based
 
-*TODO*
+🔜 TODO
 
 * [ ] Integrate secrets with `agenix`
 * [ ] Remove `firefox-bin` overlay when package is fixed on darwin
-* [ ] Create `steampipe` module for `home-manager` similar to awscli with plugins and a configuration generated
-* [ ] Create `rio` module for`stylix`, rio will be released in 23.11
+* [ ] Create `steampipe` module for `home-manager` similar to awscli, with plugins
+* [ ] Create `rio` module for`stylix`
 
 === Installation
 
-. (darwin) Install Xcode Command Line Tool
+. (darwin) Install `XCode Command Line Tool`
 [source,bash]
 ----
   code-select --install
 ----
 
-. (darwin) Install rosetta
+. (darwin) Install `Rosetta Project`
 [source,bash]
 ----
   softwareupdate --install-rosetta --agree-to-license
 ----
 
-. Install Nix, restart your shell
+. Install `Nix`, restart your shell
 [source,bash]
 ----
   sh <(curl -L https://nixos.org/nix/install) --daemon
@@ -82,8 +82,7 @@ I mostly use Darwin as the main OS for my workstations (work/home) and NixOS for
 
 === Contributing
 
-I don't claim to be an expert at Nix, so there are certainly improvements that could be made.
-
+I don't claim to be an expert at `Nix`, so there are certainly improvements that could be made. + 
 Feel free to suggest them! 
 
 === Acknowledgements
@@ -100,8 +99,8 @@ Big thanks to all those great projects and the Nix maintainers.
 
 === License
 
-link:./LICENSE[MIT]
+⚖️ link:./LICENSE[MIT]
 
 === Authors
 
-https://github.com/marc-0x01[@marc-0x01]
+👨🏻‍💻 https://github.com/marc-0x01[@marc-0x01]
