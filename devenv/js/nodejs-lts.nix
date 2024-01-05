@@ -22,6 +22,8 @@
             editor.formatOnPaste = true;
             editor.minimap.autohide = true;
             vim.mouseSelectionGoesIntoVisualMode = false;
+            asciidoc.antora.enableAntoraSupport = false;
+            asciidoc.extensions.enableKroki = true;
             # Stack Specific
             codeswing.layout = "splitLeft";
           };
@@ -31,6 +33,7 @@
             "github.codespaces"
             "github.copilot"
             "github.copilot-chat"
+            "asciidoctor.asciidoctor-vscode"
             "scodevim.vim"
             "mkhl.direnv"
             # Stack specific
