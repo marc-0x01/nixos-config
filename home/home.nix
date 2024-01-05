@@ -83,6 +83,7 @@
     home.packages = with pkgs; [
       # Apps
       obsidian                  # Digital Garden and noote taking
+      jetbrains.gateway         # Remote development, alternative to vim in a professional environment
       # Terminal
       bitwarden-cli             # Passkey manager
       steampipe                 # Query like it's 1992
