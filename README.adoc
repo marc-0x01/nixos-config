@@ -94,7 +94,7 @@ Big thanks to all those great projects and the Nix maintainers.
 * http://daiderd.com/nix-darwin/[nix-darwin] bringing the fun to OSX
 * https://github.com/nix-community/home-manager[home-manager] enabling to manage all the user environment
 * https://github.com/danth/stylix[stylix] for easy ricing
-* https://devenv.sh/[deven.sh] harmonizing the development environments
+* https://devenv.sh/[devenv] harmonizing the development environments
 * https://github.com/ryantm/agenix[agenix] to decrypt `age` secrets as part of the build/switch 
 
 === License
