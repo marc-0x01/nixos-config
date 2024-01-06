@@ -69,8 +69,10 @@
   difftastic.enable = true;
   packages = with pkgs; [ 
     # Standard
+    curl
     git
     gh
+    jq
     # Stack specific
     vulnix
   ];
@@ -103,7 +105,7 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Nix Stack
+  # Scripts: Nix
   # Can be used as aliases
   scripts = {
     # Workflow shortcuts

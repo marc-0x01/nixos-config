@@ -76,6 +76,7 @@
   difftastic.enable = true;
   packages = with pkgs; [ 
     # Standard
+    curl
     git
     gh
     jq
@@ -119,7 +120,7 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Python Stack
+  # Scripts: Python
   # Can be used as aliases
   scripts = {
     # Workflow shortcuts

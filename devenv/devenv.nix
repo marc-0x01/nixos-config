@@ -49,6 +49,7 @@
         storage = "32gb";
       };
       # Optional: Secret asked when starting the devcontainer
+      # No secrets, this is a sandbox
       secrets = {};
     };
   };
@@ -64,6 +65,7 @@
   difftastic.enable = true;
   packages = with pkgs; [ 
     # Standard
+    curl
     git
     gh
     jq
@@ -102,7 +104,7 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Rust Stack
+  # Scripts: {{stack}}
   # Can be used as aliases, built your own lightsaber
   scripts = {
     # Install global addons

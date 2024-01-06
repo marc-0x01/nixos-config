@@ -68,6 +68,7 @@
   difftastic.enable = true;
   packages = with pkgs; [ 
     # Standard
+    curl
     git
     gh
     jq
@@ -110,7 +111,7 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Terraform Stack
+  # Scripts: Terraform
   # Can be used as aliases
   scripts = {
     # Workflow shortcuts

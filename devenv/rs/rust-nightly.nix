@@ -69,6 +69,7 @@
   difftastic.enable = true;
   packages = with pkgs; [ 
     # Standard
+    curl
     git
     gh
     jq
@@ -108,7 +109,7 @@
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Rust Stack
+  # Scripts: Rust
   # Can be used as aliases, built your own lightsaber
   scripts = {
     # Install cargo addons

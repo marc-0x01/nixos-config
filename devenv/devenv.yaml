@@ -1,5 +1,5 @@
 # devenv configuration file
-# Note: using same release as for the nic configuration
+# Note: using same release as for other nix configurations
 # See https://devenv.sh/reference/yaml-options/ for more options
 allowUnfree: true
 inputs:
