@@ -40,7 +40,7 @@
 
     # Used for styling apps, Uniix Porn
     stylix = {
-      url = "github:danth/stylix/master";
+      url = "github:danth/stylix/release-23.11";
     }; 
 
     # Used by devenv for development environments
