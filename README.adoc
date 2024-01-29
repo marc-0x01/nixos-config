@@ -1,8 +1,42 @@
-== My NixOS Configurations
+= README
+:doctype: article
+:repository-url: https://github.com/marc-0x01/nixos-config
+:!showtitle:
+:icons: font
+:imagesdir: docs/assets/img
+:hardbreaks-option:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
 
-*_This repository contains my NixOS 💻 systems, 🏠 dotfiles and 🚀 devlopment sandboxes configurations!_*
+// Standard shields and technology skills
+https://github.com/marc-0x01/nixos-config/graphs/contributors[image:https://img.shields.io/github/contributors/marc-0x01/nixos-config.png?style=for-the-badge[https://img.shields.io/github/contributors/marc-0x01/nixos-config]] https://github.com/marc-0x01/nixos-config/network/members[image:https://img.shields.io/github/forks/marc-0x01/nixos-config.svg?style=for-the-badge[https://img.shields.io/github/forks/marc-0x01/nixos-config]] https://github.com/marc-0x01/nixos-config/stargazers[image:https://img.shields.io/github/stars/marc-0x01/nixos-config.svg?style=for-the-badge[https://img.shields.io/github/stars/marc-0x01/nixos-config]] https://github.com/marc-0x01/nixos-config/issues[image:https://img.shields.io/github/issues/marc-0x01/nixos-config.svg?style=for-the-badge[https://img.shields.io/github/issues/marc-0x01/nixos-config]] https://github.com/marc-0x01/nixos-config/blob/master/LICENSE.txt[image:https://img.shields.io/github/license/marc-0x01/nixos-config.svg?style=for-the-badge[https://img.shields.io/github/license/marc-0x01/nixos-config]] https://nixos.org/[image:https://img.shields.io/badge/-nixos-grey.svg?style=for-the-badge&logo=nixos[https://img.shields.io/badge/-nixos-grey]] 
 
--> I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS* for WMs and servers. 
+// Header
+
+++++
+<div style="text-align: center"  align="center">
+  <br>
+  <pre>
+███╗   ██╗██╗██╗  ██╗
+████╗  ██║██║╚██╗██╔╝
+██╔██╗ ██║██║ ╚███╔╝ 
+██║╚██╗██║██║ ██╔██╗ 
+██║ ╚████║██║██╔╝ ██╗
+╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝
+  </pre>
+	<h1>NixOS Configurations</h1>
+	<p style="text-align: center"  align="center">
+		<i><b>My NixOS 💻 systems, 🏠 dotfiles and 🚀 devlopment sandboxes configurations!</b></i>
+	</p>
+</div>
+++++
+
+=== About
+
+I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS* for WMs and servers. 
 
 === Features
 
