@@ -21,6 +21,13 @@
         identitiesOnly = true;
         identityFile = "~/.ssh/id-ed25519.key";
       };
+      "github.com-pro" = {
+        host = "github.com"; 
+        compression = true;
+        user = "mguillen";
+        identitiesOnly = true;
+        identityFile = "~/.ssh/id-ed25519-pro.key";
+      };
       "0x01.cloud" = {
         host = "*.0x01.cloud"; 
         compression = true;
