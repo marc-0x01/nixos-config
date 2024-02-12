@@ -15,25 +15,13 @@
 ++++
 <div style="text-align: center"  align="center">
   <!-- Repository statistics-->
-  <a href="https://github.com/marc-0x01/nixos-config/graphs/contributors">
-  	<img src="https://img.shields.io/github/contributors/marc-0x01/nixos-config.png?style=for-the-badge" alt="https://img.shields.io/github/contributors/marc-0x01/nixos-config">
-  </a>
-  <a href="https://github.com/marc-0x01/nixos-config/network/members">
-  	<img src="https://img.shields.io/github/forks/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/forks/marc-0x01/nixos-config">
-  </a>
-  <a href="https://github.com/marc-0x01/nixos-config/stargazers">
-  	<img src="https://img.shields.io/github/stars/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/stars/marc-0x01/nixos-config">
-  </a>
-  <a href="https://github.com/marc-0x01/nixos-config/issues">
-  	<img src="https://img.shields.io/github/issues/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/issues/marc-0x01/nixos-config">
-  </a>
-  <a href="https://github.com/marc-0x01/nixos-config/blob/master/LICENSE.txt">
-  	<img src="https://img.shields.io/github/license/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/license/marc-0x01/nixos-config">
-  </a>
+  <a href="https://github.com/marc-0x01/nixos-config/graphs/contributors"><img src="https://img.shields.io/github/contributors/marc-0x01/nixos-config.png?style=for-the-badge" alt="https://img.shields.io/github/contributors/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/marc-0x01/nixos-config/network/members"><img src="https://img.shields.io/github/forks/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/forks/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/marc-0x01/nixos-config/stargazers"><img src="https://img.shields.io/github/stars/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/stars/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/marc-0x01/nixos-config/issues"><img src="https://img.shields.io/github/issues/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/issues/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/marc-0x01/nixos-config/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/license/marc-0x01/nixos-config"></a>
   <!-- Main Technologies -->
-  <a href="https://nixos.org/">
-  	<img src="https://img.shields.io/badge/-nixos-grey.svg?style=for-the-badge&logo=nixos" alt="https://img.shields.io/badge/-nixos-grey">
-  </a>
+  <a href="https://nixos.org/"><img src="https://img.shields.io/badge/-nixos-grey.svg?style=for-the-badge&logo=nixos" alt="https://img.shields.io/badge/-nixos-grey"></a>
 </div>
 <br>
 ++++
