@@ -79,14 +79,13 @@
     };
 
     # Extra packages or not yet in home-manager
-    # More not packaged yet: charasay (better cowsay), lolcrab (better lolcat), neko
     home.packages = with pkgs; [
       # Apps
       obsidian                  # Digital Garden and noote taking
       jetbrains.gateway         # Remote development, alternative to vim in a professional environment
       # Terminal
       bitwarden-cli             # Passkey manager
-      steampipe                 # Query like it's 1992
+      steampipe                 # Query like it's 1992 (steampipe)
       uutils-coreutils          # Better coreutils in rust, hamonize on darwin (*)
       ouch                      # Compression swiss-army knif (ouch)
       rsign2                    # Signing cli compatible with minisign (rsign)
@@ -97,6 +96,10 @@
       asciinema                 # Terminal recorder
       vulnix                    # Nix scurity scanner
       difftastic                # Better diff (difft)
+      # Fun - Look for rust alternatives: charasay (better cowsay), lolcrab (better lolcat)
+      #oneko                     # Cat chase mouses (oneko) - Currently broken on OSX
+      cowsay                    # Cow have voice in terminal (cowsay)
+      lolcat                    # Rainbow! (lolcat)
     ];
 
     # XDG General

@@ -11,7 +11,7 @@
     system = "x86_64-darwin";
   };
 
-  # Auto upgrade the nix deamon and packages, required on darrwin
+  # Auto upgrade the nix deamon and packages, required on darwin
   services.nix-daemon.enable = true;
 
  # Networking
