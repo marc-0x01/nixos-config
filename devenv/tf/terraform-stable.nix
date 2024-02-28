@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: {
 
-  name = "Terraform Development Sandbox ";
+  name = "Terraform Development Sandbox";
+
 
   # Enable devcontainer support
   # Note: features are not used and replaced by devenv
@@ -76,6 +77,7 @@
     awscli2
     terragrunt
     localstack
+    infracost
     graphviz    # Used to inspect the graph
   ];
 
@@ -101,8 +103,8 @@
   env = {
     DEVENV_STACK = "terraform";
     # Localstack, set your token and activate pro feature
-    LOCALSTACK_AUTH_TOKEN = "";
-    ACTIVATE_PRO = 0;
+    # LOCALSTACK_AUTH_TOKEN = "";
+    # ACTIVATE_PRO = 1;
   };
  
   # Special hosts
