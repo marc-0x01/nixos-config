@@ -1,6 +1,6 @@
 # zellij: A terminal workspace with batteries included
 
-# Note: Youo might need to manually clear clear the cache
+# Note: You might need to manually clear clear the cache
 #  * OSX: rm -rf ~/Library/Caches/org.Zellij-Contributors.Zellij
 #  * Linux: rm -rf ~/.cache/zellij
 
