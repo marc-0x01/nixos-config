@@ -51,6 +51,7 @@
       ./modules/starship.nix
       ./modules/direnv.nix
       ./modules/zellij.nix
+      ./modules/yazi.nix
       ./modules/neovim.nix
       ./modules/gpg.nix
       ./modules/ssh.nix
