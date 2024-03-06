@@ -2,8 +2,8 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
    
-  # Misc scripts, usually launch scripts are in the respectivw programs modules
-  # Darwin Flaviour
+  # Misc scripts, usually launch scripts are in the respective programs modules
+  # Darwin Flavour
   home.file = {
     ".local/bin/wm-lock.sh" = {
       enable = pkgs.stdenv.isDarwin;
