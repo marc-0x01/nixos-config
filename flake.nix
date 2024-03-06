@@ -195,7 +195,8 @@
 
     devShells.x86_64-darwin.terraform-stable = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      #pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = import nixpkgs { system = "x86_64-darwin"; config.allowUnfree = true; };
       modules = [ ./devenv/tf/terraform-stable.nix ];
     };
 
