@@ -50,7 +50,7 @@
     };
     lfs.enable = false;
     extraConfig = {
-      init.defaultBranch = "master";
+      init.defaultBranch = "main";
       core.editor = "nvim";
     };
   };
