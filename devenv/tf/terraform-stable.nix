@@ -153,7 +153,8 @@
     echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
     printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
     printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
-    printf "Localstack v%s\n\n" `localstack --version`
+    printf "Localstack v%s\n" `localstack --version`
+    printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
   '';
 
 }
