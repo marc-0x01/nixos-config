@@ -1,5 +1,6 @@
 = README
 :doctype: article
+:fragment:
 :repository-url: https://github.com/marc-0x01/nixos-config
 :!showtitle:
 :icons: font
