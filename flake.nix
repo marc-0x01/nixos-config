@@ -38,7 +38,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Used for styling apps, Uniix Porn
+    # Used for styling apps, Unix Porn
     stylix = {
       url = "github:danth/stylix/release-23.11";
     }; 

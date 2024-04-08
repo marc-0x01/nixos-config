@@ -52,7 +52,7 @@
   stylix = {
     image = pkgs.fetchurl {
       url = "https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg";
-      sha256 = "9a7fe80946c6664cd20320c15f6a98a7374203e8689ad2f99c62ec2b570804bc";
+      sha256 = "1631d02e8317833673c13305a86410158296f1764f7e08e4ab1612b6fd15b300";
     };
   };
 
