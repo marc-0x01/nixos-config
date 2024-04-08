@@ -59,7 +59,7 @@
     envFile.text = ''
       # Nushell Env File
       $env.X01_SYSTEM = 'marcbook-work'
-      # Indicators, almost none cuase ii am using starship
+      # Indicators, almost none cause i am using starship
       $env.PROMPT_INDICATOR = {|| "" }
       $env.PROMPT_INDICATOR_VI_INSERT = {|| "" }
       $env.PROMPT_INDICATOR_VI_NORMAL = {|| "" }
@@ -112,7 +112,7 @@
       # Compress, Uncompress
       z = "ouch c";
       uz = "ouch d";
-      # Git
+      # Git, linking git aliases
       gl = "git l";
       ga = "git a";
       gap = "git ap";

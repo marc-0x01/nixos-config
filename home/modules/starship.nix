@@ -4,6 +4,10 @@
 
   programs.starship = {
     enable = true;
+    # Integrations
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    # Settings
     settings = {
       add_newline = false;
       scan_timeout = 10;
@@ -15,9 +19,7 @@
         impure_msg = "!";
       };
     };
-    # Integrations
-    enableZshIntegration = true;
-    enableNushellIntegration = true;
+
   };
 
 }

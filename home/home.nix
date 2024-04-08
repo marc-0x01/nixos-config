@@ -70,7 +70,7 @@
       jq.enable = true;           # Json parser (jq)
       skim.enable = true;         # Fuzzy finder (sk)
       lazygit.enable = true;      # Git UI for humans (lazygit)
-      nix-index.enable = true;    # Nix locator (nix-inidex)
+      nix-index.enable = true;    # Nix locator (nix-index)
       k9s.enable = true;          # Cluster Management
       taskwarrior.enable = true;  # Task management (task)
       ripgrep.enable = true;      # Better grep (rg)

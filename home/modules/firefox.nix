@@ -14,7 +14,9 @@
         settings = {
           "general.smoothScroll" = true;
           "browser.startup.blankWindow" = true;
+          "browser.disableResetPrompt" = true;
           "browser.newtabpage.enabled" = false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.tabs.tabmanager.enabled" = false;
           "browser.tabs.firefox-view" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
@@ -61,6 +63,8 @@
             };
             "Google".metaData.hidden = true;
             "Amazon.com".metaData.hidden = true;
+            "Bing".metaData.hidden = true;
+            "eBay".metaData.hidden = true;
           };
         };
         # Extra profile settings
@@ -68,9 +72,6 @@
           user_pref("update_notifications.enabled", false);
           user_pref("extensions.pocket.enabled", false);
           user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-          user_pref("full-screen-api.ignore-widgets", true);
-          user_pref("media.ffmpeg.vaapi.enabled", true);
-          user_pref("media.rdd-vpx.enabled", true);
         '';
         # User Chrome inspired by SimpleFox
         userChrome = builtins.readFile ./assets/userChrome.css;

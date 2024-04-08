@@ -5,7 +5,8 @@
   # Not strictly necessary, testing it for now!
 
   programs.yazi = {
-    enable = false; 
+    enable = true; 
+    # Integrations
     enableZshIntegration = true;
     enableNushellIntegration = true;
     # General settings
