@@ -125,23 +125,23 @@
       printf " ! Repository Name: "
       read -r my_repo_name
       printf " ✓ Creating a new repo \033[3m%s\033[0m in organisation \033[3m%s\033[0m based on template \033[3m%s\033[0m!\n" "''${my_repo_name}" "''${my_orga}" "''${DEVENV_STACK}-template" 
-      gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-template.git"
+      gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-workspace.git"
     '';
     init.exec = ''
       localstack start
-      terraform init
+      terragrunt init
     '';
     update.exec = ''
-      terraform init
+      terragrunt init
     '';
     plan.exec = ''
-      terrafrom get
-      terraform fmt
-      terraform validate
-      terraform plan
+      terragrunt get
+      terragrunt fmt
+      terragrunt validate
+      terragrunt plan
     ''; 
     apply.exec = ''
-      terraform apply
+      terragrunt apply
     '';
   };
 
@@ -152,7 +152,7 @@
     printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
     printf "Terragrunt %s\n" `terragrunt -v | cut -d " " -f 3`
     printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
-    echo " It comes with some additional optional goodies"
+    echo "\nIt comes with some additional optional goodies..."
     printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
     printf "Localstack v%s\n" `localstack --version`
     printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
