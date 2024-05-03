@@ -78,6 +78,7 @@
     terragrunt  # Terrafrom configuration
     # Stack specific, optional
     localstack  # Run localy, mocking AWS api 
+    trivy       # Static scanning 
     infracost   # Get cost, hopefully once in trivvy
   ];
 
@@ -138,9 +139,6 @@
       terraform fmt
       terraform validate
       terraform plan
-    '';
-    inspect.exec = ''
-      terraform graph | dot -Tsvg > depedency.svg
     ''; 
     apply.exec = ''
       terraform apply
@@ -152,7 +150,10 @@
     clear
     echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
     printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
+    printf "Terragrunt %s\n" `terragrunt -v | cut -d " " -f 3`
     printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
+    echo " It comes with some additional optional goodies"
+    printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
     printf "Localstack v%s\n" `localstack --version`
     printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
   '';
