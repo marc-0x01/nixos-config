@@ -73,12 +73,12 @@
     git
     gh
     jq
-    # Stack specific
-    awscli2
-    terragrunt
-    localstack
-    infracost
-    graphviz    # Used to inspect the graph
+    # Stack specific, mandatory
+    awscli2     # root cli
+    terragrunt  # Terrafrom configuration
+    # Stack specific, optional
+    localstack  # Run localy, mocking AWS api 
+    infracost   # Get cost, hopefully once in trivvy
   ];
 
   # Toolchain: Terraform
