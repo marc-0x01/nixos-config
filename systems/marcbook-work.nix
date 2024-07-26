@@ -60,8 +60,7 @@
   # Fonts
   # Selection of good coding fonts
   fonts = {                              
-    fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       source-code-pro
       font-awesome
       (nerdfonts.override {
