@@ -1,4 +1,4 @@
-# Hardware tweaks for MacBook Pro 15 with Intel processor
+# Hardware tweaks for MacBook Pro 15 with Intel processor, TO BE REMOVED SOON
 
 { pkgs, lib, nixpkgs, nixpkgs-unstable, nix-darwin, ... }: {
   system.defaults.CustomSystemPreferences = {
