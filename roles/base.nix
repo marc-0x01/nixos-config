@@ -48,12 +48,13 @@
   ];
 
   # Genrate system-level theme
-  # Based on funky image
+  # Based summerfruit theme
   stylix = {
     image = pkgs.fetchurl {
-      url = "https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg";
-      sha256 = "1631d02e8317833673c13305a86410158296f1764f7e08e4ab1612b6fd15b300";
+      url = "https://placehold.co/600x400/FFF/FFF/jpeg";
+      sha256 = "b522de69bcb6a6db707ae7257df595aa1a63d108c5b698296346db1c220d4b8c";
     };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/summerfruit-light.yaml";
   };
 
   # Set default environement variables 
