@@ -17,7 +17,7 @@
   home-manager.users.mguillen = {
 
     # State Version, used for backward compatibility
-    home.stateVersion = "23.11";
+    home.stateVersion = "24.05";
 
     # Let Home Manager install and manage itself
     programs.home-manager.enable = true;
@@ -46,7 +46,7 @@
       #./themes/amber.nix
       # Applications
       ./modules/alacritty.nix
-      ./modules/firefox.nix
+      ./modules/qutebrowser.nix
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
@@ -71,24 +71,25 @@
       skim.enable = true;         # Fuzzy finder (sk)
       lazygit.enable = true;      # Git UI for humans (lazygit)
       nix-index.enable = true;    # Nix locator (nix-index)
-      k9s.enable = true;          # Cluster Management
       taskwarrior.enable = true;  # Task management (task)
       ripgrep.enable = true;      # Better grep (rg)
       thefuck.enable = true;      # Correct latest command (fuck)
-      # Testing
+      # Global Development
+      k9s.enable = true;          # Cluster Management
+      # Beta Testing
       rio.enable = true;          # Rust/WebGPU Terminal (rio) - alacritty replacement ?
     };
 
     # Extra packages or not yet in home-manager
     home.packages = with pkgs; [
-      # Apps
+      # Desktop Apps
       obsidian                  # Digital Garden and noote taking
       jetbrains.gateway         # Remote development, alternative to vim in a professional environment
       # Terminal
       bitwarden-cli             # Passkey manager
       steampipe                 # Query like it's 1992 (steampipe)
       uutils-coreutils          # Better coreutils in rust, hamonize on darwin (*)
-      ouch                      # Compression swiss-army knif (ouch)
+      ouch                      # Compression swiss-army knife (ouch)
       rsign2                    # Signing cli compatible with minisign (rsign)
       rage                      # A simple, secure and modern encryption tool (age)
       age-plugin-yubikey        # -- Integrration of age with yubikey
@@ -98,7 +99,7 @@
       vulnix                    # Nix scurity scanner
       difftastic                # Better diff (difft)
       # Fun - Look for rust alternatives: charasay (better cowsay), lolcrab (better lolcat)
-      #oneko                     # Cat chase mouses (oneko) - Currently broken on OSX
+      #oneko                    # Cat chase mouses (oneko) - Currently broken on OSX
       cowsay                    # Cow have voice in terminal (cowsay)
       lolcat                    # Rainbow! (lolcat)
     ];

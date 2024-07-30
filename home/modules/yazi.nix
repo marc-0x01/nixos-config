@@ -2,8 +2,6 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
-  # Not strictly necessary, testing it for now!
-
   programs.yazi = {
     enable = true; 
     # Integrations
