@@ -10,7 +10,7 @@
 
     # Used by the core system config
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-23.11";
+      url = "github:NixOS/nixpkgs/nixos-24.05";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -34,13 +34,13 @@
 
     # Used by home-manager, well to manages home
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Used for styling apps, Unix Porn
     stylix = {
-      url = "github:danth/stylix/release-23.11";
+      url = "github:danth/stylix/release-24.05";
     }; 
 
     # Used by devenv for development environments
@@ -93,9 +93,9 @@
             mozilla.overlay
             (final: prev: {
               # Better keep it on closer to the edge
-              yabai = nixpkgs-unstable.legacyPackages."x86_64-darwin".yabai;
-              skhd = nixpkgs-unstable.legacyPackages."x86_64-darwin".skhd;
-              rio = nixpkgs-unstable.legacyPackages."x86_64-darwin".rio;
+              yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
+              skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
+              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
             })
           ]; 
           # Home Manager Config
@@ -142,8 +142,8 @@
             mozilla.overlay
             (final: prev: {
               # Better keep it on closer to the edge
-              yabai = nixpkgs-unstable.legacyPackages."x86_64-darwin".yabai;
-              skhd = nixpkgs-unstable.legacyPackages."x86_64-darwin".skhd;
+              yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
+              skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
             })
           ]; 
           # Home Manager Config
@@ -163,40 +163,39 @@
     # run with 
     # $ nix develop --impure .#<devenv>
 
-    devShells.x86_64-darwin.nix = devenv.lib.mkShell {
+    devShells.aarch64-darwin.nix = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
       modules = [ ./devenv/nix/nix.nix ];
     };
 
-    devShells.x86_64-darwin.rust-nightly = devenv.lib.mkShell {
+    devShells.aarch64-darwin.rust-nightly = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
       modules = [ ./devenv/rs/rust-nightly.nix ];
     };
 
-    devShells.x86_64-darwin.rust-stable = devenv.lib.mkShell {
+    devShells.aarch64-darwin.rust-stable = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
       modules = [ ./devenv/rs/rust-stable.nix ];
     };
 
-    devShells.x86_64-darwin.python-stable = devenv.lib.mkShell {
+    devShells.aarch64-darwin.python-stable = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
       modules = [ ./devenv/py/python-stable.nix ];
     };
 
-    devShells.x86_64-darwin.javascript-stable = devenv.lib.mkShell {
+    devShells.aarch64-darwin.javascript-stable = devenv.lib.mkShell {
       inherit inputs;
-      pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
       modules = [ ./devenv/js/nodejs-lts.nix ];
     };
 
-    devShells.x86_64-darwin.terraform-stable = devenv.lib.mkShell {
+    devShells.aarch64-darwin.terraform-stable = devenv.lib.mkShell {
       inherit inputs;
-      #pkgs = nixpkgs.legacyPackages."x86_64-darwin";
-      pkgs = import nixpkgs { system = "x86_64-darwin"; config.allowUnfree = true; };
+      pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
       modules = [ ./devenv/tf/terraform-stable.nix ];
     };
 

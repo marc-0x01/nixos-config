@@ -3,12 +3,12 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, nur, nix-darwin, home-manager, stylix, ... }: {
 
   # State Version, used for backward compatibility
-  system.stateVersion = 4;
+  system.stateVersion = "24.05";
 
   # Set the system arch/os
   nixpkgs.hostPlatform = {
-    config = "x86_64-apple-darwin";
-    system = "x86_64-darwin";
+    config = "aarch64-apple-darwin";
+    system = "aarch64-darwin";
   };
 
   # Auto upgrade the nix deamon and packages, required on darwin
@@ -31,7 +31,7 @@
   # This system is a workstation
   imports = [
     # Hardware
-    ../hardware/macbook-pro-15-intel.nix
+    ../hardware/macbook-pro-16-m3.nix
     # Roles 
     ../roles/base.nix
     # Additional global services
@@ -58,14 +58,14 @@
   };
 
   # Fonts
-  # Selection of good coding fonts
+  # Selection of good terminal/coding fonts
   fonts = {                              
     packages = with pkgs; [
-      source-code-pro
+      monoid
       font-awesome
       (nerdfonts.override {
         fonts = [
-          "SourceCodePro"
+          "Monoid"
         ];
       })
     ];
@@ -89,12 +89,12 @@
     # Global Namespace Settings
     defaults.NSGlobalDomain = {
       # Set the style to ‘Dark’ to enable dark mode, or leave unset for normal mode.
-      AppleInterfaceStyle = "Dark";
+      AppleInterfaceStyle = null;
       # When to display scroll bars
       AppleShowScrollBars = "WhenScrolling";
       # Device Input key repeat
-      InitialKeyRepeat = 23;
-      KeyRepeat = 1;
+      InitialKeyRepeat = 25;
+      KeyRepeat = 6;
     };
 
     # Login
@@ -247,7 +247,7 @@
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
-        # Enable annoying hidden feature useful for developpers
+        # Enable hidden feature useful for developpers
         NSNavPanelExpandedStateForSaveMode = true;
         NSTextShowsControlCharacters = true;
       };
@@ -278,7 +278,7 @@
         "Quit When Finished" = true;
       };
       "com.apple.dock" = {
-        # Disable switchiing workspace automatically
+        # Disable switching workspace automatically
         workspaces-auto-swoosh = false;
       };
       "com.apple.finder" = {
