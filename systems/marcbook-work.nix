@@ -34,6 +34,7 @@
     # Additional global services
     ./modules/yabai.nix
     ./modules/skhd.nix
+    ./modules/sketchybar.nix
     # Apply home settings
     ../home/home.nix
   ];
