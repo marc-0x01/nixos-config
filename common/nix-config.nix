@@ -11,9 +11,11 @@
 
   # Extra Options
   # Flakes and unified command still experimental
+  # extra-platforms required for rosetta to cross-compile
   nix.extraOptions = ''
     auto-optimise-store = false
     experimental-features = nix-command flakes
+    extra-platforms = x86_64-darwin aarch64-darwin
   '';
 
 }

@@ -2,9 +2,6 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, nur, nix-darwin, home-manager, stylix, ... }: {
 
-  # State Version, used for backward compatibility
-  system.stateVersion = "24.05";
-
   # Set the system arch/os
   nixpkgs.hostPlatform = {
     config = "aarch64-apple-darwin";
