@@ -231,6 +231,7 @@
         #Set accent color to graphite
         AppleAccentColor = -1;
         # Autohide the menu bar
+        AppleMenuBarVisibleInFullscreen = false;
         _HIHideMenuBar = true;
         # Reduce animation for the tilling manager
         NSAutomaticWindowAnimationsEnabled = false;
