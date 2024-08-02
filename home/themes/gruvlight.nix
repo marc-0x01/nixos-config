@@ -22,19 +22,19 @@
     # Fonts
     fonts = {
       serif = {
-        name = "Gohu Font 14 Nerd Font";
+        name = "GohuFont 14 Nerd Font";
         package = pkgs.nerdfonts.override {
           fonts = ["Gohu"];
         };
       };
       sansSerif = {
-        name = "Gohu Font 14 Nerd Font";
+        name = "GohuFont 14 Nerd Font";
         package = pkgs.nerdfonts.override {
           fonts = ["Gohu"];
         };
       };
       monospace = {
-        name = "Gohu Font 14 Nerd Font";
+        name = "GohuFont 14 Nerd Font";
         package = pkgs.nerdfonts.override {
           fonts = ["Gohu"];
         };
