@@ -47,7 +47,7 @@
       #./themes/amber.nix
       # Applications
       ./modules/alacritty.nix
-      ./modules/qutebrowser.nix
+      #./modules/qutebrowser.nix - CURRENTLY BROKEN
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
