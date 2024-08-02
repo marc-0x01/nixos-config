@@ -69,25 +69,20 @@
       $env.VISUAL = 'nvim'
       $env.PAGER = 'less -R'
       # Nix
-      $env.NIX_PATH = $'/Users/($env.USER)/.nix-defexpr/channels:darwin-config=/Users/($env.USER)/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels'
+      $env.NIX_PATH = $'/Users/($env.USER)/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels'
       $env.NIX_PROFILES = $'/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/($env.USER) /Users/($env.USER)/.nix-profile'
       $env.NIX_REMOTE = 'daemon'
       $env.NIX_SSL_CERT_FILE = '/etc/ssl/certs/ca-certificates.crt'
-      $env.NIX_USER_PROFILE_DIR = $"/nix/var/nix/profiles/per-user/($env.USER)"
       $env.NIX_USER_CONF_FILES = $"/Users/($env.USER)/Devel/nix-config"
       $env.NIX_USER_CONF_REPOSITORY = $"github:/marc-0x01/nixos-config"
       $env.TERMINFO_DIRS = $"/Users/($env.USER)/.nix-profile/share/terminfo:/etc/profiles/per-user/($env.USER)/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo"
-      # XDG Base directories
-      #$env.XDG_CONFIG_DIRS = $"/Users/($env.USER)/.nix-profile/etc/xdg:/etc/profiles/per-user/($env.USER)/etc/xdg:/run/current-system/sw/etc/xdg:/nix/var/nix/profiles/default/etc/xdg"
-      #$env.XDG_DATA_DIRS = $"/Users/($env.USER)/.nix-profile/share:/etc/profiles/per-user/($env.USER)/share:/run/current-system/sw/share:/nix/var/nix/profiles/default/share"
       # Path
       $env.PATH = (
         $env.PATH
         | split row (char esep)
-        | prepend $"/Users/($env.USER)/.nix-profile/bin"
-        | prepend $"/etc/profiles/per-user/($env.USER)/bin"
-        | prepend '/run/current-system/sw/bin/'
         | prepend '/nix/var/nix/profiles/default/bin'
+        | prepend '/run/current-system/sw/bin/'
+        | prepend $"/etc/profiles/per-user/($env.USER)/bin"
         | prepend $"/Users/($env.USER)/.local/bin"
       )
     '';

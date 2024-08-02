@@ -5,26 +5,26 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      title = "Terminal";
-      class = {
-        instance = "Alacritty";
-        general = "Alacritty";
-      };
       # Shell
       shell = {
         program = "/etc/profiles/per-user/mguillen/bin/nu";
       };
       # Window Configuration
       window = {
+        title = "Terminal";
+        class = {
+          instance = "Alacritty";
+          general = "Alacritty";
+        };
+        startup_mode = "Maximized";
         decorations = "ButtonLess";
+        dynamic_title = true;
+        dynamic_padding = true;
         padding = {
           x = 10;
           y = 10;
         };
       };
-      startup_mode = "Maximized";
-      dynamic_title = true;
-      dynamic_padding = true;
       # Cursor configuration
       mouse = {
         hide_when_typing = true;
@@ -43,8 +43,10 @@
       };
       # Live reload the configuration
       live_config_reload = true;
-      # Keybindigs
-      key_bindings = [];
+      # Keyboard and bindings
+      keyboard = {
+        bindings = [];
+      };
     };
   };
 
