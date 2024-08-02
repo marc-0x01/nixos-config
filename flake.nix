@@ -55,8 +55,7 @@
     };
 
     # Overlays
-    mozilla.url = "github:bandithedoge/nixpkgs-firefox-darwin";
-
+    # No overlays for now
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nur, agenix, nix-darwin,
@@ -90,7 +89,6 @@
           # Nix Overlays
           nixpkgs.overlays = [
             nur.overlay
-            mozilla.overlay
             (final: prev: {
               # Better keep it on closer to the edge
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
@@ -140,7 +138,6 @@
           # Nix Overlays
           nixpkgs.overlays = [
             nur.overlay
-            mozilla.overlay
             (final: prev: {
               # Better keep it on closer to the edge
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
