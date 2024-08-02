@@ -96,8 +96,7 @@
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
-              # Testing from unstable
-              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
+              qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
             })
           ]; 
           # Home Manager Config
@@ -147,6 +146,7 @@
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
+              qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
             })
           ]; 
           # Home Manager Config
