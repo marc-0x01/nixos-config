@@ -1,6 +1,6 @@
 #!/bin/bash
 
-out=$(/usr/bin/open -a "Firefox")
+out=$(/usr/bin/open -a "qutebrowser")
 if [ $? -ne 0 ];
 then
     exit 1

@@ -62,9 +62,8 @@ I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS*
 🔜 TODO
 
 * [ ] Integrate secrets with `agenix`
-* [ ] Remove `firefox-bin` overlay when package is fixed on darwin
 * [ ] Create `steampipe` module for `home-manager` similar to awscli, with plugins
-* [ ] Create `rio` module for`stylix`
+* [ ] Create `rio` module for `stylix`
 
 === Installation
 
@@ -123,13 +122,13 @@ nix --extra-experimental-features nix-command --extra-experimental-features flak
 * Launch maually a garbage collection 
 [source,bash]
 ----
-  nix-store --gc
+  sudo nix-store --gc
 ----
 
 * Optimize manually the store (avoid on darwin, it can create a mess with links)
 [source,bash]
 ----
-  nix store optimise
+  sudo nix store optimise
 ----
 
 * Check for vulnerabilites of the system

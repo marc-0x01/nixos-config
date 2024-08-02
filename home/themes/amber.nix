@@ -46,25 +46,25 @@
       serif = {
         name = "Terminess Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["Terminus" ];
+          fonts = ["Terminus"];
         };
       };
       sansSerif = {
         name = "Terminess Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["Terminus" ];
+          fonts = ["Terminus"];
         };
       };
       monospace = {
         name = "Terminess Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["Terminus" ];
+          fonts = ["Terminus"];
         };
       };
       emoji = {
         name = "Symbols Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["NerdFontsSymbolsOnly" ];
+          fonts = ["NerdFontsSymbolsOnly"];
         };
       };
       # Font Sizes by context

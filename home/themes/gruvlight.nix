@@ -10,10 +10,10 @@
       gnome.enable = false;
     };
     # Wallpaper!
-    image = ./assets/wallpapers/monochrome1-5k-2880x1800.jpg;
+    image = ./assets/wallpapers/gruv4-5k-3840x2160.jpeg;
     # Monochrome and dark
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/grayscale-dark.yaml";
-    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-soft.yaml";
+    polarity = "light";
     # Opacities
     opacity = {
        terminal = 0.85;
@@ -21,32 +21,32 @@
     # Fonts
     fonts = {
       serif = {
-        name = "SauceCodePro Nerd Font";
+        name = "Gohu Font 14 Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["SourceCodePro"];
+          fonts = ["Gohu"];
         };
       };
       sansSerif = {
-        name = "SauceCodePro Nerd Font";
+        name = "Gohu Font 14 Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["SourceCodePro"];
+          fonts = ["Gohu"];
         };
       };
       monospace = {
-        name = "SauceCodePro Nerd Font";
+        name = "Gohu Font 14 Nerd Font";
         package = pkgs.nerdfonts.override {
-          fonts = ["SourceCodePro"];
+          fonts = ["Gohu"];
         };
       };
       emoji = {
-        name = "Symbols Nerd Font";
+        name = "Symbols Font 14 Nerd Font";
         package = pkgs.nerdfonts.override {
           fonts = ["NerdFontsSymbolsOnly"];
         };
       };
       # Font Sizes by context
       sizes = {
-        terminal = 13;
+        terminal = 14;
       };
     };
   };

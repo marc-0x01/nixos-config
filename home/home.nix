@@ -42,7 +42,8 @@
     # Note: VSCode, Discord, Slack are used in their web incarnations
     imports = [
       # Theme
-      ./themes/monochrome.nix
+      ./themes/gruvlight.nix
+      #./themes/monochrome.nix
       #./themes/amber.nix
       # Applications
       ./modules/alacritty.nix
@@ -65,28 +66,32 @@
     # Extra programs managed by home manager
     # They do not need extra configuration
     programs = {
+      # Terminal
       bat.enable = true;          # Better cat (bat)
       bottom.enable = true;       # Better top (btm)
       jq.enable = true;           # Json parser (jq)
       skim.enable = true;         # Fuzzy finder (sk)
       lazygit.enable = true;      # Git UI for humans (lazygit)
-      nix-index.enable = true;    # Nix locator (nix-index)
       taskwarrior.enable = true;  # Task management (task)
       ripgrep.enable = true;      # Better grep (rg)
+      difftastic.enable = true;   # Better diff (difft)
+      rbw.enable = true;          # Bitwarden cli (rbw)
       thefuck.enable = true;      # Correct latest command (fuck)
       # Global Development
-      k9s.enable = true;          # Cluster Management
+      k9s.enable = false;          # Cluster Management
       # Beta Testing, enabled on demand
       rio.enable = false;         # Rust/WebGPU Terminal (rio) - alacritty replacement ?
     };
 
     # Extra packages or not yet in home-manager
+    # Look for new addition or rust alternatives: lolcrab (better lolcat)
     home.packages = with pkgs; [
       # Desktop Apps
       obsidian                  # Digital Garden and noote taking
       jetbrains.gateway         # Remote development, alternative to vim in a professional environment
       # Terminal
-      bitwarden-cli             # Passkey manager
+      charasay                  # Cow have voice in terminal, better coesay (charasay)
+      lolcat                    # Rainbow! (lolcat)
       steampipe                 # Query like it's 1992 (steampipe)
       uutils-coreutils          # Better coreutils in rust, hamonize on darwin (*)
       ouch                      # Compression swiss-army knife (ouch)
@@ -97,10 +102,6 @@
       du-dust                   # More intuitive du (dust)
       asciinema                 # Terminal recorder
       vulnix                    # Nix scurity scanner
-      difftastic                # Better diff (difft)
-      # Fun - Look for rust alternatives: charasay (better cowsay), lolcrab (better lolcat)
-      cowsay                    # Cow have voice in terminal (cowsay)
-      lolcat                    # Rainbow! (lolcat)
     ];
 
     # XDG General
