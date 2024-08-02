@@ -74,7 +74,6 @@
       lazygit.enable = true;      # Git UI for humans (lazygit)
       taskwarrior.enable = true;  # Task management (task)
       ripgrep.enable = true;      # Better grep (rg)
-      difftastic.enable = true;   # Better diff (difft)
       rbw.enable = true;          # Bitwarden cli (rbw)
       thefuck.enable = true;      # Correct latest command (fuck)
       # Global Development
@@ -98,6 +97,7 @@
       rsign2                    # Signing cli compatible with minisign (rsign)
       rage                      # A simple, secure and modern encryption tool (age)
       age-plugin-yubikey        # -- Integrration of age with yubikey
+      difftastic                # Better diff (difft), mostly for git
       macchina                  # System info fetcher (macchina)
       du-dust                   # More intuitive du (dust)
       asciinema                 # Terminal recorder
