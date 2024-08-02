@@ -3,6 +3,7 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }: {
 
   stylix = {
+    enable = true;
     # Theme apps by default
     autoEnable = true;
     targets = {
