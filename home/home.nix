@@ -76,8 +76,8 @@
       thefuck.enable = true;      # Correct latest command (fuck)
       # Global Development
       k9s.enable = true;          # Cluster Management
-      # Beta Testing
-      rio.enable = true;          # Rust/WebGPU Terminal (rio) - alacritty replacement ?
+      # Beta Testing, enabled on demand
+      rio.enable = false;         # Rust/WebGPU Terminal (rio) - alacritty replacement ?
     };
 
     # Extra packages or not yet in home-manager
@@ -99,7 +99,6 @@
       vulnix                    # Nix scurity scanner
       difftastic                # Better diff (difft)
       # Fun - Look for rust alternatives: charasay (better cowsay), lolcrab (better lolcat)
-      #oneko                    # Cat chase mouses (oneko) - Currently broken on OSX
       cowsay                    # Cow have voice in terminal (cowsay)
       lolcat                    # Rainbow! (lolcat)
     ];
