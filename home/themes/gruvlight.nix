@@ -60,9 +60,66 @@
       target = "${config.home.homeDirectory}/.local/bin/wm-setup-bar.sh";
       text = ''
         #!/bin/bash
+        ## Colors
+        export WHITE=0xffffffff
+        export BAR_COLOR=0xff2d2b02
+        export ITEM_BG_COLOR=0xff8e7e0a
+        export ACCENT_COLOR=0xfff7fc17
+        ## Bar
+        sketchybar --bar \ 
+          height=37        \
+          blur_radius=30   \
+          position=top     \
+          sticky=off       \
+          padding_left=10  \
+          padding_right=10 \
+          color=$BAR_COLOR
         ## Defaults
+        sketchybar --default 
+          icon.font="SF Pro:Semibold:15.0"  \
+          icon.color=$WHITE                 \
+          label.font="SF Pro:Semibold:15.0" \
+          label.color=$WHITE                \
+          background.color=$ITEM_BG_COLOR   \
+          background.corner_radius=5        \
+          background.height=24              \
+          padding_left=5                    \
+          padding_right=5                   \
+          label.padding_left=4              \
+          label.padding_right=10            \
+          icon.padding_left=10              \
+          icon.padding_right=4
         ## Plugins
+        battery = (
+          #!/bin/sh
+          PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
+          CHARGING=$(pmset -g batt | grep 'AC Power')
+          if [ $PERCENTAGE = "" ]; then
+            exit 0
+          fi
+          case ${PERCENTAGE} in
+            9[0-9]|100) ICON="􀛨"
+            ;;
+            [6-8][0-9]) ICON="􀺸"
+            ;;
+            [3-5][0-9]) ICON="􀺶"
+            ;;
+            [1-2][0-9]) ICON="􀛩"
+            ;;
+            *) ICON="􀛪"
+          esac
+
+          if [[ $CHARGING != "" ]]; then
+            ICON="􀢋"
+          fi
+          sketchybar --set battery icon="$ICON" label="${PERCENTAGE}%"
+        )
         ## Items
+        # Battery
+        sketchybar --add item battery right \
+          --set battery update_freq=120 \
+                        script="${battery[@]}" \
+          --subscribe battery system_woke power_source_change
       '';
     };
   };
