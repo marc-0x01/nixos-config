@@ -27,7 +27,7 @@
       active_window_opacity = 1.0;
       normal_window_opacity = 0.9;
       window_shadow = "off";
-      external_bar = "all:37:0"
+      external_bar = "all:37:0";
     };
     # Rules and Signals
     extraConfig = ''
