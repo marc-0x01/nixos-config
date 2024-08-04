@@ -52,4 +52,19 @@
     };
   };
 
+  # (darwin )Sketchy Bar configuration
+  home.file = {
+    ".local/bin/wm-setup-bar.sh" = {
+      enable = pkgs.stdenv.isDarwin;
+      executable = true;
+      target = "${config.home.homeDirectory}/.local/bin/wm-setup-bar.sh";
+      text = ''
+        #!/bin/bash
+        ## Defaults
+        ## Plugins
+        ## Items
+      '';
+    };
+  };
+
 }

@@ -6,40 +6,35 @@
     enable = true;
     # All in one config
     config = ''
-        ## General Appearance and Defaults
-        # Bar Appearance
-        sketchybar --bar      \
-            height=38         \
-            position=top      \
-            sticky=off        \
-            y_offset=-1       \
-            padding_left=20   \
-            padding_right=-1  \
-            color=0xff
-        # Changing Defaults
-        sketchybar --default \
-            icon.font="Helvetica:Regular:15.0"  \
-            icon.padding_left=-1                \
-            icon.padding_right=-1               \
-            label.font="Helvetica:Regular:15.0"
-        ## Items
-        # No Custom Items
-        ## Layouts
-        # Left Items
-        sketchybar --add item logo left
-        sketchybar --set logo \
-            label.string="(oO,) \,,/" \
-            label.color=0xff000000    \
-            label.font.style=Bold
-        # Notch Items
-        # Nothing in notch area!
-        # Right Items
-        sketchybar --add alias "Control Center,Clock" right
-        sketchybar --add alias "Control Center,WiFi" right
-        sketchybar --add alias "Control Center,Battery" right
-        sketchybar --add alias "Control Center,Sound" right
-        ## Force all scripts to run the first time
-        sketchybar --update
+      ## General Appearance and Defaults
+      # Bar Appearance
+      sketchybar --bar \
+        height=37         \
+        position=top      \
+        sticky=off        \
+        y_offset=-1       \
+        padding_left=10   \
+        padding_right=10  \
+        color=0xff
+      # Changing Defaults
+      sketchybar --default \
+        icon.font="SF Pro:Semibold:15.0"      \
+        icon.color=0xffffffff                 \
+        label.font="SF Pro:Semibold:15.0"     \
+        label.color=0xffffffff                \
+        background.color=0xff                 \
+        background.corner_radius=5            \
+        background.height=24                  \
+        padding_left=5                        \
+        padding_right=5                       \
+        label.padding_left=4                  \
+        label.padding_right=10                \
+        icon.padding_left=10                  \
+        icon.padding_right=4
+      ## Source theme specific configuration in home space
+      source ${config.home.homeDirectory}/.local/bin/wm-setup-bar.sh
+      ## Force all scripts to run the first time
+      sketchybar --update
     '';
   };
 }
