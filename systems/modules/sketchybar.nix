@@ -32,7 +32,7 @@
         icon.padding_left=10                  \
         icon.padding_right=4
       ## Source theme specific configuration in home space
-      source ${config.home.homeDirectory}/.local/bin/wm-setup-bar.sh
+      FILE=/users/mguillen/.local/bin/wm-setup-bar.sh && test -f $FILE && source $FILE
       ## Force all scripts to run the first time
       sketchybar --update
     '';
