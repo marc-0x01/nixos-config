@@ -1,6 +1,6 @@
 #!/bin/bash
 
-out=$(/usr/bin/open -a "qutebrowser")
+out=$(/usr/bin/open -a "qutebrowser" --args --target window)
 if [ $? -ne 0 ];
 then
     exit 1

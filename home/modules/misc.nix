@@ -29,6 +29,12 @@
       source = ../scripts/wm-open-digital-garden-darwin.sh;
       target = "${config.home.homeDirectory}/.local/bin/wm-open-digital-garden.sh";
     };
+    ".local/bin/wm-open-code-editor-darwin.sh" = {
+      enable = pkgs.stdenv.isDarwin;
+      executable = true;
+      source = ../scripts/wm-open-code-editor-darwin.sh;
+      target = "${config.home.homeDirectory}/.local/bin/wm-open-code-editor.sh";
+    };
   };
 
 }
