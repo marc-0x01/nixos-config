@@ -11,7 +11,7 @@
       alt - u : /Users/mguillen/.local/bin/wm-open-music-player.sh
       alt - e : /Users/mguillen/.local/bin/wm-open-file-manager.sh
       alt - o : /Users/mguillen/.local/bin/wm-open-digital-garden.sh
-      alt - c : /Users/mguillen/.local/bin/wm.open-code-editor.sh
+      alt - c : /Users/mguillen/.local/bin/wm-open-code-editor.sh
       shift + alt - l : /Users/mguillen/.local/bin/wm-lock.sh
       shift + alt - e : /Users/mguillen/.local/bin/wm-shutdown.sh
       # Windows close
