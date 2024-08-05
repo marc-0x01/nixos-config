@@ -61,10 +61,10 @@
       text = ''
         #!/bin/bash
         ## Colors
-        export WHITE=0xffffffff
-        export BAR_COLOR=0xff2d2b02
-        export ITEM_BG_COLOR=0xff8e7e0a
-        export ACCENT_COLOR=0xfff7fc17
+        export DEFAULT=0xff${config.lib.stylix.colors.base05}
+        export BAR_COLOR=0xff${config.lib.stylix.colors.base00}
+        export ITEM_BG_COLOR=0xff${config.lib.stylix.colors.base02}
+        export ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}
         ## Bar
         sketchybar --bar \ 
           height=37        \
@@ -75,11 +75,11 @@
           padding_right=10 \
           color=$BAR_COLOR
         ## Defaults
-        sketchybar --default 
-          icon.font="SF Pro:Semibold:15.0"  \
-          icon.color=$WHITE                 \
-          label.font="SF Pro:Semibold:15.0" \
-          label.color=$WHITE                \
+        sketchybar --default \
+          icon.font="GohuFont 14 Nerd Font:Regular:15.0"  \
+          icon.color=$DEFAULT               \
+          label.font="GohuFont 14 Nerd Font:Regular:15.0" \
+          label.color=$DEFAULT              \
           background.color=$ITEM_BG_COLOR   \
           background.corner_radius=5        \
           background.height=24              \
@@ -90,36 +90,11 @@
           icon.padding_left=10              \
           icon.padding_right=4
         ## Plugins
-        battery = (
-          #!/bin/sh
-          PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
-          CHARGING=$(pmset -g batt | grep 'AC Power')
-          if [ $PERCENTAGE = "" ]; then
-            exit 0
-          fi
-          case ${PERCENTAGE} in
-            9[0-9]|100) ICON="􀛨"
-            ;;
-            [6-8][0-9]) ICON="􀺸"
-            ;;
-            [3-5][0-9]) ICON="􀺶"
-            ;;
-            [1-2][0-9]) ICON="􀛩"
-            ;;
-            *) ICON="􀛪"
-          esac
-
-          if [[ $CHARGING != "" ]]; then
-            ICON="􀢋"
-          fi
-          sketchybar --set battery icon="$ICON" label="${PERCENTAGE}%"
-        )
         ## Items
-        # Battery
-        sketchybar --add item battery right \
-          --set battery update_freq=120 \
-                        script="${battery[@]}" \
-          --subscribe battery system_woke power_source_change
+	      sketchybar --add item logo left \
+	        --set logo label.string="oO,)\,,/" \
+	                   label.font-style="Bold" \
+		                 background.color=0xff
       '';
     };
   };
