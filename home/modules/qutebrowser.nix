@@ -3,7 +3,7 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, nur, home-manager, ... }: {
 
   programs.qutebrowser = {
-    enable = true;
+    enable = false;  # CURRENTLY BROKEN ;(
     # Key bindings
     enableDefaultBindings = true;
     #keyBindings = {};
