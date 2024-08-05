@@ -4,22 +4,77 @@
 
   programs.qutebrowser = {
     enable = false;  # CURRENTLY BROKEN ;(
-    # Key bindings
-    enableDefaultBindings = true;
-    #keyBindings = {};
-    # Engines
-    searchEngines = {
-      dd = "";
-      w = "https://en.wikipedia.org/wiki/Special:Search?search={}&go=Go&ns0=1";
-      nw = "https://wiki.nixos.org/index.php?search={}";
-      g = "https://www.google.com/search?hl=en&q={}";
-    };
-    # Command Aliases
-    aliases = {};
-    # General Settings
+    loadAutoconfig = false;
+    # General Settings, most defaults are fine!
     settings = {
-        backend = "webengine";
-        confirm_quit = "never";
+      backend = "webengine";
+      confirm_quit = "never";
+      window = {
+        hide_decoration = true;
+        transparent = true;
+        title_format = "qutebrowser{title_sep}{current_title} ({host})";
+      };
+      auto_save = {
+        session = false;
+      };
+      content = {
+        private_browsing = true;
+        prefers_reduced_motion = true;
+        autoplay = false;
+        mute = true;
+        pdfjs = true;
+        webgl = true;
+        user_stylesheets = null;
+        notifications = {
+          enabled = false;
+        };
+      };
+      downloads = {
+        location = {
+          prompt = false;
+          directory = "${config.home.homeDirectory}/Downloads";
+          };
+      };
+      statusbar = {
+        position = "bottom";
+        show = "in-mode";
+      };
+      tabs = {
+        show = "multiple";
+        last_close = "close";
+        mousewheel_switching = false;
+        favicons = {
+          show = false;
+        };
+        title = {
+          format = "{index}: {current_title}";
+        };
+      };
+      url = {
+        default_page  = "about:blank";
+        start_pages = "https://start.duckduckgo.com";
+      };
+    };
+    # Command Aliases and Bindings
+    aliases = {};
+    enableDefaultBindings = true;
+    keyBindings = {
+      normal = {
+        "," = "Ss";
+      };
+    };
+    # Common Search Engines
+    searchEngines = {
+      duckduckgo = "https://duckduckgo.com/?q={}&kp=-1&kl=us-en&kae=t";
+      wikipedia = "https://en.wikipedia.org/wiki/Special:Search?search={}&go=Go&ns0=1";
+      nixwiki = "https://wiki.nixos.org/index.php?search={}";
+      google = "https://www.google.com/search?hl=en&q={}";
+    };
+    # Quickmarks = Bookmarks
+    quickmarks = {
+      code = "https://vscode.dev";
+      gh = "https://github.com/marc-0x01";
+      sky = "https://sky.pictet.com";
     };
   };
 
