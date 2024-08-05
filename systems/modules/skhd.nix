@@ -33,7 +33,7 @@
       shift + alt - k : yabai -m window --warp north
       shift + alt - l : yabai -m window --warp east 
       # Windows moving to space
-      shift + alt - espace : yabai -m window --space last; yabai -m space --focus last
+      shift + alt - escape : yabai -m window --space last; yabai -m space --focus last
       shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev
       shift + alt - n : yabai -m window --space next; yabai -m space --focus next
       shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
