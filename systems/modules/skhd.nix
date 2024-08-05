@@ -11,6 +11,7 @@
       alt - u : /Users/mguillen/.local/bin/wm-open-music-player.sh
       alt - e : /Users/mguillen/.local/bin/wm-open-file-manager.sh
       alt - o : /Users/mguillen/.local/bin/wm-open-digital-garden.sh
+      alt - c : /Users/mguillen/.local/bin/wm.open-code-editor.sh
       shift + alt - l : /Users/mguillen/.local/bin/wm-lock.sh
       shift + alt - e : /Users/mguillen/.local/bin/wm-shutdown.sh
       # Windows close
@@ -32,7 +33,7 @@
       shift + alt - k : yabai -m window --warp north
       shift + alt - l : yabai -m window --warp east 
       # Windows moving to space
-      shift + alt - m : yabai -m window --space last; yabai -m space --focus last
+      shift + alt - espace : yabai -m window --space last; yabai -m space --focus last
       shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev
       shift + alt - n : yabai -m window --space next; yabai -m space --focus next
       shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
