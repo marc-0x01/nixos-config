@@ -42,9 +42,8 @@
     # Note: VSCode, Discord, Slack are used in their web incarnations
     imports = [
       # Theme
+      ./themes/common.nix
       ./themes/gruvlight.nix
-      #./themes/monochrome.nix
-      #./themes/amber.nix
       # Applications
       ./modules/alacritty.nix
       ./modules/qutebrowser.nix
