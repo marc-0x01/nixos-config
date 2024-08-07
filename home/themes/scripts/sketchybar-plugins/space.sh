@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BAR_COLOR=0xff${config.lib.stylix.colors.base00}
 ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}

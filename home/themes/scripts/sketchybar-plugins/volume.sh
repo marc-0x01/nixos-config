@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ "$SENDER" = "volume_change" ]; then
   VOLUME=$INFO
