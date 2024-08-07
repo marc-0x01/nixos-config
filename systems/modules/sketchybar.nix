@@ -32,7 +32,7 @@
         icon.padding_left=10                  \
         icon.padding_right=4
       ## Source theme specific configuration in home space
-      FILE=/users/mguillen/.config/sketchybat/sketchybarrc && test -f $FILE && source $FILE
+      FILE=/users/mguillen/.config/sketchybar/sketchybarrc && test -f $FILE && source $FILE
       ## Force all scripts to run the first time
       sketchybar --update
     '';
