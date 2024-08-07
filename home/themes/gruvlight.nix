@@ -52,7 +52,7 @@
     };
   };
 
-  # (darwin )Sketchy Bar configuration
+  # (darwin) Sketchy Bar configuration
   home.file = {
     ".config/sketchybar/sketchybarrc" = {
       enable = pkgs.stdenv.isDarwin;
@@ -61,10 +61,7 @@
       text = ''
         #!/bin/bash
         ## Colors
-        export DEFAULT=0xff${config.lib.stylix.colors.base05}
-        export BAR_COLOR=0xff${config.lib.stylix.colors.base00}
-        export ITEM_BG_COLOR=0xff${config.lib.stylix.colors.base02}
-        export ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}
+        source "${config.home.homeDirectory}.config/sketchybar/color-scheme.sh"
         ## Bar
         sketchybar --bar \
           height=37 \
