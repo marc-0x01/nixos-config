@@ -90,7 +90,7 @@
           icon.padding_left=10 \
           icon.padding_right=4
         ## Plugins
-        PLUGIN_DIR="./plugins"
+        PLUGIN_DIR="${config.home.homeDirectory}/.config/sketchybar/plugins"
         ## Items
         # L: Logo
         sketchybar --add item logo left \
