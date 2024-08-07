@@ -96,7 +96,7 @@
         sketchybar --add item logo left \
           --set logo label.string="oO,)\,,/" \
                      label.font.style="Bold" \
-                     icon= \
+                     icon=󰉛 \
                      background.color=0xff
                      click_script="sketchybar -m --update"
         # L: spaces
@@ -140,7 +140,7 @@
         # R: Calendar
         sketchybar --add item calendar right \
            --set calendar update_freq=30 \
-                          icon=<U+EAB0>  \
+                          icon=󰚒  \
                           script="$PLUGIN_DIR/calendar.sh"
         # R: Volume
         sketchybar --add item volume right \
@@ -154,7 +154,7 @@
         # R: CPU
         sketchybar --add item cpu right \
            --set cpu update_freq=2 \
-                     icon=<U+F035B> \
+                     icon=󰍛 \
                      script="$PLUGIN_DIR/cpu.sh"
       '';
     };
