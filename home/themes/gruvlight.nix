@@ -73,7 +73,7 @@
           color=$TRANSPARENT
         ## Defaults
         sketchybar --default \
-          icon.font="GohuFont 14 Nerd Font:Regular:15.0" \
+          icon.font="Symbols Font 14 Nerd Font:Regular:15.0" \
           icon.color=$DEFAULT \
           label.font="GohuFont 14 Nerd Font:Regular:15.0" \
           label.color=$DEFAULT \
