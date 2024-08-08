@@ -3,7 +3,7 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }: {
 
   # (Darwin) Sketchybar, common plugins
-
+  # Utils
   home.file = {
     ".config/sketchybar/color-scheme.sh" = {
       enable = pkgs.stdenv.isDarwin;
@@ -19,6 +19,13 @@
         export ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}
       '';
     };
+    ".config/sketchybar/plugins/icon-map.sh" = {
+      enable = pkgs.stdenv.isDarwin;
+      executable = true;
+      source = ./scripts/sketchybar-plugins/icon-map.sh;
+      target = "${config.home.homeDirectory}/.config/sketchybar/plugins/icon-map.sh";
+    };
+    # Plugins
     ".config/sketchybar/plugins/calendar.sh" = {
       enable = pkgs.stdenv.isDarwin;
       executable = true;
