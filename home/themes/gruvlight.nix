@@ -93,7 +93,8 @@
         sketchybar --add item logo left \
           --set logo label.string="oO,)\,,/" \
                      label.font.style="Bold" \
-                     icon=󰉛 \
+                     icon.font.size="16" \
+                     icon=󱓞 \
                      background.color=$TRANSPARENT \
                      click_script="sketchybar -m --update"
         # L: spaces
