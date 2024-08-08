@@ -8,7 +8,7 @@ if [ "$SENDER" = "space_windows_change" ]; then
   if [ "${apps}" != "" ]; then
     while read -r app
     do
-      icon_strip+=" $($HOME/.config/sketchybar/plugins/icon_map.sh "$app")"
+      icon_strip+=" $($HOME/.config/sketchybar/plugins/icon-map.sh "$app")"
     done <<< "${apps}"
   else
     icon_strip=" —"
