@@ -61,7 +61,7 @@
       text = ''
         #!/bin/bash
         ## Colors
-        source "${config.home.homeDirectory}.config/sketchybar/color-scheme.sh"
+        source "${config.home.homeDirectory}/.config/sketchybar/color-scheme.sh"
         ## Bar
         sketchybar --bar \
           height=37 \
