@@ -4,6 +4,7 @@
 
   # (Darwin) Sketchybar, common plugins
   # Utils
+  home.packages = with pkgs; [ sketchybar-app-font ];
   home.file = {
     ".config/sketchybar/color-scheme.sh" = {
       enable = pkgs.stdenv.isDarwin;
