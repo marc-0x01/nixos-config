@@ -16,7 +16,7 @@
         export BAR_COLOR=0xff${config.lib.stylix.colors.base00}
         export ITEM_BG_COLOR=0xff${config.lib.stylix.colors.base02}
         export ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}
-      ''
+      '';
     };
     ".config/sketchybar/plugins/calendar.sh" = {
       enable = pkgs.stdenv.isDarwin;
