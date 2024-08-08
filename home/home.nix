@@ -75,10 +75,9 @@
       ripgrep.enable = true;      # Better grep (rg)
       rbw.enable = true;          # Bitwarden cli (rbw)
       thefuck.enable = true;      # Correct latest command (fuck)
-      # Global Development
-      k9s.enable = false;          # Cluster Management
       # Beta Testing, enabled on demand
       rio.enable = false;         # Rust/WebGPU Terminal (rio) - alacritty replacement ?
+      helix.enable = false;       # Rust Post Modern Editor (hlx) - neovim replacement ? 
     };
 
     # Extra packages or not yet in home-manager
@@ -99,7 +98,6 @@
       difftastic                # Better diff (difft), mostly for git
       macchina                  # System info fetcher (macchina)
       du-dust                   # More intuitive du (dust)
-      asciinema                 # Terminal recorder
       vulnix                    # Nix scurity scanner
     ];
 
