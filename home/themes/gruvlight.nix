@@ -70,7 +70,7 @@
           sticky=off \
           padding_left=10 \
           padding_right=10 \
-          color=$BAR_COLOR
+          color=$TRANSPARENT
         ## Defaults
         sketchybar --default \
           icon.font="GohuFont 14 Nerd Font:Regular:15.0" \
@@ -94,7 +94,7 @@
           --set logo label.string="oO,)\,,/" \
                      label.font.style="Bold" \
                      icon=󰉛 \
-                     background.color=0xff
+                     background.color=$TRANSPARENT \
                      click_script="sketchybar -m --update"
         # L: spaces
         SPACE_SIDS=(1 2 3 4 5 6 7 8 9 10)

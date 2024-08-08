@@ -12,9 +12,9 @@
       text = ''
         #!/bin/bash
         ## Bar olors derived from base16
+        export TRANSPARENT=0xff
         export DEFAULT=0xff${config.lib.stylix.colors.base05}
-        #export BAR_COLOR=0xff${config.lib.stylix.colors.base00}
-        export BAR_COLOR=0xff
+        export BAR_COLOR=0xff${config.lib.stylix.colors.base00}
         export ITEM_BG_COLOR=0xff${config.lib.stylix.colors.base02}
         export ACCENT_COLOR=0xff${config.lib.stylix.colors.base04}
       '';
