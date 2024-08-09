@@ -11,7 +11,7 @@
     settings = {
       backend = "webengine";
       window = {
-        hide_decoration = false;
+        hide_decoration = false; # On darwin, if enable yabai won't manage the screen
         transparent = true;
         title_format = "qutebrowser{title_sep}{current_title} ({host})";
       };
@@ -75,14 +75,46 @@
         ":" = "cmd-set-text :";
         # enter modes
         "i" = "mode-enter insert";
+        "v" = "mode-enter caret";
         # page navigation
         "h" = "scroll left";
         "j" = "scroll down";
         "k" = "scroll up";
         "l" = "scroll right";
+        # content
+        "<Return>" = "selection-follow";
+        "<Meta-r>" = "reload";
+        # history
+        "H" = "back";
+        "<Meta-Left>" = "back";
+        "L" = "forward";
+        "<Meta-Right>" = "forward";
         # tab
+        "J" = "tab-next";
+        "<Meta-Down>" = "tab-next";
+        "K" = "tab-prev";
+        "<Meta-Up>" = "tab-prev";
+        "o" = "open -t";
+        "<Meta-t>" = "open -t";
+        "dd" = "tab-close";
+        "<Meta-w>" = "tab-close";
+        "<Meta-1>" = "tab-focus 1";
+        "<Meta-2>" = "tab-focus 2";
+        "<Meta-3>" = "tab-focus 3";
+        "<Meta-4>" = "tab-focus 4";
+        "<Meta-5>" = "tab-focus 5";
+        "<Meta-6>" = "tab-focus 6";
+        "<Meta-7>" = "tab-focus 7";
+        "<Meta-8>" = "tab-focus 8";
+        "<Meta-Backspace>" = "tab-focus last";
+        "<Meta-p>" = "tab-pin";
+        "<Meta-m>" = "tab-mute";
         # search
+        "<Meta-f>" = "cmd-set-text /";
+        "n" = "search-next";
+        "p" = "search-prev";
         # bookmarks
+        "<meta-b>" = "bookmark-add";
         # zoom
         "+" = "zoom-in";
         "-" = "zoom-out";
@@ -90,11 +122,50 @@
       insert = {
         "<Escape>" = "mode-leave";
       };
+      caret = {
+        "<Return>" = "yank selection";
+        "<Escape>" = "mode-leave";
+        "<Space>" = "selection-toggle";
+        "<Shift-Space>" = "selection-drop";
+      };
+      command = {
+        "<Return>" = "command-accept";
+        "<Escape>" = "mode-leave";
+        "<Tab>" = "completion-item-focus next";
+        "<Up>" = "completion-item-focus --history prev";
+        "<Down>" = "completion-item-focus --history next";  
+        "<Ctrl-K>" = "rl-kill-line";
+        "<Ctrl-A>" = "rl-beginning-of-line";
+        "<Ctrl-E>" = "rl-end-of-line";
+        "<Ctrl-N>" = "command-history-next";
+        "<Ctrl-P>" = "command-history-prev";
+      };
+      hint = {
+        "<Return>" = "hint-follow";
+        "<Escape>" = "mode-leave";
+      };
+      prompt = {
+        "<Return>" = "prompt-accept";
+        "<Escape>" = "mode-leave";
+        "<Tab>" = "prompt-item-focus next";
+        "<Down" = "prompt-item-focus next";
+        "<Shift-Tab>" = "prompt-item-focus prev";
+        "<Up>" = "prompt-item-focus prev";
+        "<Ctrl-K>" = "rl-kill-line";
+        "<Ctrl-A>" = "rl-beginning-of-line";
+        "<Ctrl-E>" = "rl-end-of-line";
+      };
+      yesno = {
+        "<Return>" = "prompt-accept";
+        "<Escape>" = "mode-leave";
+        "y" = "prompt-accept yes";
+        "n" = "prompt-accept no";
+      };
       passthrough = {
         "<Shift-Escape>" = "mode-leave";
       };
       register = {
-        "<Shift-Escape>" = "mode-leave";
+        "<Escape>" = "mode-leave";
       };
     };
     # Common Search Engines
