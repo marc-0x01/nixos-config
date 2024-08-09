@@ -5,6 +5,7 @@
   programs.qutebrowser = {
     enable = true;  
     # Main package currently broken, using own bin derivation
+    package = pkgs.qutebrowser-bin;
     loadAutoconfig = false;
     # General Settings, most defaults are fine!
     settings = {
