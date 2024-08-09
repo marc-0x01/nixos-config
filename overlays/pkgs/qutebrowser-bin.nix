@@ -8,6 +8,7 @@
   then "arm64"
   else if (stdenv.isDarwin && stdenv.isx86_64)
   then "x86_64"
+  else "undifined"
 }:
 
 assert builtins.elem variant [ "arm64" "x86_64" ];
@@ -16,7 +17,7 @@ stdenv.mkDerivation (finalAttrs: {
   version = "3.2.1";
 
   src = fetchurl {
-    url = "https://github.com/qutebrowser/qutebrowser/releases/download/v${finalAttrs.version}/qutebrowser-${finalAttrs.version}-${variant}.dmg"
+    url = "https://github.com/qutebrowser/qutebrowser/releases/download/v${finalAttrs.version}/qutebrowser-${finalAttrs.version}-${variant}.dmg";
     hash = {
       "arm64" = "sha256-HNEXLXy1rgHiD97JyOEuBuZAeGjge1wvHgo9esZZKCY=";
       "intel64" = "sha256-mOtwN5435O5eZk58mfHa0eW2GNAM1QWVtGoXz9KaBxo=";

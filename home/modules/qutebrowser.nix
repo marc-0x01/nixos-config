@@ -3,12 +3,12 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, nur, home-manager, ... }: {
 
   programs.qutebrowser = {
-    enable = false;  # CURRENTLY BROKEN ;(
+    enable = true;  
+    # Main package currently broken, using own bin derivation
     loadAutoconfig = false;
     # General Settings, most defaults are fine!
     settings = {
       backend = "webengine";
-      confirm_quit = "never";
       window = {
         hide_decoration = true;
         transparent = true;
@@ -44,7 +44,7 @@
         last_close = "close";
         mousewheel_switching = false;
         favicons = {
-          show = false;
+          show = "never";
         };
         title = {
           format = "{index}: {current_title}";
