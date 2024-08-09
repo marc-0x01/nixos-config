@@ -11,13 +11,13 @@
     settings = {
       backend = "webengine";
       window = {
-        hide_decoration = true;
+        hide_decoration = false;
         transparent = true;
         title_format = "qutebrowser{title_sep}{current_title} ({host})";
       };
       input = {
+        spatial_navigation = true;
         insert_mode = { 
-          spatial_navigation = true;
           auto_enter = true;
           auto_leave = false;
         };
@@ -66,11 +66,35 @@
     };
     # Command Aliases
     aliases = {};
-    # Bindings, start from scratch
+    # Bindings, start from scratch and stay minimal
     enableDefaultBindings = false;
     keyBindings = {
       normal = {
-        "," = "config-edit";
+        # commands
+        "/" = "cmd-set-text /";
+        ":" = "cmd-set-text :";
+        # enter modes
+        "i" = "mode-enter insert";
+        # page navigation
+        "h" = "scroll left";
+        "j" = "scroll down";
+        "k" = "scroll up";
+        "l" = "scroll right";
+        # tab
+        # search
+        # bookmarks
+        # zoom
+        "+" = "zoom-in";
+        "-" = "zoom-out";
+      };
+      insert = {
+        "<Escape>" = "mode-leave";
+      };
+      passthrough = {
+        "<Shift-Escape>" = "mode-leave";
+      };
+      register = {
+        "<Shift-Escape>" = "mode-leave";
       };
     };
     # Common Search Engines
