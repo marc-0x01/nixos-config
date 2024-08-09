@@ -15,6 +15,13 @@
         transparent = true;
         title_format = "qutebrowser{title_sep}{current_title} ({host})";
       };
+      input = {
+        insert_mode = { 
+          spatial_navigation = true;
+          auto_enter = true;
+          auto_leave = false;
+        };
+      };
       auto_save = {
         session = false;
       };
@@ -38,9 +45,10 @@
       };
       statusbar = {
         position = "bottom";
-        show = "in-mode";
+        show = "always";
       };
       tabs = {
+        position = "top";
         show = "multiple";
         last_close = "close";
         mousewheel_switching = false;
@@ -56,12 +64,13 @@
         start_pages = "https://start.duckduckgo.com";
       };
     };
-    # Command Aliases and Bindings
+    # Command Aliases
     aliases = {};
-    enableDefaultBindings = true;
+    # Bindings, start from scratch
+    enableDefaultBindings = false;
     keyBindings = {
       normal = {
-        "," = "Ss";
+        "," = "config-edit";
       };
     };
     # Common Search Engines
