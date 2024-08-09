@@ -96,6 +96,9 @@
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
             })
+            (final: prev: {
+              qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
+            })
           ]; 
           # Home Manager Config
           home-manager.useGlobalPkgs = true;
