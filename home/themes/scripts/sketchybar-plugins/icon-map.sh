@@ -426,7 +426,7 @@ function icon_map() {
     icon_result=":whats_app:"
     ;;
   *)
-    icon_result=""
+    icon_result=":default:"
     ;;
   esac
 }

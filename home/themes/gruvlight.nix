@@ -104,6 +104,7 @@
         sketchybar --add space space.$sid left \
           --set space.$sid space=$sid \
                            icon=$sid \
+                           label.font="sketchybar-app-font:Regular:15.0" \
                            label.padding_right=20 \
                            label.y_offset=-1 \
                            script="$PLUGIN_DIR/space.sh" \
@@ -119,10 +120,11 @@
            --subscribe space_separator space_windows_change
         # L: Front Application
         sketchybar --add item front_app left \
-           --set front_app       background.color=$ACCENT_COLOR \
-                                 icon.color=$BAR_COLOR \
-                                 label.color=$BAR_COLOR \
-                                 script="$PLUGIN_DIR/front-app.sh" \
+           --set front_app  background.color=$ACCENT_COLOR \
+                            icon.font="sketchybar-app-font:Regular:15.0" \
+                            icon.color=$BAR_COLOR \
+                            label.color=$BAR_COLOR \
+                            script="$PLUGIN_DIR/front-app.sh" \
            --subscribe front_app front_app_switched
         # LN: Media
         sketchybar --add item media e \
