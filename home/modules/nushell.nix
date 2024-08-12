@@ -13,7 +13,7 @@
         edit_mode: vi
         shell_integration: true
         ls: {
-          use_ls_colors: false
+          use_ls_colors: true
           clickable_links: true
         }
         rm: {
