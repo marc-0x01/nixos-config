@@ -18,6 +18,7 @@
       input = {
         spatial_navigation = true;
         insert_mode = { 
+          auto_load = true;
           auto_enter = true;
           auto_leave = false;
         };
@@ -58,6 +59,14 @@
         title = {
           format = "{index}: {current_title}";
         };
+      };
+      completion = {
+        height = 25%; 
+        shrink = true;
+      };
+      hints = {
+        uppercase = true;
+        radius = 2;
       };
       url = {
         default_page  = "about:blank";
