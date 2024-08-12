@@ -61,7 +61,7 @@
         };
       };
       completion = {
-        height = 25%; 
+        height = 0.25; 
         shrink = true;
       };
       hints = {
