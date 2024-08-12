@@ -79,7 +79,7 @@
     # Stack specific, optional
     localstack  # Run localy, mocking AWS api 
     trivy       # Static scanning 
-    infracost   # Get cost, hopefully once in trivvy
+    infracost   # Get cost, hopefully once in trivy
   ];
 
   # Toolchain: Terraform
@@ -132,6 +132,7 @@
       terragrunt init
     '';
     update.exec = ''
+      terragrunt get
       terragrunt init
     '';
     plan.exec = ''

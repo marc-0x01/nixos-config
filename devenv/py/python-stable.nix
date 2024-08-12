@@ -81,7 +81,6 @@
     gh
     jq
     # Stack specific
-    pipx  
     zlib  # Required for numpy and other data package
   ];
 
