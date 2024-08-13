@@ -56,7 +56,7 @@
   # Theme
   # Rio is not yet in Stylix, for now generating theme from the stylix colors
   # TODO Move to a TOML maker and eventualy create a stylix module
-  program.rio.settings = {
+  programs.rio.settings = {
     window = {
         opacity = 0.85;
         blur = true;
