@@ -27,7 +27,6 @@
         };
         shell = {
             program = "/etc/profiles/per-user/mguillen/bin/nu";
-            args = [];
         };
         keyboard = {
             use-kitty-keyboard-protocol = true;
