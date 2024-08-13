@@ -103,7 +103,8 @@
         "<Meta-Down>" = "tab-next";
         "K" = "tab-prev";
         "<Meta-Up>" = "tab-prev";
-        "o" = "cmd-set-text :open -t ";
+        "o" = "cmd-set-text :open ";
+        "O" = "cmd-set-text :open -t ";
         "<Meta-t>" = "open -t";
         "dd" = "tab-close";
         "<Meta-w>" = "tab-close";
