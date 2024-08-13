@@ -50,17 +50,12 @@
         developer = {
             log-level = "OFF";
         };
-    } // rio_theme;
-  };
-
-  # Theme
-  # Rio is not yet in Stylix, for now generating theme from the stylix colors
-  # TODO Move to a TOML maker and eventualy create a stylix module
-  let
-    colors = config.lib.stylix.colors.withHashtag;
-  in
-  rio_theme = lib.mkIf (config.stylix.enable) {
-    programs.rio.settings = {
+    } // 
+    
+    # Theme
+    # Rio is not yet in Stylix, for now generating theme from the stylix colors
+    # TODO Move to a TOML maker and eventualy create a stylix module
+    {
         window = {
             opacity = 0.85;
             blur = true;
@@ -93,6 +88,8 @@
             light_white = "#7c6f64";
         };
     };
+
+
   };
 
   # Open terminal script
