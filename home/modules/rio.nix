@@ -18,7 +18,7 @@
         window = {
             mode = "Maximized";
             blur = true;
-            decorations = "Disabled";
+            decorations = "Buttonless";
         };
         renderer = {
             performance = "High";
@@ -27,6 +27,10 @@
         };
         shell = {
             program = "/etc/profiles/per-user/mguillen/bin/nu";
+            args=[
+                "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
+                "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"
+            ];
         };
         keyboard = {
             use-kitty-keyboard-protocol = true;
