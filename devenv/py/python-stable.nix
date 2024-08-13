@@ -34,7 +34,6 @@
             "github.copilot"
             "github.copilot-chat"
             "asciidoctor.asciidoctor-vscode"
-            "scodevim.vim"
             "mkhl.direnv"
             # Notebooks and additional features
             "ms-toolsai.jupyter"

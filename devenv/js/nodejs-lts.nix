@@ -34,7 +34,6 @@
             "github.copilot"
             "github.copilot-chat"
             "asciidoctor.asciidoctor-vscode"
-            "scodevim.vim"
             "mkhl.direnv"
             # Stack specific
             "codespaces-contrib.codeswing"

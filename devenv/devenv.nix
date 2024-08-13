@@ -29,7 +29,6 @@
             "github.codespaces"
             "github.copilot"
             "github.copilot-chat"
-            "scodevim.vim"
             "mkhl.direnv"
             # Stack specific
             # ...
