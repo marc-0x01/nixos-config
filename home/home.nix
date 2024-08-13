@@ -46,6 +46,7 @@
       ./themes/gruvlight.nix
       # Applications
       ./modules/alacritty.nix
+      ./modules/rio.nix
       ./modules/qutebrowser.nix
       ./modules/nushell.nix
       ./modules/starship.nix
@@ -76,7 +77,6 @@
       rbw.enable = true;          # Bitwarden cli (rbw)
       thefuck.enable = true;      # Correct latest command (fuck)
       # Beta Testing, enabled on demand
-      rio.enable = false;         # Rust/WebGPU Terminal (rio) - alacritty replacement ?
       helix.enable = false;       # Rust Post Modern Editor (hlx) - neovim replacement ? 
     };
 
