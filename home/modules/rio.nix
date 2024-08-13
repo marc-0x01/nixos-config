@@ -13,11 +13,9 @@
         padding-x = 10;
         padding-y = [10 10];
         option-as-alt = "left";
-        working-dir = "/Users/mguillen/";
         confirm-before-quit = false;
         window = {
             mode = "Maximized";
-            blur = true;
             decorations = "Buttonless";
         };
         renderer = {
@@ -55,14 +53,55 @@
     };
   };
 
+  # Theme
+  # Rio is not yet in Stylix, for now generating theme from the stylix colors
+  # TODO Move to a TOML maker and eventualy create a stylix module
+  program.rio.settings = {
+    window = {
+        opacity = 0.85;
+        blur = true;
+    };
+    fonts = {
+        family = "GohuFont 14 Nerd Font";
+        size = 14;
+    };
+    colors = {
+        background = "#fbf1c7";
+        foreground = "#282828";
+        selection-background = "#d5c4a1";
+        selection-foreground = "#665c54";
+        cursor = "#282828";
+        black = "#fbf1c7";
+        red = "#9d0006";
+        green = "#79740e";
+        yellow = "#b57614";
+        blue = "#076678";
+        magenta = "#8f3f71";
+        cyan = "#427b58";
+        white = "#3c3836";
+        light_black = "#9d8374";
+        light_red = "#cc241d";
+        light_green = "#98971a";
+        light_yellow = "#d79921";
+        light_blue = "#458588";
+        light_magenta = "#b16186";
+        light_cyan = "#689d69";
+        light_white = "#7c6f64";
+    };
+  };
+
+
+
+
+
   # Open terminal script
-  #home.file = {
-  #  ".local/bin/wm-open-term.sh" = {
-  #    enable = pkgs.stdenv.isDarwin;
-  #    executable = true;
-  #    source = ../scripts/wm-open-term-darwin.sh;
-  #    target = "${config.home.homeDirectory}/.local/bin/wm-open-term.sh";
-  #  };
-  #};
+  home.file = {
+    ".local/bin/wm-open-term.sh" = {
+      enable = pkgs.stdenv.isDarwin;
+      executable = true;
+      source = ../scripts/wm-open-term-darwin.sh;
+      target = "${config.home.homeDirectory}/.local/bin/wm-open-term.sh";
+    };
+  };
 
 }

@@ -53,14 +53,4 @@
     };
   };
 
-  # Open terminal script
-  home.file = {
-    ".local/bin/wm-open-term.sh" = {
-      enable = pkgs.stdenv.isDarwin;
-      executable = true;
-      source = ../scripts/wm-open-term-darwin.sh;
-      target = "${config.home.homeDirectory}/.local/bin/wm-open-term.sh";
-    };
-  };
-
 }
