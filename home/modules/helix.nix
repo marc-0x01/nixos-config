@@ -9,7 +9,7 @@
     # Plugins
     extraPackages = [ ];
     # Ignore/Unignore list
-    ignore = [
+    ignores = [
         "!.gitignore"
     ];
     # Main configuration, most default are right
