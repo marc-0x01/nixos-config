@@ -76,8 +76,6 @@
       ripgrep.enable = true;      # Better grep (rg)
       rbw.enable = true;          # Bitwarden cli (rbw)
       thefuck.enable = true;      # Correct latest command (fuck)
-      # Beta Testing, enabled on demand
-      helix.enable = false;       # Rust Post Modern Editor (hlx) - neovim replacement ? 
     };
 
     # Extra packages or not yet in home-manager
