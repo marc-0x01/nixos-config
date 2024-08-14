@@ -31,7 +31,7 @@
         };
     };
     # Language configuration, LSP tweaks
-    Languages = { };
+    languages = { };
   };
 
 }
