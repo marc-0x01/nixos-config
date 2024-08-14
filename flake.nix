@@ -95,6 +95,9 @@
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
+              # Emerging also close to the edge
+              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
+              helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
             })
             (final: prev: {
               qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
@@ -147,6 +150,9 @@
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
+              # Emerging also close to the edge
+              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
+              helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
             })
             (final: prev: {
               qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
