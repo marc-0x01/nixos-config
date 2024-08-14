@@ -42,7 +42,6 @@
             mode = "CollapsedTab";
             clickable = false;
             use-current-path = false;
-            color-automation = [];
         };
         bindings = {
             keys = [];
@@ -63,6 +62,9 @@
         fonts = {
             family = "GohuFont 14 Nerd Font";
             size = 14;
+        };
+        navigation = {
+            color-automation = [];
         };
         colors = {
             background = "#fbf1c7";
