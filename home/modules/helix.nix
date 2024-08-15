@@ -7,7 +7,9 @@
     # Still using vim as default for now
     defaultEditor = false;
     # Plugins
-    extraPackages = [ ];
+    extraPackages = with pkgs; [
+         helix-gpt 
+    ];
     # Ignore/Unignore list
     ignores = [
         "!.gitignore"
