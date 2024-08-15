@@ -16,18 +16,50 @@
     settings = {
         # Editor settings
         editor = {
+            # Layout
             line-number = "absolute";
-            lsp.display-messages = true;
+            auto-info = false;
+            bufferline = "multiple";
+            popup-border = "all";
+            statusline = {
+                left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"];
+                center = [ ];
+                right = ["diagnostics", "selections", "register", "position", "file-encoding"];
+                separator = "•";
+                mode = {
+                    normal = "N";
+                    insert = "I";
+                    select = "S";
+                };
+            };
+            ident-guides = {
+                render = true;
+                character = "│";
+                skip-levels = 0;
+            };
+            cursor-shape = {
+                    normal = "block";
+                    insert = "bar";
+                    select = "underline";
+            };
+            # Mouse/Selection
+            mouse = true;
+            middle-click-paste = "false";
+            # Shell
+            shell = [
+                "/etc/profiles/per-user/mguillen/bin/nu"
+            ];
+            # Common LSP
+            lsp = {
+                display-messages = true;
+            };
         };
         # Keybindings remap
-        keys.normal = {
-            space.space = "file_picker";
-            space.w = ":w";
-            space.q = ":q";
-            esc = [ 
-                "collapse_selection"
-                "keep_primary_selection" 
-            ];
+        # Keepng helix promoted as reference keybindings!
+        keys = {
+            normal = { };
+            insert = { };
+            select = { };
         };
     };
     # Language configuration, LSP tweaks
