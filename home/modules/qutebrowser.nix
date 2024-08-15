@@ -17,7 +17,6 @@
       };
       input = {
         spatial_navigation = true;
-        mode_override = "insert";
         insert_mode = { 
           auto_load = true;
           auto_enter = true;
@@ -175,7 +174,7 @@
         "n" = "prompt-accept no";
       };
       passthrough = {
-        "<Shift-Escape>" = "mode-leave";
+        "<Escape>" = "mode-leave";
       };
       register = {
         "<Escape>" = "mode-leave";
