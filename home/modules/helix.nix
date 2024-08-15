@@ -40,7 +40,7 @@
                     "file-line-ending"
                     "file-encoding"
                 ];
-                separator = "•";
+                separator = " • ";
                 mode = {
                     normal = "N";
                     insert = "I";
