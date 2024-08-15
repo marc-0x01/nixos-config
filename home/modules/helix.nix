@@ -22,9 +22,21 @@
             bufferline = "multiple";
             popup-border = "all";
             statusline = {
-                left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"];
+                left = [
+                    "mode"
+                    "spinner"
+                    "file-name"
+                    "read-only-indicator"
+                    "file-modification-indicator"
+                ];
                 center = [ ];
-                right = ["diagnostics", "selections", "register", "position", "file-encoding"];
+                right = [
+                    "diagnostics"
+                    "selections"
+                    "register"
+                    "position"
+                    "file-encoding"
+                ];
                 separator = "•";
                 mode = {
                     normal = "N";
