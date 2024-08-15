@@ -56,7 +56,7 @@
             };
             # Mouse/Selection
             mouse = true;
-            middle-click-paste = "false";
+            middle-click-paste = false;
             # Shell
             shell = [
                 "/etc/profiles/per-user/mguillen/bin/nu"
