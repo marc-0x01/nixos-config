@@ -24,7 +24,8 @@
             statusline = {
                 left = [
                     "mode"
-                    "spinner"
+                    "spinner" "separator"
+                    "revision-control" "separator"
                     "file-name"
                     "read-only-indicator"
                     "file-modification-indicator"
@@ -34,7 +35,9 @@
                     "diagnostics"
                     "selections"
                     "register"
-                    "position"
+                    "position" "separator"
+                    "file-type"
+                    "file-line-ending"
                     "file-encoding"
                 ];
                 separator = "•";
