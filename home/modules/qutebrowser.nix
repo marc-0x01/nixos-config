@@ -17,6 +17,7 @@
       };
       input = {
         spatial_navigation = true;
+        mode_override = "insert";
         insert_mode = { 
           auto_load = true;
           auto_enter = true;
@@ -46,13 +47,15 @@
       };
       statusbar = {
         position = "bottom";
-        show = "always";
+        show = "in-mode";
       };
       tabs = {
         position = "top";
         show = "multiple";
         last_close = "close";
         mousewheel_switching = false;
+        mode_on_change = "persist";
+        select_on_remove = "last-used";
         favicons = {
           show = "never";
         };
