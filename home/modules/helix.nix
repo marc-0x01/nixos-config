@@ -44,7 +44,7 @@
                     select = "S";
                 };
             };
-            ident-guides = {
+            indent-guides = {
                 render = true;
                 character = "│";
                 skip-levels = 0;
