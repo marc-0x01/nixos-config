@@ -51,7 +51,7 @@
     lfs.enable = false;
     extraConfig = {
       init.defaultBranch = "main";
-      core.editor = "nvim";
+      core.editor = "hx";
     };
   };
 

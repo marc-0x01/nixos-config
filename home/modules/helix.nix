@@ -5,7 +5,7 @@
   programs.helix = {
     enable = true;
     # Still using vim as default for now
-    defaultEditor = false;
+    defaultEditor = true;
     # Plugins
     extraPackages = with pkgs; [
          helix-gpt 

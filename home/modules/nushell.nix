@@ -65,8 +65,8 @@
       $env.PROMPT_INDICATOR_VI_NORMAL = {|| "" }
       $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
       # Usual suspects
-      $env.EDITOR = 'nvim'
-      $env.VISUAL = 'nvim'
+      $env.EDITOR = 'hx'
+      $env.VISUAL = 'hx'
       $env.PAGER = 'less -R'
       # Nix
       $env.NIX_PATH = $'/Users/($env.USER)/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels'
@@ -89,8 +89,6 @@
     shellAliases = {
       # Programs
       cls = "clear";
-      vi = "nvim";
-      vim = "nvim";
       tree = "tree -NFC -dirsfirst";
       grep = "rg";
       btm = "btm -T";
