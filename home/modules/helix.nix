@@ -25,7 +25,7 @@
                 left = [
                     "mode"
                     "spinner" "separator"
-                    "revision-control" "separator"
+                    "version-control" "separator"
                     "file-name"
                     "read-only-indicator"
                     "file-modification-indicator"
