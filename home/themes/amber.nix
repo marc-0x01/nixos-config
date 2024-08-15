@@ -40,6 +40,7 @@
     # Opacities
     opacity = {
        terminal = 0.95;
+       desktop = 0.95;
     };
     # Fonts
     # TODO: Substitute with Benguiat fonts for an Avalon vibe
