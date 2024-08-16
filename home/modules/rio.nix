@@ -56,7 +56,7 @@
     # TODO Move to a TOML maker and eventualy create a stylix module
     {
         window = {
-            opacity = 0.85;
+            background-opacity = 0.85; # Should be opacity > 0.1.0
             blur = true;
         };
         fonts = {
