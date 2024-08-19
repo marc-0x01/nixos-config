@@ -5,11 +5,15 @@
   
   programs.rio = {
     enable = true;
+    package = pkgs.rio-bin;
     settings = {
         cursor = "▇";
         blinking-cursor = true;
         hide-cursor-when-typing = true;
-        editor = "hx";
+        editor = {
+            program = "/etc/profiles/per-user/mguillen/bin/hx";
+            args = [];
+        };
         padding-x = 10;
         padding-y = [10 10];
         option-as-alt = "left";
@@ -56,7 +60,7 @@
     # TODO Move to a TOML maker and eventualy create a stylix module
     {
         window = {
-            background-opacity = 0.85; # Should be opacity > 0.1.0
+            opacity = 0.85; # Should be opacity > 0.1.0
             blur = true;
         };
         fonts = {
