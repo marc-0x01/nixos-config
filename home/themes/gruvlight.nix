@@ -19,6 +19,8 @@
     opacity = {
        terminal = 0.85;
        desktop = 0.95;
+       applications = 0.95;
+       popups = 0.85;
     };
     # Fonts
     fonts = {

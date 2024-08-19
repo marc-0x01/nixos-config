@@ -60,8 +60,8 @@
     # TODO Move to a TOML maker and eventualy create a stylix module
     {
         window = {
-            opacity = 0.85; # Should be opacity > 0.1.0
-            blur = true;
+            opacity = 0.85;
+            blur = false;
         };
         fonts = {
             family = "GohuFont 14 Nerd Font";
@@ -94,8 +94,6 @@
             light_white = "#7c6f64";
         };
     };
-
-
   };
 
   # Open terminal script

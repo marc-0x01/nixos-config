@@ -96,7 +96,7 @@
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
               # Emerging also close to the edge
-              #rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
+              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
               helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
             })
             (final: prev: {
@@ -152,7 +152,7 @@
               sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
               # Emerging also close to the edge
-              #rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
+              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
               helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
             })
             (final: prev: {
