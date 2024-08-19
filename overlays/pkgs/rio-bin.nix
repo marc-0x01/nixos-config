@@ -3,16 +3,14 @@
 , makeWrapper
 , stdenv
 , undmg
-, variant = "arm64"
 }:
 
-assert builtins.elem variant [ "arm64" ];
 stdenv.mkDerivation (finalAttrs: {
   pname = "rio-bin";
   version = "0.1.7";
 
   src = fetchurl {
-    url = "https://github.com/rapahmorim/rio/releases/download/v${finalAttrs.version}/Rio-v${finalAttrs.version}.dmg";
+    url = "https://github.com/raphamorim/rio/releases/download/v${finalAttrs.version}/Rio-v${finalAttrs.version}.dmg";
     hash = "sha256-x+5frYncXhJXX6UY/ovozVqAUXugqWNAClxiW+N76to=";
   };
 
