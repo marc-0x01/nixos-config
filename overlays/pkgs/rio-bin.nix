@@ -3,8 +3,10 @@
 , makeWrapper
 , stdenv
 , undmg
+, variant = "arm64"
 }:
 
+assert builtins.elem variant [ "arm64" ];
 stdenv.mkDerivation (finalAttrs: {
   pname = "rio-bin";
   version = "0.1.7";
@@ -32,13 +34,15 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   meta = with lib; {
-    description = "";
+    description = "A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.";
     homepage    = "https://github.com/raphamorim/rio";
     changelog   = "https://github.com/raphamorim/rio/blob/v${version}/CHANGELOG.md";
     license     = licenses.mit;
     mainProgram = "rio";
     maintainers = with maintainers; [ mguillen ];
-    platforms   = systems.inspect.patterns.isAarch64;
+    platforms   = systems.inspect.patternLogicalAnd
+      (systems.inspect.patterns.isDarwin)
+      (systems.inspect.patterns.isAarch64);
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
   };
 })
