@@ -95,6 +95,7 @@
       age-plugin-yubikey        # -- Integrration of age with yubikey
       difftastic                # Better diff (difft), mostly for git
       macchina                  # System info fetcher (macchina)
+      xh                        # Replacement for httpie, curl (xh)
       du-dust                   # More intuitive du (dust)
       vulnix                    # Nix scurity scanner
     ];
