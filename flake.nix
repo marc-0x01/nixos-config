@@ -101,6 +101,7 @@
             })
             (final: prev: {
               qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
+              rio-bin = prev.pkgs.callPackage ./overlays/pkgs/rio-bin.nix { };
             })
           ]; 
           # Home Manager Config
@@ -156,6 +157,7 @@
             })
             (final: prev: {
               qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
+              rio-bin = prev.pkgs.callPackage ./overlays/pkgs/rio-bin.nix { };
             })
           ]; 
           # Home Manager Config
