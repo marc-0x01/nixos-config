@@ -3,6 +3,7 @@
 , makeWrapper
 , stdenv
 , undmg
+, _7zz
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -19,6 +20,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     makeWrapper
     undmg
+    _7zz
   ];
 
   installPhase = ''
