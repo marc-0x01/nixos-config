@@ -7,35 +7,22 @@
     system = "x86_64-linux";
   };
 
-  # Boot: EFI, initrd, systemd
-  boot = {
-
-    # Loader
-    loader = {
-      systemd-boot = {
-        enable = true;
-        configurationLimit = 50;
-      };
-      efi.canTouchEfiVariables = true;
-    };
-
-    # Init
-    initrd = { 
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "v4l2loopback" ];
-    };
-
-    # Kernel
-    kernelModules = [ "uinput" "v4l2loopback" ];
-    extraModulePackages = with pkgs; [ 
-      linuxPackages.v4l2loopback
-    ];
-
+  # Locale
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    i18n.extraLocaleSettings = {};
+  };
+  time.timeZone = "Europe/Zurich";
+  
+  # Console
+  console = {
+    earlySetup = true;
+    font = "Lat2-Terminus16";
+    keyMap = "fr_CH";
+    useXkbConfig = config.services.xserver.enable;
   };
 
-  # Set the time zone
-  time.timeZone = "Europe/Zurich";
-
-  # Networking
+  # Netwoking
   networking = {
 
     # Names
@@ -51,7 +38,7 @@
     proxy.default = null;
 
     # Firewall
-    nftables.enable = false;
+    nftables.enable = false; # iptables required for containers
     firewall = {
       enable = true;
       # Incoming allowance, treat as exceptions
@@ -86,34 +73,86 @@
 
   # Vitualization
   virtualisation = {
-    qemu.enable = true;     # Machine emulation and vitualizer
+    libvirtd = {           # Machine emulation and vitualizer
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+      }; 
     podman.enable = true;   # Containers, replacement for Docker
   };
 
   # Common Services
   services = {
+
+    # Power Management
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+        #Optional helps save long term battery health
+        START_CHARGE_THRESH_BAT0 = 40;   # 40 and bellow it starts to charge
+        STOP_CHARGE_THRESH_BAT0 = 80;    # 80 and above it stops charging
+      };
+    };
+
     # Print: enable CUPS
     printing = {
       enable = true;
       drivers = []; 
     };
+
+    # eOOM: Early out of memory prevention
+    earlyoom = {
+      enable = true;
+      enableNotifications = true;
+      freeSwapThreshold = 10;
+      freeMemThreshold = 10;
+      extraArgs =
+        let
+          catPatterns = patterns: builtins.concatStringsSep "|" patterns;
+          preferPatterns = [
+            "java"
+            "rust-analyzer"
+          ];
+          avoidPatterns = [
+            "bash"
+            "sshd"
+            "systemd"
+            "systemd-logind"
+            "systemd-udevd"
+          ];
+        in
+        [
+          "--prefer '^(${catPatterns preferPatterns})$'"
+          "--avoid '^(${catPatterns avoidPatterns})$'"
+        ];
+    };
+
+    # Other daemon...
+    thermald.enable = true;         # Temperature
+
   };
 
   # Security
   security = {
+
     # No sudo for wheel users
     sudo = {
       enable = true;
-      extraRules = [{
-        commands = [
-          {
-           command = "${pkgs.systemd}/bin/reboot";
-           options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }];
+      wheelNeedsPassword = false;
     };
+
+    # RTKit enable for audio
+    rtkit.enable = true;
+
   };
 
   # Do not generate documentation
@@ -150,6 +189,19 @@
           "Monoid"
         ];
       })
+    ];
+  };
+
+  # User account
+  users.users.mguillen = {
+    name = "mguillen";
+    home = "/home/mguillen";
+    description = "Marc Guillen";
+    shell = pkgs.nushell;
+    isNormalUser = true;
+    extraGroups = [ 
+      "wheel" 
+      "NetworkManager"
     ];
   };
 

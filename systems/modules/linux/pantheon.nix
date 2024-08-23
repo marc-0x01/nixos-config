@@ -2,7 +2,7 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, ... }: {
 
-  # X
+  # Graphical Environment Services
   services = {
     
     # Xorg Configuration
@@ -53,12 +53,24 @@
     
     # Additional Related Services
     flatpak.enable = true;
+  
+  };
 
-  # Default environment
+  # Default Environment
   environment = {
+
+    # Built-in Pantheon Apps
     pantheon = { 
       excludePackages = with pkgs; [];
     };
+
+    # Related Applications
+    systemPackages = with pkgs;[
+      xclip         # Access X clipboard from cli
+      torrential    # Torrent client
+      oneko         # Just melancoly ;)
+    ];
+
   };
 
 }
