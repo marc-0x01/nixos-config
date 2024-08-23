@@ -12,7 +12,7 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-=== New linux workstation setup 
+== New linux workstation setup 
 
 . Boot NixOS (minimal) from an USB drive
 
@@ -22,12 +22,14 @@
   sudo -i
 ----
 
+[start=3]
 . Activate the keyboard map to avoid messing around with a US keymap
 [source,bash]
 ----
   loadkeys fr_CH
 ----
 
+[start=4]
 . Set Network Wifi connection with `wpa`, this is needed for the install
 [source,bash]
 ----
@@ -44,6 +46,7 @@
   >> quit
 ----
 
+[start=5]
 . Create an EFI partitions set (assuming main volume is `nvme1n`, adapt if needed)
 [source,bash]
 ----
@@ -59,6 +62,7 @@
   parted /dev/nvme1n -- set 3 esp on
 ----
 
+[start=6]
 . Format the partitions
 [source,bash]
 ----
@@ -70,6 +74,7 @@
   mkfs.fat -F 32 -n boot /dev/nvme1np3
 ----
 
+[start=7]
 . Prelude for installation, mount filesystems!
 [source,bash]
 ----
@@ -80,6 +85,7 @@
   mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
 ----
 
+[start=8]
 . Generate and Modify a bootstrap configuration
 [source,bash]
 ----
@@ -95,6 +101,7 @@ Do some most essential initial changes:
 * networking (wifi)
 * install `vim` and `git`
 
+[start=9]
 . Finally install NixOS
 [source,bash]
 ----
@@ -103,12 +110,14 @@ Do some most essential initial changes:
 ----
 As the last step, set the password for the root user
 
+[start=10]
 . Remove the USB drive and reboot
 [source,bash]
 ----
   reboot
 ----
 
+[start=11]
 . Clone the NixOS configuration and switch to the new awesome actual configuration
 [source,bash]
 ----
@@ -124,10 +133,12 @@ If it is your first time on a new harware or a new configuration, you probably w
   nixos-rebuild switch --flake .#wackbox-0x01 
 ----
 
+[start=12]
 . Rename bootstrap config, it will be replaced by the flake
 [source,zsh]
 ----
   sudo mv /etc/nixos /etc/nixos.bootstrap
 ----
 
+[start=13]
 . 🚀 You are good to go!
