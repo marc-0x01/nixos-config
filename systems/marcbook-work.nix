@@ -31,15 +31,18 @@
     ../hardware/macbook-pro-16-m3.nix
     # Roles 
     ../roles/base.nix
+    # Graphical Environment
+    # Well builtin OSX
     # Additional global services
-    ./modules/yabai.nix
-    ./modules/skhd.nix
-    ./modules/sketchybar.nix
-    # Apply home settings
+    ./modules/darwin/yabai.nix
+    ./modules/darwin/skhd.nix
+    ./modules/darwin/sketchybar.nix
+    # Apply home settings, OS agnostic
     ../home/home.nix
   ];
 
   # Additional system-wide Packages
+  # There is no virtualization config on nix-darwin
   environment.systemPackages = with pkgs; [
     qemu     # Machine emulation and vitualizer
     podman   # Containers, replacement for Docker         

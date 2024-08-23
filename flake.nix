@@ -75,7 +75,6 @@
         # Modules
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
-        agenix.nixosModules.default
         nur.hmModules.nur
         # Base Modules
         {
@@ -99,6 +98,7 @@
               rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
               helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
             })
+            # Custom packages
             (final: prev: {
               qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
               rio-bin = prev.pkgs.callPackage ./overlays/pkgs/rio-bin.nix { };
@@ -117,20 +117,20 @@
       ];
     };
 
-    ### Entrypoint for marcbook-0x01
+    ### Entrypoint for wackbox-0x01
     # run with 
-    # $ darwin-rebuild switch --flake .#marcbook-0x01
-    # $ nix run nix-darwin  -- switch --flake .#marcbook-0x01
+    # $ nixos-rebuild dry-build --flake .#wackbox-0x01
+    # $ nixos-rebuild switch --flake .#wackbox-0x01
 
-    darwinConfigurations.marcbook-0x01 = nix-darwin.lib.darwinSystem {
+    nixosConfigurations.wackbox-0x01 = nixpkgs.lib.nixosSystem  {
       inherit inputs;
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
-        ./systems/marcbook-0x01.nix
+        ./systems/wackbox-0x01.nix
         # Modules
-        home-manager.darwinModules.home-manager
-        stylix.darwinModules.stylix
+        home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
         agenix.nixosModules.default
         nur.hmModules.nur
         # Base Modules
@@ -147,18 +147,16 @@
             nur.overlay
             (final: prev: {
               # Better keep it on closer to the edge
-              yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
-              skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
-              sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
-              qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
+              yabai = nixpkgs-unstable.legacyPackages."x86_64-linux".yabai;
+              skhd = nixpkgs-unstable.legacyPackages."x86_64-linux".skhd;
+              sketchybar = nixpkgs-unstable.legacyPackages."x86_64-linux".sketchybar;
+              qutebrowser = nixpkgs-unstable.legacyPackages."x86_64-linux".qutebrowser;
               # Emerging also close to the edge
-              rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
-              helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;
+              rio = nixpkgs-unstable.legacyPackages."x86_64-linux".rio;
+              helix = nixpkgs-unstable.legacyPackages."x86_64-linux".helix;
             })
-            (final: prev: {
-              qutebrowser-bin = prev.pkgs.callPackage ./overlays/pkgs/qutebrowser-bin.nix { };
-              rio-bin = prev.pkgs.callPackage ./overlays/pkgs/rio-bin.nix { };
-            })
+            # Custom packages
+            # Nothing for now
           ]; 
           # Home Manager Config
           home-manager.useGlobalPkgs = true;
@@ -173,7 +171,8 @@
       ];
     };
 
-    ### Entrypoint for devenv    
+    ### Entrypoint for devenv
+    # TODO: Move to another repo using forAllSystems  
     # run with 
     # $ nix develop --impure .#<devenv>
 
