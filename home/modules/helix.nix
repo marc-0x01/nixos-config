@@ -78,6 +78,8 @@
             insert = { };
             select = { };
         };
+        # Theme, stylix base16 but transparent
+        theme = lib.mkForce "base16_transparent";
     };
     # Language configuration, LSP tweaks
     languages = { };
