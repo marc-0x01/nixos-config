@@ -49,11 +49,12 @@
 
 === About
 
-I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS* for WMs and servers. 
+I mostly use *MacOS* as the main system for my work workstations and *NixOS* for my personal workstation, WMs and servers. 
 
 === Features
 
-*  Configuration of OSX environements for personal and work contexts via `nix-darwin`
+* 💻 Configuration of NixOS workstation for personal context
+*  Configuration of MacOS workstation for work context, via `nix-darwin`
 * 🏠 Configuration of my dotfiles via `home-manager`
 * ✨ Styling of the different programs with `stylix`
 * 🚀 Configuration of development sanboxes via `devenv`
@@ -61,81 +62,32 @@ I mostly use *Darwin* as the main OS for my workstations (work/home) and *NixOS*
 
 🔜 TODO
 
+* [ ] Add __let..in__ for recurring variables such as __username__
+* [ ] Make `home-manager` more generic and support multiple targets
+* [ ] Move `devenv` in a separated repo
 * [ ] Integrate secrets with `agenix`
 * [ ] Create `steampipe` module for `home-manager` similar to awscli, with plugins
 * [ ] Create `rio` module for `stylix`
 
 === Installation
 
-. (darwin) Install `XCode Command Line Tool`
+Please refer to the setup guides for link:./doc/setup-workstation-linux.adoc[linux (NixOS)] and link:./doc/setup-workstation-linux.adoc[darwin (MacOS)].
+
+=== Usage
+
+Linux
 [source,bash]
 ----
-  code-select --install
+  nixos-rebuild switch --flake .#wackbox-0x01 
 ----
 
-. (darwin) Install `Rosetta Project`
+Darwin
 [source,bash]
 ----
-  softwareupdate --install-rosetta --agree-to-license
+  darwin-rebuild switch --flake .#marcbook-work  
 ----
 
-. Install `Nix`, using Determinate Installer or hypster style below
-----
-curl --proto '=https' --tlsv1.2 -sSf -L \
-  https://install.determinate.systems/nix | sh -s -- install
-----
-
-. (darwin) Rename existing config, it will be replace by the flake
-----
-sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
-----
-
-. (darwin) Do the initial bootstrap with extra features
-----
-nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake .#marcbook-0x01
-----
-
-
-=== Cookbook
-
-* (darwin) Update and switch a system to the target configuration
-[source,bash]
-----
-  nix flake update
-  nix run nix-darwin -- switch --flake .#marcbook-0x01   
-----
-
-* Start a development sandbox 
-[source,bash]
-----
-  nix develop --impure .#rust-stable
-  # or remotely
-  nix develop --impure github:/marc-0x01/nixos-config#rust-stable  
-----
-
-* Cleanup old generations (keep the current and last two)
-[source,bash]
-----
-  sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +3
-----
-
-* Launch maually a garbage collection 
-[source,bash]
-----
-  sudo nix-store --gc
-----
-
-* Optimize manually the store (avoid on darwin, it can create a mess with links)
-[source,bash]
-----
-  sudo nix store optimise
-----
-
-* Check for vulnerabilites of the system
-[source,bash]
-----
-  vulnix --system
-----
+For additional commands have a look at my link:./doc/cookbook.adoc[cookbook]!
 
 === Contributing
 
@@ -148,7 +100,7 @@ Big thanks to all those great projects and the Nix maintainers.
 
 * https://nixos.org/[nixOS ecosystem] and the awesome https://github.com/nix-community[nix community]
 * https://github.com/nix-community/NUR[NUR] for those package that need to be build from source
-* http://daiderd.com/nix-darwin/[nix-darwin] bringing the fun to OSX
+* http://daiderd.com/nix-darwin/[nix-darwin] bringing the fun to MacOS
 * https://github.com/nix-community/home-manager[home-manager] enabling to manage all the user environment
 * https://github.com/danth/stylix[stylix] for easy ricing
 * https://devenv.sh/[devenv] harmonizing the development environments

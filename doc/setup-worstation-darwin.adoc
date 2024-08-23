@@ -1,0 +1,58 @@
+= SETUP-WORKSTATION-DARWIN
+:doctype: article
+:fragment:
+:repository-url: https://github.com/marc-0x01/nixos-config
+:!showtitle:
+:icons: font
+:imagesdir: docs/assets/img
+:hardbreaks-option:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+=== New darwin workstation setup 
+
+. Install and Setup OSX the usual way with the introduction wizard
+Create your user with the right username !
+
+. Start a __Terminal__
+
+. Install `XCode Command Line Tool`
+[source,zsh]
+----
+  code-select --install
+----
+
+. Install `Rosetta Project`
+[source,zsh]
+----
+  softwareupdate --install-rosetta --agree-to-license
+----
+
+. Install `Nix`, using Determinate Installer or hypster style below
+[source,zsh]
+----
+  curl --proto '=https' --tlsv1.2 -sSf -L \
+    https://install.determinate.systems/nix | sh -s -- install
+----
+
+. Rename existing config, it will be replace by the flake
+[source,zsh]
+----
+  sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
+----
+
+. Do the initial bootstrap with extra features
+[source,zsh]
+----
+  nix --extra-experimental-features nix-command \
+      --extra-experimental-features flakes \
+      run nix-darwin -- switch --flake .#marcbook-0x01
+----
+Do not forget to authorize the `yabai`, `skhd` in __Privacy & Security__ -> __Accessibility__ !
+
+. Reboot
+
+. 🚀 You are good to go!

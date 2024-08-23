@@ -1,0 +1,58 @@
+= COOKBOOK
+:doctype: article
+:fragment:
+:repository-url: https://github.com/marc-0x01/nixos-config
+:!showtitle:
+:icons: font
+:imagesdir: docs/assets/img
+:hardbreaks-option:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+== Cookbook
+
+=== Nix
+
+* Update flakes and switch linux to the target configuration
+[source,bash]
+----
+  nix flake update
+  nixos-rebuild switch --flake .#wackbox-0x01   
+----
+
+* Update flakes and switch darwin to the target configuration
+[source,bash]
+----
+  nix flake update
+  darwin-rebuild switch --flake .#marcbook-work   
+----
+
+* Cleanup old generations (keep the current and last two)
+[source,bash]
+----
+  sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +3
+----
+
+* Launch maually a garbage collection 
+[source,bash]
+----
+  sudo nix-store --gc
+----
+
+* Optimize manually the store (avoid on darwin, it can create a mess with links)
+[source,bash]
+----
+  sudo nix store optimise
+----
+
+* Check for vulnerabilites of the system
+[source,bash]
+----
+  vulnix --system
+----
+
+
+

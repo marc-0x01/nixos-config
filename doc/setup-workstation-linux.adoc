@@ -1,0 +1,133 @@
+= SETUP-WORKSTATION-LINUX
+:doctype: article
+:fragment:
+:repository-url: https://github.com/marc-0x01/nixos-config
+:!showtitle:
+:icons: font
+:imagesdir: docs/assets/img
+:hardbreaks-option:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+=== New linux workstation setup 
+
+. Boot NixOS (minimal) from an USB drive
+
+. You are login automatically as user `nixos`, stay in _interactive sudo_ for the rest of the session
+[source,bash]
+----
+  sudo -i
+----
+
+. Activate the keyboard map to avoid messing around with a US keymap
+[source,bash]
+----
+  loadkeys fr_CH
+----
+
+. Set Network Wifi connection with `wpa`, this is needed for the install
+[source,bash]
+----
+  # Start the wpa daemon
+  sudo systemctl start wpa_supplicant
+  # Launch the cli
+  wpa_cli
+  # ... then enter the following
+  >> add_network
+  >> set_network 0 ssid "wolf-den-01"
+  >> set_network 0 psk "mywifipassword"
+  >> set_network 0 key_mgmt WPA-PSK
+  >> enable_network 0
+  >> quit
+----
+
+. Create an EFI partitions set (assuming main volume is `nvme1n`, adapt if needed)
+[source,bash]
+----
+  # ORDER OF THE COMMANDS IS IMPORTANT!
+  # Label main volume
+  parted /dev/nvme1n -- mklabel gpt
+  # Make root partition
+  parted /dev/nvme1n -- mkpart root ext4 512MB -8GB
+  # Make swap partition
+  parted /dev/nvme1n -- mkpart swap linux-swap -8GB 100%
+  # Make boot partition
+  parted /dev/nvme1n -- mkpart ESP fat32 1MB 512MB
+  parted /dev/nvme1n -- set 3 esp on
+----
+
+. Format the partitions
+[source,bash]
+----
+  # Format root
+  mkfs.ext4 -L nixos /dev/nvme1np1
+  # Format swap
+  mkswap -L swap /dev/nvme1np2
+  # Format boot
+  mkfs.fat -F 32 -n boot /dev/nvme1np3
+----
+
+. Prelude for installation, mount filesystems!
+[source,bash]
+----
+  # Mount target for the installation
+  mount /dev/disk/by-label/nixos /mnt
+  # Mount boot (UEFI)
+  mkdir -p /mnt/boot
+  mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
+----
+
+. Generate and Modify a bootstrap configuration
+[source,bash]
+----
+  # Generate configuration
+  sudo nixos-generate-config --root /mnt
+  # Modify configuration
+  cd /mnt/etc/nixos/
+  sudo nano configuration.nix
+----
+Do some most essential initial changes:
+* keyboard layout
+* users creation with an initial password
+* networking (wifi)
+* install `vim` and `git`
+
+. Finally install NixOS
+[source,bash]
+----
+  cd /mnt
+  sudo nixos-install
+----
+As the last step, set the password for the root user
+
+. Remove the USB drive and reboot
+[source,bash]
+----
+  reboot
+----
+
+. Clone the NixOS configuration and switch to the new awesome actual configuration
+[source,bash]
+----
+  nixos-rebuild switch --flake github:/marc-0x01/nixos-config#wackbox-0x01 
+----
+If it is your first time on a new harware or a new configuration, you probably want to clone the repo instead and make some additions!
+[source,bash]
+----
+  mkdir -p Devel; cd Devel
+  git clone https://github.com/marc-0x01/nixos-config.git
+  cd nixos-config
+  vim ./hardware/brand-model-size-cpu.nix
+  nixos-rebuild switch --flake .#wackbox-0x01 
+----
+
+. Rename bootstrap config, it will be replaced by the flake
+[source,zsh]
+----
+  sudo mv /etc/nixos /etc/nixos.bootstrap
+----
+
+. 🚀 You are good to go!
