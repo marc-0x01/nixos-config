@@ -12,7 +12,7 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-=== New darwin workstation setup 
+== New darwin workstation setup 
 
 . Install and Setup OSX the usual way with the introduction wizard
 Create your user with the right username !
@@ -25,12 +25,14 @@ Create your user with the right username !
   code-select --install
 ----
 
+[start=4]
 . Install `Rosetta Project`
 [source,zsh]
 ----
   softwareupdate --install-rosetta --agree-to-license
 ----
 
+[start=5]
 . Install `Nix`, using Determinate Installer or hypster style below
 [source,zsh]
 ----
@@ -38,12 +40,14 @@ Create your user with the right username !
     https://install.determinate.systems/nix | sh -s -- install
 ----
 
+[start=6]
 . Rename existing config, it will be replace by the flake
 [source,zsh]
 ----
   sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.before-nix-darwin
 ----
 
+[start=7]
 . Do the initial bootstrap with extra features
 [source,zsh]
 ----
@@ -53,6 +57,7 @@ Create your user with the right username !
 ----
 Do not forget to authorize the `yabai`, `skhd` in __Privacy & Security__ -> __Accessibility__ !
 
+[start=8]
 . Reboot
 
 . 🚀 You are good to go!
