@@ -2,14 +2,6 @@
  
 { pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, nur, home-manager, stylix, ... }: {
   
-  # User account
-  users.users.mguillen = {
-    name = "mguillen";
-    home = "/Users/mguillen";
-    description = "Marc Guillen";
-    shell = pkgs.nushell;
-  };
-
   # Expand Default Shells
   environment.shells = with pkgs; [ zsh nushell ];
 

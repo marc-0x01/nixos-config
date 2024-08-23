@@ -291,6 +291,14 @@
 
   };
 
+  # User account
+  users.users.mguillen = {
+    name = "mguillen";
+    home = "/Users/mguillen";
+    description = "Marc Guillen";
+    shell = pkgs.nushell;
+  };
+
   # Post-Activation Commands
   # - Avoid a logout/login cycle when building the config
   system.activationScripts.postUserActivation.text = ''
