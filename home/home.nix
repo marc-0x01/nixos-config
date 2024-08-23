@@ -92,7 +92,7 @@
       ouch                      # Compression swiss-army knife (ouch)
       rsign2                    # Signing cli compatible with minisign (rsign)
       rage                      # A simple, secure and modern encryption tool (age)
-      age-plugin-yubikey        # -- Integrration of age with yubikey
+      age-plugin-yubikey        # -- Integration of age with yubikey
       difftastic                # Better diff (difft), mostly for git
       macchina                  # System info fetcher (macchina)
       xh                        # Replacement for httpie, curl (xh)
