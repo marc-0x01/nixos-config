@@ -3,11 +3,15 @@
 { nixpkgs, nixpkgs-unstable, pkgs, ... }: {
 
   # Garbage Collection
-  nix.gc = {
+  nix.gc = if pkgs.stdenv.isDarwin
+  then {
     automatic = true;
-    # The OS scheduler is used so definition changes 
-    if pkgs.stdenv.isDarwin then dates = "weekly";
-    if pkgs.stdenv.isLinux then interval.Day = 7;
+    interval.Day = 7;
+    options = "--delete-older-than 7d";
+  }
+  else { # linux
+    automatic = true;
+    dates = "weekly";
     options = "--delete-older-than 7d";
   };
 
