@@ -51,10 +51,16 @@
     };
   };
 
-
   # SWAP
   swapDevices = [];
   zramSwap.enable = true;
+
+  # Networking
+  networking = {
+    useDHCP = false;
+    interfaces.wlp59s0.useDHCP = true;    # wifi
+    interfaces.enp58s0f1.useDHCP = true;  # ethernet
+  };
 
   # Harware Configuration
   hardware = { 
@@ -93,13 +99,6 @@
           KernelExperimental = true;
         };
       };
-    };
-
-    # Networking
-    networking = {
-      useDHCP = false;
-      interfaces.wlp59s0.useDHCP = true;    # wifi
-      interfaces.enp58s0f1.useDHCP = true;  # ethernet
     };
 
     # Enable all recommended configuration for system76 systems
