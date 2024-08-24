@@ -47,19 +47,19 @@
 ----
 
 [start=5]
-. Create an EFI partitions set (assuming main volume is `nvme1n`, adapt if needed)
+. Create an EFI partitions set (assuming main volume is `nvme0`, adapt if needed)
 [source,bash]
 ----
   # ORDER OF THE COMMANDS IS IMPORTANT!
   # Label main volume
-  parted /dev/nvme1n -- mklabel gpt
+  parted /dev/nvme0n1 -- mklabel gpt
   # Make root partition
-  parted /dev/nvme1n -- mkpart root ext4 512MB -8GB
+  parted /dev/nvme0n1 -- mkpart root ext4 512MB -8GB
   # Make swap partition
-  parted /dev/nvme1n -- mkpart swap linux-swap -8GB 100%
+  parted /dev/nvme0n1 -- mkpart swap linux-swap -8GB 100%
   # Make boot partition
-  parted /dev/nvme1n -- mkpart ESP fat32 1MB 512MB
-  parted /dev/nvme1n -- set 3 esp on
+  parted /dev/nvme0n1 -- mkpart ESP fat32 1MB 512MB
+  parted /dev/nvme0n1 -- set 3 esp on
 ----
 
 [start=6]
@@ -67,11 +67,11 @@
 [source,bash]
 ----
   # Format root
-  mkfs.ext4 -L nixos /dev/nvme1np1
+  mkfs.ext4 -L nixos /dev/nvme0n1p1
   # Format swap
-  mkswap -L swap /dev/nvme1np2
+  mkswap -L swap /dev/nvme0n1p2
   # Format boot
-  mkfs.fat -F 32 -n boot /dev/nvme1np3
+  mkfs.fat -F 32 -n boot /dev/nvme0n1p3
 ----
 
 [start=7]
@@ -96,13 +96,14 @@
   sudo nano configuration.nix
 ----
 Do some most essential initial changes:
-* keyboard layout
-* users creation with an initial password
-* networking (wifi)
-* install `vim` and `git`
+* internationalisation, timezone and conosle keyboard layout
+* users creation with an initialPassword
+* basic networking (hostname, wifi with NetworkManager)
+* install `vim`, `git`, `curl` in system space
+* enable copy and linking of the configuration, just in case
 
 [start=9]
-. Finally install NixOS
+. Finally install NixOS and grab a coffee
 [source,bash]
 ----
   cd /mnt
@@ -118,10 +119,42 @@ As the last step, set the password for the root user
 ----
 
 [start=11]
+. Login as root and change password
+[source,bash]
+----
+  passwd
+  exit
+----
+
+[start=12]
+. Login as as your regular user for the rest of the installation, start by changing the password
+[source,bash]
+----
+  passwd
+----
+
+[start=13]
+. Setup wifi wit NetworkManager once for all (assuming wlp59s0 as device)
+[source,bash]
+----
+  # Check NetworkManager
+  systemctl status NetworkManager
+  # List device and networks
+  nmcli device
+  nmcli device wifi list
+  # Connect
+  sudo nmcli device wifi connect wolf-den-01 password mywifipassword
+  # Inspect
+  nmcli device show wlp59s0
+----
+
+[start=14]
 . Clone the NixOS configuration and switch to the new awesome actual configuration
 [source,bash]
 ----
-  nixos-rebuild switch --flake github:/marc-0x01/nixos-config#wackbox-0x01 
+  sudo nixos-rebuild build --flake github:/marc-0x01/nixos-config#wackbox-0x01
+  sudo nixos-rebuild dry-run --flake github:/marc-0x01/nixos-config#wackbox-0x01 
+  sudo nixos-rebuild switch --flake github:/marc-0x01/nixos-config#wackbox-0x01 
 ----
 If it is your first time on a new harware or a new configuration, you probably want to clone the repo instead and make some additions!
 [source,bash]
@@ -130,15 +163,17 @@ If it is your first time on a new harware or a new configuration, you probably w
   git clone https://github.com/marc-0x01/nixos-config.git
   cd nixos-config
   vim ./hardware/brand-model-size-cpu.nix
-  nixos-rebuild switch --flake .#wackbox-0x01 
+  sudo nixos-rebuild build --flake .#wackbox-0x01
+  sudo nixos-rebuild dry-run --flake .#wackbox-0x01
+  sudo nixos-rebuild switch --flake .#wackbox-0x01 
 ----
 
-[start=12]
+[start=15]
 . Rename bootstrap config, it will be replaced by the flake
 [source,zsh]
 ----
   sudo mv /etc/nixos /etc/nixos.bootstrap
 ----
 
-[start=13]
+[start=16]
 . 🚀 You are good to go!

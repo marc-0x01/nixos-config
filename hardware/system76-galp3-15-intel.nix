@@ -18,7 +18,7 @@
     # Init
     initrd = { 
       availableKernelModules = [ 
-        "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" 
+        "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"
       ];
       kernelModules = [];
     };
@@ -35,9 +35,25 @@
   };
 
   # Filesystems
-  # ...
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/76dd494e-636e-487f-b2f8-a0301b134a23";
+      fstype = "ext4";
+      options = [];
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/58AA-D37C";
+      fstype = "vfat";
+      options = [
+        "fmask=0077" 
+        "dmask=0077"
+      ];
+    };
+  };
 
-  # Enable ZRAM
+
+  # SWAP
+  swapDevices = [];
   zramSwap.enable = true;
 
   # Harware Configuration
@@ -81,8 +97,9 @@
 
     # Networking
     networking = {
-      useDHCP = true;
-      #interfaces.<interface_id>.useDHCP = true;
+      useDHCP = false;
+      interfaces.wlp59s0.useDHCP = true;    # wifi
+      interfaces.enp58s0f1.useDHCP = true;  # ethernet
     };
 
     # Enable all recommended configuration for system76 systems
