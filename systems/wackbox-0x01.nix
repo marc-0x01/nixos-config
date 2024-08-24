@@ -27,7 +27,7 @@
   networking = {
 
     # Names
-    computerName = "WackBox";
+    hostId = "df806bb5";
     hostName = "wackobox";
 
     # Hosts mappings
