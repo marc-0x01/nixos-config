@@ -152,8 +152,8 @@ As the last step, set the password for the root user
 . Clone the NixOS configuration and switch to the new awesome actual configuration
 [source,bash]
 ----
-  sudo nixos-rebuild build --flake github:/marc-0x01/nixos-config#wackbox-0x01
-  sudo nixos-rebuild dry-run --flake github:/marc-0x01/nixos-config#wackbox-0x01 
+  sudo nixos-rebuild dry-build --flake github:/marc-0x01/nixos-config#wackbox-0x01
+  sudo nixos-rebuild dry-activate --flake github:/marc-0x01/nixos-config#wackbox-0x01 
   sudo nixos-rebuild switch --flake github:/marc-0x01/nixos-config#wackbox-0x01 
 ----
 If it is your first time on a new harware or a new configuration, you probably want to clone the repo instead and make some additions!
@@ -163,8 +163,8 @@ If it is your first time on a new harware or a new configuration, you probably w
   git clone https://github.com/marc-0x01/nixos-config.git
   cd nixos-config
   vim ./hardware/brand-model-size-cpu.nix
-  sudo nixos-rebuild build --flake .#wackbox-0x01
-  sudo nixos-rebuild dry-run --flake .#wackbox-0x01
+  sudo nixos-rebuild dry-build --flake .#wackbox-0x01
+  sudo nixos-rebuild dry-activate --flake .#wackbox-0x01
   sudo nixos-rebuild switch --flake .#wackbox-0x01 
 ----
 

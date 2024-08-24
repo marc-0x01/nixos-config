@@ -55,6 +55,7 @@ Create your user with the right username !
       --extra-experimental-features flakes \
       run nix-darwin -- switch --flake .#marcbook-0x01
 ----
+You can use `check` instead of `switch` to do a dry-build.
 Do not forget to authorize the `yabai`, `skhd` in __Privacy & Security__ -> __Accessibility__ !
 
 [start=8]
