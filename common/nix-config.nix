@@ -5,7 +5,9 @@
   # Garbage Collection
   nix.gc = {
     automatic = true;
-    interval.Day = 7;
+    # The OS scheduler is used so definition changes 
+    lib.optionals pkgs.stdenv.isDarwin dates = "weekly";
+    lib.optionals pkgs.stdenv.isLinux interval.Day = 7;
     options = "--delete-older-than 7d";
   };
 
