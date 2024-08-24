@@ -6,8 +6,8 @@
   nix.gc = {
     automatic = true;
     # The OS scheduler is used so definition changes 
-    lib.optionals pkgs.stdenv.isDarwin dates = "weekly";
-    lib.optionals pkgs.stdenv.isLinux interval.Day = 7;
+    if pkgs.stdenv.isDarwin then dates = "weekly";
+    if pkgs.stdenv.isLinux then interval.Day = 7;
     options = "--delete-older-than 7d";
   };
 
