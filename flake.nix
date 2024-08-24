@@ -67,7 +67,6 @@
     # $ nix run nix-darwin -- switch --flake .#marcbook-work
 
     darwinConfigurations.marcbook-work = nix-darwin.lib.darwinSystem {
-      inherit inputs;
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
@@ -123,7 +122,6 @@
     # $ nixos-rebuild switch --flake .#wackbox-0x01
 
     nixosConfigurations.wackbox-0x01 = nixpkgs.lib.nixosSystem  {
-      inherit inputs;
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
@@ -146,10 +144,7 @@
           nixpkgs.overlays = [
             nur.overlay
             (final: prev: {
-              # Better keep it on closer to the edge
-              yabai = nixpkgs-unstable.legacyPackages."x86_64-linux".yabai;
-              skhd = nixpkgs-unstable.legacyPackages."x86_64-linux".skhd;
-              sketchybar = nixpkgs-unstable.legacyPackages."x86_64-linux".sketchybar;
+              # Better keep it on closer to the edgeß
               qutebrowser = nixpkgs-unstable.legacyPackages."x86_64-linux".qutebrowser;
               # Emerging also close to the edge
               rio = nixpkgs-unstable.legacyPackages."x86_64-linux".rio;
