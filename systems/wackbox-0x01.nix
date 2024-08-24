@@ -79,7 +79,8 @@
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;
-      }; 
+      };
+    }; 
     podman.enable = true;   # Containers, replacement for Docker
   };
 
