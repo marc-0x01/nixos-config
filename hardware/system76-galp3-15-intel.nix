@@ -74,8 +74,7 @@
       enable = true;
       extraPackages = with pkgs; [
         # Open GL, Vulkan and VAAPI drivers
-        vpl-gpu-rt          # for newer GPUs on NixOS >24.05 or unstable
-        # intel-media-sdk   # for older GPUs
+        onevpl-intel-gpu
       ];
     };
 

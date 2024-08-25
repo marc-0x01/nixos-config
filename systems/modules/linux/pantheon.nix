@@ -32,7 +32,7 @@
       displayManager = {
         # Using LightDM
         lightdm = {
-          enable = false;
+          enable = true;
           greeters.pantheon.enable = true;
         };
       };
