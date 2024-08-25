@@ -50,9 +50,9 @@
 
   # Set default environement variables 
   environment.variables = { 
-    EDITOR = lib.mkDefault "vim";
-    VISUAL = lib.mkDefault "vim";
-    PAGER = lib.mkDefault "less -R";
+    EDITOR = lib.mkForce "vim";
+    VISUAL = lib.mkForce "vim";
+    PAGER = lib.mkForce "less -R";
   };
 
   # Post-activation commands  
