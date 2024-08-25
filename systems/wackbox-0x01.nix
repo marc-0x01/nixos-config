@@ -198,5 +198,6 @@
   # Post-Activation Commands
   # - Avoid a logout/login cycle when building the config
   system.activationScripts.postUserActivation.text = ''
+    print "Enjoy!"
   '';
 }
