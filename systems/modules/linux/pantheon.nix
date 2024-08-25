@@ -39,7 +39,8 @@
 
       # Keyboard and inputs
       xkb = {
-        layout = "fr_CH";
+        layout = "ch";
+        variant = "fr";
         options = "";
       };
 
