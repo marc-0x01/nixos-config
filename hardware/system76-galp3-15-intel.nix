@@ -38,12 +38,12 @@
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/76dd494e-636e-487f-b2f8-a0301b134a23";
-      fstype = "ext4";
+      fsType = "ext4";
       options = [];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/58AA-D37C";
-      fstype = "vfat";
+      fsType = "vfat";
       options = [
         "fmask=0077" 
         "dmask=0077"
