@@ -55,10 +55,4 @@
     PAGER = lib.mkForce "less -R";
   };
 
-  # Post-activation commands  
-  #system.activationScripts.postActivation.text = ''
-  #  # Change the default shell for root
-  #  sudo chsh -s ${pkgs.zsh}/bin/zsh
-  #'';
-
 }
