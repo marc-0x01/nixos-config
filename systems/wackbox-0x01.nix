@@ -19,7 +19,7 @@
     earlySetup = true;
     # Internationalisation
     font = "Lat2-Terminus16";
-    keyMap = "fr_CH";
+    keyMap = lib.mkDefault "fr_CH";
     useXkbConfig = config.services.xserver.enable;
   };
 
