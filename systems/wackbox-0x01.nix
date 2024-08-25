@@ -156,7 +156,7 @@
     # Graphical Environment
     ./modules/linux/pantheon.nix
     # Apply home settings, OS agnostic
-    ../home/home.nix
+    #../home/home.nix
   ];
 
   # Additional system-wide Packages
