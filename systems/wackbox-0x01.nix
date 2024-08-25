@@ -177,16 +177,19 @@
   };
 
   # User account
-  users.users.mguillen = {
-    name = "mguillen";
-    home = "/home/mguillen";
-    description = "Marc Guillen";
-    shell = pkgs.nushell;
-    isNormalUser = true;
-    extraGroups = [ 
-      "wheel" 
-      "NetworkManager"
-    ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.mguillen = {
+      name = "mguillen";
+      home = "/home/mguillen";
+      description = "Marc Guillen";
+      shell = pkgs.zsh;
+      isNormalUser = true;
+      extraGroups = [ 
+        "wheel" 
+        "NetworkManager"
+      ];
+    };
   };
 
   # State Version, Don't change!

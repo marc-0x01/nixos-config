@@ -296,7 +296,7 @@
     name = "mguillen";
     home = "/Users/mguillen";
     description = "Marc Guillen";
-    shell = pkgs.nushell;
+    shell = pkgs.zsh;
   };
 
   # Post-Activation Commands
