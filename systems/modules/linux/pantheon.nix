@@ -41,7 +41,11 @@
       xkb = {
         layout = "ch";
         variant = "fr";
-        options = "";
+        # Set various useful tricks
+        # - terminater x with ctrl-alt-bksp
+        # - use alt-shit to toggle layouts
+        # - swap capslock with left control
+        options = "terminate:ctrl_alt_bksp,grp:alt_shift_toggle, ctrl:swapcaps";
       };
 
     };
