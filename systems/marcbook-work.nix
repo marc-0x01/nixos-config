@@ -301,7 +301,7 @@
 
   # Post-Activation Commands
   # - Avoid a logout/login cycle when building the config
-  system.activationScripts.postUserActivation.text = ''
+  system.activationScripts.postActivationSystem.text = ''
     /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
   '';
 }

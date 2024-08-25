@@ -45,7 +45,7 @@
         # - terminater x with ctrl-alt-bksp
         # - use alt-shit to toggle layouts
         # - swap capslock with left control
-        options = "terminate:ctrl_alt_bksp,grp:alt_shift_toggle, ctrl:swapcaps";
+        options = "terminate:ctrl_alt_bksp,grp:alt_shift_toggle";
       };
 
     };
@@ -66,10 +66,25 @@
 
     # Built-in Pantheon Apps
     pantheon = { 
-      excludePackages = with pkgs; [];
+      excludePackages = with pkgs.panteon; [
+        elementary-mail       # SaaS
+        elementary-tasks      # using taskwarrior
+        elementary-calendar   # SaaS
+        elementary-music      # Using spotify
+        elementary-photos     # SaaS
+        elementary-camera     # Not useful
+        elementary-code       # Using helix
+        elementary-wallpapers # I have mine
+      ];
     };
 
-    # Related Applications
+    # Additional Programs
+    programs = {
+      # Provides additional options to tweaks
+      pantheon-tweaks.enable = true;
+    };
+
+    # Related Pantheon or X Applications
     systemPackages = with pkgs;[
       xclip         # Access X clipboard from cli
       torrential    # Torrent client

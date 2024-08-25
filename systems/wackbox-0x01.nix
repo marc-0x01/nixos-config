@@ -196,8 +196,10 @@
   system.stateVersion = "24.05";
 
   # Post-Activation Commands
-  # - Avoid a logout/login cycle when building the config
-  system.activationScripts.postUserActivation.text = ''
-    print "Enjoy!"
-  '';
+  system.activationScripts = { 
+    postActivationSystem.text = ''
+      print "ENOY!"
+    '';
+  };
+
 }
