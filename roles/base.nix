@@ -16,16 +16,11 @@
     # Vim: visual instrument
     vim = {
       enable = true;
-      enableSensible = true; 
-      vimConfig = '''';
     };
 
     # Tmux: multiplexor
     tmux = {
       enable = true;
-      enableSensible = true;
-      enableVim = true;
-      extraConfig = '''';
     };
 
   };
