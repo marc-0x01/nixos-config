@@ -56,9 +56,9 @@
   };
 
   # Post-activation commands  
-  system.activationScripts.postActivation.text = ''
-    # Change the default shell for root
-    sudo chsh -s ${pkgs.zsh}/bin/zsh
-  '';
+  #system.activationScripts.postActivation.text = ''
+  #  # Change the default shell for root
+  #  sudo chsh -s ${pkgs.zsh}/bin/zsh
+  #'';
 
 }
