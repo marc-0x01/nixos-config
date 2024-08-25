@@ -13,11 +13,6 @@
       enable = true;
     };
 
-    # Vim: visual instrument
-    vim = {
-      enable = true;
-    };
-
     # Tmux: multiplexor
     tmux = {
       enable = true;
@@ -27,7 +22,8 @@
 
   # Common unix cli tools for any situation
   # Only optional for IEEE Std 1003.1-2008
-  environment.systemPackages = with pkgs; [         
+  environment.systemPackages = with pkgs; [
+    vim         
     git
     less
     curl
