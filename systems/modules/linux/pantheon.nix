@@ -38,7 +38,6 @@
       };
 
       # Keyboard and inputs
-      libinput.enable = true;
       xkb = {
         layout = "fr_CH";
         options = "";
@@ -52,6 +51,7 @@
     };
     
     # Additional Related Services
+    libinput.enable = true;
     flatpak.enable = true;
   
   };
