@@ -61,6 +61,12 @@
   
   };
 
+  # Additional Programs
+  programs = {
+    # Provides additional options to tweaks
+    pantheon-tweaks.enable = true;
+  };  
+
   # Default Environment
   environment = {
 
@@ -76,12 +82,6 @@
         elementary-code       # Using helix
         elementary-wallpapers # I have mine
       ];
-    };
-
-    # Additional Programs
-    programs = {
-      # Provides additional options to tweaks
-      pantheon-tweaks.enable = true;
     };
 
     # Related Pantheon or X Applications
