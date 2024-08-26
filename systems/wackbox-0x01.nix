@@ -55,7 +55,7 @@
       enable = true;
       wifi = {
         backend = "wpa_supplicant";
-        macAddress = "stable-ssid"; # Generate MAC
+        macAddress = "preserve";
       };
       # Additional config if needed
       settings = {};
@@ -160,7 +160,10 @@
   ];
 
   # Additional system-wide Packages
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    pciutils
+    usbutils
+  ];
 
   # Fonts
   # Selection of good terminal/coding fonts
