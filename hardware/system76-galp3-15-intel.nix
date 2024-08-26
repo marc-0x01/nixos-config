@@ -24,6 +24,7 @@
     };
 
     # Kernel Modules
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ 
       "kvm-intel" 
     ];
