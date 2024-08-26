@@ -72,7 +72,7 @@
 
     # Built-in Pantheon Apps
     pantheon = { 
-      excludePackages = with pkgs.panteon; [
+      excludePackages = with pkgs.pantheon; [
         elementary-mail       # SaaS
         elementary-tasks      # using taskwarrior
         elementary-calendar   # SaaS
