@@ -56,9 +56,9 @@
 
   # Networking
   networking = {
-    useDHCP = false;
-    interfaces.wlp59s0.useDHCP = true;    # wifi
-    interfaces.enp58s0f1.useDHCP = true;  # ethernet
+    useDHCP = lib.mkDefault false;
+    interfaces.wlp59s0.useDHCP = lib.mkDefault true;    # wifi
+    interfaces.enp58s0f1.useDHCP = lib.mkDefault true;  # ethernet
   };
 
   # Harware Configuration
