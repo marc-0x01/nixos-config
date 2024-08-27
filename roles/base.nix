@@ -6,12 +6,16 @@
   environment.shells = with pkgs; [ zsh ];
 
   # System level base programs
+  # UNIX Trilogy
   programs = {
 
     # Zsh: standard shell
     zsh = {
       enable = true;
     };
+
+    # Vim: Editor
+    # Should be there anyway in any system
 
     # Tmux: multiplexor
     tmux = {
