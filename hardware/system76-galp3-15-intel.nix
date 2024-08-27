@@ -65,6 +65,9 @@
   # Harware Configuration
   hardware = { 
     
+    # Use compliant firmwares
+    enableRedistributableFirmware = true;
+
     # CPU
     cpu.intel = {
       updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
