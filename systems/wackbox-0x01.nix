@@ -2,10 +2,13 @@
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, nur, home-manager, stylix, ... }: {
 
-  # Set the system arch/os
+  # System ARCH-OS
   nixpkgs.hostPlatform = {
     system = "x86_64-linux";
   };
+
+  # State Version, Don't change!
+  system.stateVersion = "24.05";
 
   # Locale
   i18n = {
@@ -39,7 +42,7 @@
     proxy.default = null;
 
     # Firewall
-    nftables.enable = false; # iptables required for containers
+    nftables.enable = false; # iptables "required" for containers
     firewall = {
       enable = true;
       # Incoming allowance, treat as exceptions
@@ -147,13 +150,13 @@
     X01_SYSTEM = "wackbox-0x01";
   };
 
-  # This system is a workstation
+  # This configuration builds a workstation
   imports = [
     # Hardware
     ../hardware/system76-galp3-15-intel.nix
     # Roles 
     ../roles/base.nix
-    # Graphical Environment
+    # Graphical Environment(s)
     ./modules/linux/pantheon.nix
     # Apply home settings, OS agnostic
     #../home/home.nix
@@ -194,9 +197,6 @@
       ];
     };
   };
-
-  # State Version, Don't change!
-  system.stateVersion = "24.05";
 
   # Post-Activation Commands
   system.activationScripts = { 
