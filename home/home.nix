@@ -2,10 +2,15 @@
  
 { pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, nur, home-manager, stylix, ... }: {
   
-  # Expand Default Shells
-  environment.shells = with pkgs; [ zsh nushell ];
+  # Expand System Environment, in User space
+  environment = {
+    shells = with pkgs; [ zsh nushell ]; 
+    pathsToLink = [ 
+      "/share/zsh"
+    ];
+  };
 
-  # Actual home dotfiles configuration
+  # Actual Home and dotfiles configuration
   home-manager.users.mguillen = {
 
     # State Version, used for backward compatibility
@@ -14,21 +19,90 @@
     # Let Home Manager install and manage itself
     programs.home-manager.enable = true;
 
-    # Base information about the user
-    home = {
-      username = "mguillen";
-      homeDirectory = "/Users/mguillen";
-    };
 
-    # Basic POSIX shell
-    # NOTE: Not forwarded to nu as it is non POSIX
-    programs.zsh.enable = true;
+    ## User Environment ##
+    # - Common to all POSIX shell (not nu!)
+
     home = {
-      sessionPath = [
+
+      # Base Information
+      username = "mguillen";
+      homeDirectory = {
+        "x86_64-linux" = "/home/mguillen";
+        "aarch64-darwin" = "/Users/mguillen";
+      }.{builtins.currentSystem};
+
+      # Extra directories to add to PATH
+      sessionPath = [ 
        "$HOME/.local/bin"
       ];
-      shellAliases = {};
+
+      # User specific environment Variables
+      # Environment variables to always set at login
+      home.sessionVariables = {};
+
+      # Common aliases that are compatible across all shells
+      shellAliases = {
+        # shorcuts
+        c="clear";
+        cs="clear;ls";
+        h="history";
+        j="jobs -l";
+        # overrides
+        more="less";
+        mkdir="mkdir -p";
+        du="du -kh";
+        df="df -kTh";
+        rm="rm -i";
+        cp="cp -i";
+        mv="mv -i";
+        tree="tree --dirsfirst -F";
+        meow="cat";       # just because you can
+        man="echo woman"; # just because you can
+        # ls
+        ll="ls -l";
+        la="ls -la";
+        lm="la | less";
+        # cd 
+        ".."="cd ..";
+        "..."="cd ../..";
+        "...."="cd ../../..";
+        "....."="cd ../../../..";
+        "~"="cd ~";
+      };
+
     };
+
+    ## 1 Base Configuration ##
+    # - Unix Trinity with *sensible* defaults
+    # Note: Similar to what I use in dev workspaces
+
+    # Zsh: Shell
+    programs.zsh = {
+      enable = true;
+      dotDir = ".config/zsh";
+      enableCompletion = true;
+      autocd = true;
+      enableAutosuggestions = true;
+      
+      # Zsh specific, the rest goes to "home"
+      shellAliases = {
+      };
+    };
+
+    # Vim: Editor
+    programs.vim = {
+      enable = true;
+    };
+
+    # Tmux: Terminal Multiplexor
+    programs.tmux = {
+      enable = true;
+    };
+
+
+    ## 2 Lightsaber Configuration ##
+    # Where the tweaks and productivity happens 
 
     # This configuration builds the following lightsaber...
     # Note: VSCode, Discord, Slack are used in their web incarnations
@@ -92,14 +166,14 @@
       vulnix                    # Nix scurity scanner
     ];
 
-    # XDG General
-    # i.e. for config, data, cache
+    ## XDG General ##
+
     xdg.enable = true;
 
-    # XDG User Directories, linux only - not supported onééééélkk Darwin
+    # XDG User Directories, linux only - not supported on Darwin ?
     # i.e. Desktop, Downloads, Public
     xdg.userDirs = {
-      enable = pkgs.stdenv.isLinux;
+      enable = true; #pkgs.stdenv.isLinux;
       createDirectories = true; 
       # Standard directories
       desktop = "${config.home.homeDirectory}/Desktop";
@@ -119,23 +193,23 @@
     };
 
     # For Darwin, savage overwriting the config file
-    xdg.configFile.user-dirs = {
-      enable = pkgs.stdenv.isDarwin;
-      target = "user-dirs.dirs";
-      text = ''
-        XDG_DESKTOP_DIR="$env.HOME/Desktop"
-        XDG_DOWNLOAD_DIR="$env.HOME/Downloads"
-        XDG_TEMPLATES_DIR="env.$HOME/Templates"
-        XDG_PUBLICSHARE_DIR="env.$HOME/Public"
-        XDG_DOCUMENTS_DIR="$env.HOME/Documents"
-        XDG_MUSIC_DIR="$env.HOME/Music"
-        XDG_PICTURES_DIR="$env.HOME/Pictures"
-        XDG_VIDEOS_DIR="$env.HOME/Movies"
-        XDG_APPLICATIONS_DIR = "$env.HOME/Applications";
-        XDG_LIBRARY_DIR = "$env.HOME/Library";
-        XDG_DEVEL_DIR = "$env.HOME/Devel";
-      '';
-    };
+    # xdg.configFile.user-dirs = {
+    #   enable = pkgs.stdenv.isDarwin;
+    #   target = "user-dirs.dirs";
+    #   text = ''
+    #     XDG_DESKTOP_DIR="${config.home.homeDirectory}/Desktop"
+    #     XDG_DOWNLOAD_DIR="${config.home.homeDirectory}/Downloads"
+    #     XDG_TEMPLATES_DIR="${config.home.homeDirectory}/Templates"
+    #     XDG_PUBLICSHARE_DIR="${config.home.homeDirectory}/Public"
+    #     XDG_DOCUMENTS_DIR="${config.home.homeDirectory}/Documents"
+    #     XDG_MUSIC_DIR="${config.home.homeDirectory}/Music"
+    #     XDG_PICTURES_DIR="${config.home.homeDirectory}/Pictures"
+    #     XDG_VIDEOS_DIR="${config.home.homeDirectory}/Movies"
+    #     XDG_APPLICATIONS_DIR = "${config.home.homeDirectory}/Applications";
+    #     XDG_LIBRARY_DIR = "${config.home.homeDirectory}/Library";
+    #     XDG_DEVEL_DIR = "${config.home.homeDirectory}/Devel";
+    #   '';
+    # };
 
   };
 
