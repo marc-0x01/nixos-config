@@ -30,7 +30,7 @@
       homeDirectory = {
         "x86_64-linux" = "/home/mguillen";
         "aarch64-darwin" = "/Users/mguillen";
-      }.{builtins.currentSystem};
+      }.${builtins.currentSystem};
 
       # Extra directories to add to PATH
       sessionPath = [ 
