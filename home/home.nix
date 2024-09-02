@@ -171,10 +171,10 @@
 
     xdg.enable = true;
 
-    # XDG User Directories, linux only - not supported on Darwin ?
+    # XDG User Directories, linux only - not supported on Darwin!
     # i.e. Desktop, Downloads, Public
     xdg.userDirs = {
-      enable = true; #pkgs.stdenv.isLinux;
+      enable = pkgs.stdenv.isLinux;
       createDirectories = true; 
       # Standard directories
       desktop = "${config.home.homeDirectory}/Desktop";
