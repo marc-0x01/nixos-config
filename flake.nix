@@ -68,7 +68,11 @@
     let
       username = "mguillen";
     in
-    darwinConfigurations.marcbook-work = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.marcbook-work = 
+    let 
+      username = "mguillen";
+      theme = "gruvlight";
+    in nix-darwin.lib.darwinSystem {
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
@@ -123,7 +127,11 @@
     # $ nixos-rebuild dry-build --flake .#wackbox-0x01
     # $ nixos-rebuild switch --flake .#wackbox-0x01
 
-    nixosConfigurations.wackbox-0x01 = nixpkgs.lib.nixosSystem  {
+    nixosConfigurations.wackbox-0x01 = 
+    let
+      username = "mguillen";
+      theme = "gruvdark";
+    in nixpkgs.lib.nixosSystem  {
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
