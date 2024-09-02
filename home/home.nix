@@ -32,6 +32,7 @@
         "aarch64-darwin" = "/Users/mguillen";
       }."${builtins.currentSystem}";
 
+
       # Extra directories to add to PATH
       sessionPath = [ 
        "$HOME/.local/bin"
@@ -39,7 +40,7 @@
 
       # User specific environment Variables
       # Environment variables to always set at login
-      home.sessionVariables = {};
+      sessionVariables = {};
 
       # Common aliases that are compatible across all shells
       shellAliases = {
