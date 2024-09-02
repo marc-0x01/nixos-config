@@ -4,8 +4,6 @@
 
   description = "Marc's systems configurations";
 
-  #nixConfig = (import ./common/nix-config.nix);
-
   inputs = {
 
     # Used by the core system config
@@ -67,9 +65,10 @@
     # $ nix run nix-darwin -- switch --flake .#marcbook-work
     darwinConfigurations.marcbook-work = 
     let 
-      username = "mguillen";
-      theme = "gruvlight";
+      param.username = "mguillen";
+      param.theme = "gruvlight";
     in nix-darwin.lib.darwinSystem {
+      specialArgs = [ param ];
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
@@ -126,8 +125,8 @@
 
     nixosConfigurations.wackbox-0x01 = 
     let
-      username = "mguillen";
-      theme = "gruvdark";
+      param.username = "mguillen";
+      param.theme = "gruvdark";
     in nixpkgs.lib.nixosSystem  {
       modules = [
         # Configurartion Modules
