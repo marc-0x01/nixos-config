@@ -65,7 +65,9 @@
     # run with 
     # $ darwin-rebuild switch --flake .#marcbook-work
     # $ nix run nix-darwin -- switch --flake .#marcbook-work
-
+    let
+      username = "mguillen";
+    in
     darwinConfigurations.marcbook-work = nix-darwin.lib.darwinSystem {
       modules = [
         # Configurartion Modules
