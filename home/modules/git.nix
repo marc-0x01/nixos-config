@@ -56,7 +56,7 @@
   };
 
   # Git for humans (lazygit)
-  lazygit = {
+  programs.lazygit = {
     enable = true;
   };
 
