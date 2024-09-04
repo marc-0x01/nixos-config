@@ -4,6 +4,7 @@
 
   programs.tmux = {
     enable = true;
+    prefix = "C-a";
     # Session Manager
     tmuxp.enable = true;
     # Plugins
