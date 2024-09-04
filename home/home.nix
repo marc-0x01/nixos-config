@@ -113,14 +113,14 @@
     
     # Core Desktop Applications
     # - My Console and Web Terminal
-    ++ lib.optionals True [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       ./modules/alacritty.nix
       ./modules/qutebrowser.nix
     ] 
     
     # Core Console Applications
     # - For productivity 
-    ++ lib.optionals True [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
@@ -135,19 +135,19 @@
 
     # Extra Desktop/Console Applications
     # Not yet in home-manager...
-    ++ lib.optionals True [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       ./modules/extra.nix
     ] 
     
     # Apply styling of the applications
-    ++ lib.optionals True [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       # Theme
       ./themes/common.nix
       ./themes/gruvlight.nix
     ] 
     
     # Currently testing those apps...
-    ++ lib.optionals True [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       ./modules/rio.nix
     ];
 
