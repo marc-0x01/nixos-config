@@ -85,7 +85,7 @@
         music = "$HOME/Music";
         pictures = "$HOME/Pictures";
         templates = "$HOME/Templates";
-        videos = "$HOME/Movies";
+        videos = "$HOME/Videos";
         publicShare = "$HOME/Public";
         # User specific
         extraConfig = {
