@@ -7,7 +7,7 @@
     userName  = "Marc Guillen";
     userEmail = "marc@0x01.ooo";
     signing = {
-      # TODO: add signing commit with minisign
+      # TODO: add signing commit with minisign/rsign
       key = "";
       signByDefault = false;
     };
@@ -53,6 +53,11 @@
       init.defaultBranch = "main";
       core.editor = "hx";
     };
+  };
+
+  # Git for humans (lazygit)
+  lazygit = {
+    enable = true;
   };
 
 }

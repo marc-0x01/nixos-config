@@ -20,14 +20,4 @@
     };
   };
 
-  # Script to launch apps
-  home.file = {
-    ".local/bin/wm-open-music-player-darwin.sh" = {
-      enable = true;
-      executable = true;
-      source = ../scripts/wm-open-music-player-darwin.sh;
-      target = "${config.home.homeDirectory}/.local/bin/wm-open-music-player.sh";
-    };
-  };
-
 }

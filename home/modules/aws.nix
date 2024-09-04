@@ -23,7 +23,7 @@
     ".local/bin/aws-setup.sh" = {
       enable = true;
       executable = true;
-      source = ../scripts/aws-setup.sh;
+      source = ./scripts/aws-setup.sh;
       target = "${config.home.homeDirectory}/.local/bin/aws-setup.sh";
     };
   };

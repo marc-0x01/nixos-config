@@ -195,14 +195,4 @@
     };
   };
 
-  # Open browser script
-  home.file = {
-    ".local/bin/wm-open-web-browser.sh" = {
-      enable = pkgs.stdenv.isDarwin;
-      executable = true;
-      source = ../scripts/wm-open-web-browser-darwin.sh;
-      target = "${config.home.homeDirectory}/.local/bin/wm-open-web-browser.sh";
-    };
-  };
-
 }

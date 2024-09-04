@@ -25,7 +25,6 @@
     };
     # Keybindings, nothing for now
     keymap = {};
-
   };
 
 }

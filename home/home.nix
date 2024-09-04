@@ -96,89 +96,59 @@
       };
     };
 
-    ## 1 Base Configuration ##
-    # - Unix Trinity with *sensible* defaults
-    # Note: Similar to what I use in dev workspaces
+    ## Applications ##
+    # - This configuration builds the following lightsaber...
 
-    # Zsh: Shell
-    programs.zsh = {
-      enable = true;
-      dotDir = ".config/zsh";
-    };
+    imports = 
 
-    # Vim: Editor
-    programs.vim = {
-      enable = true;
-    };
-
-    # Tmux: Terminal Multiplexer
-    programs.tmux = {
-      enable = true;
-    };
-
-    ## 2 Lightsaber Configuration ##
-    # Where the tweaks and productivity happens
-
-    # This configuration builds the following lightsaber...
-    # Note: VSCode, Discord, Slack are used in their web incarnations
-    imports = [
-      # Theme
-      ./themes/common.nix
-      ./themes/gruvlight.nix
-      # Applications
+    # Base Unix
+    # - That should be there whatever the context
+    [
+      ./modules/zsh.nix
+      ./modules/vim.nix
+      ./modules/tmux.nix
+      ./modules/git.nix
+      ./modules/ssh.nix
+    ] 
+    
+    # Core Desktop Applications
+    # - My Console and Web Terminal
+    ++ lib.optionals True [
       ./modules/alacritty.nix
-      ./modules/rio.nix
       ./modules/qutebrowser.nix
+    ] 
+    
+    # Core Console Applications
+    # - For productivity 
+    ++ lib.optionals True [
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
       ./modules/zellij.nix
       ./modules/yazi.nix
       ./modules/helix.nix
-      ./modules/gpg.nix
-      ./modules/ssh.nix
-      ./modules/git.nix
       ./modules/github.nix
       ./modules/aws.nix
       ./modules/ncspot.nix
       ./modules/misc.nix
-    ];
+    ] 
 
-    # Extra programs managed by home manager
-    # They do not need extra configuration
-    programs = {
-      # Terminal
-      bat.enable = true;          # Better cat (bat)
-      bottom.enable = true;       # Better top (btm)
-      jq.enable = true;           # Json parser (jq)
-      skim.enable = true;         # Fuzzy finder (sk)  +enableZshIntegration
-      lazygit.enable = true;      # Git UI for humans (lazygit)
-      taskwarrior.enable = true;  # Task management (task)
-      ripgrep.enable = true;      # Better grep (rg)
-      rbw.enable = true;          # Bitwarden cli (rbw)
-      thefuck.enable = true;      # Correct latest command (fuck) +enableZshIntegration +enableNushellIntegration
-    };
-
-    # Extra packages or not yet in home-manager
-    # Look for new addition or rust alternatives: lolcrab (better lolcat)
-    home.packages = with pkgs; [
-      # Desktop Apps
-      obsidian                  # Digital Garden and noote taking
-      jetbrains.gateway         # Remote development, alternative to vim in a professional environment
-      # Terminal
-      charasay                  # Cow have voice in terminal, better coesay (charasay)
-      lolcat                    # Rainbow! (lolcat)
-      steampipe                 # Query like it's 1992 (steampipe)
-      uutils-coreutils          # Better coreutils in rust, hamonize on darwin (*)
-      ouch                      # Compression swiss-army knife (ouch)
-      rsign2                    # Signing cli compatible with minisign (rsign)
-      rage                      # A simple, secure and modern encryption tool (age)
-      age-plugin-yubikey        # -- Integration of age with yubikey
-      difftastic                # Better diff (difft), mostly for git
-      macchina                  # System info fetcher (macchina)
-      xh                        # Replacement for httpie, curl (xh)
-      du-dust                   # More intuitive du (dust)
-      vulnix                    # Nix scurity scanner
+    # Extra Desktop/Console Applications
+    # Not yet in home-manager...
+    ++ lib.optionals True [
+      ./modules/extra.nix
+    ] 
+    
+    # Apply styling of the applications
+    ++ lib.optionals True [
+      # Theme
+      ./themes/common.nix
+      ./themes/gruvlight.nix
+    ] 
+    
+    # Currently testing those apps...
+    ++ lib.optionals True [
+      ./modules/rio.nix
     ];
 
   };
