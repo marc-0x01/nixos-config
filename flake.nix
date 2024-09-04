@@ -63,12 +63,8 @@
     # run with 
     # $ darwin-rebuild switch --flake .#marcbook-work
     # $ nix run nix-darwin -- switch --flake .#marcbook-work
-    darwinConfigurations.marcbook-work = 
-    let 
-      param.username = "mguillen";
-      param.theme = "gruvlight";
-    in nix-darwin.lib.darwinSystem {
-      specialArgs = [ param ];
+    darwinConfigurations.marcbook-work = nix-darwin.lib.darwinSystem {
+      specialArgs = inputs;
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
@@ -123,11 +119,8 @@
     # $ nixos-rebuild dry-build --flake .#wackbox-0x01
     # $ nixos-rebuild switch --flake .#wackbox-0x01
 
-    nixosConfigurations.wackbox-0x01 = 
-    let
-      param.username = "mguillen";
-      param.theme = "gruvdark";
-    in nixpkgs.lib.nixosSystem  {
+    nixosConfigurations.wackbox-0x01 = nixpkgs.lib.nixosSystem  {
+      specialArgs = inputs;
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
