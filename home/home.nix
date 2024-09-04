@@ -24,7 +24,7 @@
     home = {
 
       # Base Information
-      username = "${username}";
+      username = "mguillen";
       homeDirectory = {
         "x86_64-linux" = "/home/mguillen";
         "aarch64-darwin" = "/Users/mguillen";
