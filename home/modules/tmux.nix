@@ -10,11 +10,11 @@
     plugins = with pkgs; [
       # Using official plugins
       tmuxPlugins.sensible
-      tmuxPlugins.tmux-window-name
+      tmuxPlugins.yank
       tmuxPlugins.sessionist
       tmuxPlugins.pain-control
+      tmuxPlugins.mode-indicator
       tmuxPlugins.prefix-highlight
-      tmuxPlugins.yank
     ];
     # Config
     extraConfig = ''''; 
