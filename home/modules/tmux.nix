@@ -4,7 +4,9 @@
 
   programs.tmux = {
     enable = true;
+    # Core settings
     prefix = "C-a";
+    mouse = true;
     # Session Manager
     tmuxp.enable = true;
     # Plugins
