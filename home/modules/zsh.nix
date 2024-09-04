@@ -11,8 +11,8 @@
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     # Plugins, nothing at the moment
-    zplug = {
-      enable = true;
+    oh-my-zsh = {
+      enable = false;
       plugins = [];
     };
     # Config
