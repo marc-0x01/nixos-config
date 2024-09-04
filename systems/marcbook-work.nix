@@ -34,9 +34,7 @@
     # Graphical Environment
     # Well builtin OSX
     # Additional global services
-    ./modules/darwin/yabai.nix
-    ./modules/darwin/skhd.nix
-    ./modules/darwin/sketchybar.nix
+    ./modules/darwin/aqua.nix
     # Apply home settings, OS agnostic
     ../home/home.nix
   ];
