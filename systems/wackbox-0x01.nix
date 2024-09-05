@@ -185,7 +185,7 @@
   # User account
   users = {
     defaultUserShell = pkgs.zsh;
-    users.mguillen = {
+    users.${config.parameters.user.username} = {
       name = "${config.parameters.user.username}";
       home = "/home/${config.parameters.user.username}";
       description = "${config.parameters.user.description}";

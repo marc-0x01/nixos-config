@@ -64,7 +64,7 @@
             middle-click-paste = false;
             # Shell
             shell = [
-                "/etc/profiles/per-user/mguillen/bin/nu"
+                "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu"
             ];
             # Common LSP
             lsp = {

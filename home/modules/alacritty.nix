@@ -7,7 +7,7 @@
     settings = {
       # Shell
       shell = {
-        program = "/etc/profiles/per-user/mguillen/bin/nu";
+        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu";
         args = [
           "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
           "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"

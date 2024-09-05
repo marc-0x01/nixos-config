@@ -1,6 +1,6 @@
 # Common Nix settings accross configurations
 
-{ nixpkgs, nixpkgs-unstable, pkgs, ... }: {
+{ config, nixpkgs, nixpkgs-unstable, pkgs, ... }: {
 
   # Garbage Collection
   nix.gc = if pkgs.stdenv.isDarwin
@@ -27,7 +27,7 @@
   nix.settings = {
   trusted-users = [
       "root"
-      "mguillen"
+      "${config.parameters.user.username}"
     ];
   };
 

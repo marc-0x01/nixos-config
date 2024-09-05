@@ -290,7 +290,7 @@
   };
 
   # User account
-  users.users.mguillen = {
+  users.users.${config.parameters.user.username} = {
     name = "${config.parameters.user.username}";
     home = "/Users/${config.parameters.user.username}";
     description = "${config.parameters.user.description}";

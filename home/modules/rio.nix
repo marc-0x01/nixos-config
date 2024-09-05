@@ -11,7 +11,7 @@
       blinking-cursor = true;
       hide-cursor-when-typing = true;
       editor = {
-        program = "/etc/profiles/per-user/mguillen/bin/hx";
+        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/hx";
         args = [];
       };
       padding-x = 10;
@@ -28,7 +28,7 @@
         disable-unfocused-render = false;
       };
       shell = {
-        program = "/etc/profiles/per-user/mguillen/bin/nu";
+        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu";
         args = [
           "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
           "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"
