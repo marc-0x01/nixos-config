@@ -82,7 +82,7 @@
             context = "work";
             email = "mguillen@pictet.com";
             theme = "gruvlight";
-            enableLigtsaber = true;
+            enableLightsaber = true;
             enableStyling = true;
             enableExtra = true;
             enableTest = false;
