@@ -1,6 +1,6 @@
 # helix: A post-modern modal text editor
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
   programs.helix = {
     enable = true;
@@ -64,7 +64,7 @@
             middle-click-paste = false;
             # Shell
             shell = [
-                "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu"
+                "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu"
             ];
             # Common LSP
             lsp = {

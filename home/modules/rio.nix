@@ -1,7 +1,7 @@
 # Rio: A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.
 # Replacement for Alacritty, currently in test
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig nixpkgs, nixpkgs-unstable, home-manager, ... }: {
   
   programs.rio = {
     enable = true;
@@ -11,7 +11,7 @@
       blinking-cursor = true;
       hide-cursor-when-typing = true;
       editor = {
-        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/hx";
+        program = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/hx";
         args = [];
       };
       padding-x = 10;
@@ -28,7 +28,7 @@
         disable-unfocused-render = false;
       };
       shell = {
-        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu";
+        program = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu";
         args = [
           "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
           "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"

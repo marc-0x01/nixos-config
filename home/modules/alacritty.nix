@@ -1,13 +1,13 @@
 # Alacritty: A fast, cross-platform, OpenGL terminal emulator
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
   
   programs.alacritty = {
     enable = true;
     settings = {
       # Shell
       shell = {
-        program = "/etc/profiles/per-user/${config.parameters.user.username}/bin/nu";
+        program = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu";
         args = [
           "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
           "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"
