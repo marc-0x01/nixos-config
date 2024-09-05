@@ -20,7 +20,7 @@
         insert_mode = { 
           auto_load = true;
           auto_enter = true;
-          auto_leave = false;
+          auto_leave = true;
         };
       };
       auto_save = {
