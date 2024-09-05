@@ -73,6 +73,7 @@
 
     ## XDG ##
     # - XDG User Directories are linux only - not supported on Darwin!
+    # - For Darwin, direct overwriting of the config file!
     xdg = {
       enable = true;
       userDirs = {
@@ -93,8 +94,29 @@
           XDG_LIBRARY_DIR = "$HOME/Library";
           XDG_DEVEL_DIR = "$HOME/Devel";
         };
+        configFile.user-dirs = {
+          enable = pkgs.stdenv.isDarwin;
+          target = "user-dirs.dirs";
+          # Standard directories
+          text = ''
+            XDG_DESKTOP_DIR="${config.home.homeDirectory}/Desktop"
+            XDG_DOWNLOAD_DIR="${config.home.homeDirectory}/Downloads"
+            XDG_TEMPLATES_DIR="${config.home.homeDirectory}/Templates"
+            XDG_PUBLICSHARE_DIR="${config.home.homeDirectory}/Public"
+            XDG_DOCUMENTS_DIR="${config.home.homeDirectory}/Documents"
+            XDG_MUSIC_DIR="${config.home.homeDirectory}/Music"
+            XDG_PICTURES_DIR="${config.home.homeDirectory}/Pictures"
+            XDG_VIDEOS_DIR="${config.home.homeDirectory}/Movies" 
+            XDG_APPLICATIONS_DIR = "${config.home.homeDirectory}/Applications";
+            XDG_LIBRARY_DIR = "${config.home.homeDirectory}/Library";
+            XDG_DEVEL_DIR = "${config.home.homeDirectory}/Devel";
+          ''; # On Darwin Videos = Movies ;)
+        };
       };
     };
+
+    
+    
 
     ## Applications ##
     # - This configuration builds the following lightsaber...
