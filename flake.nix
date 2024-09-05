@@ -139,6 +139,7 @@
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
+        ./common/user-config.nix
         ./systems/wackbox-0x01.nix
         # Modules
         home-manager.nixosModules.home-manager
