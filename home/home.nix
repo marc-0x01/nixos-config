@@ -94,7 +94,9 @@
           XDG_LIBRARY_DIR = "$HOME/Library";
           XDG_DEVEL_DIR = "$HOME/Devel";
         };
-        configFile.user-dirs = {
+      };
+      configFile = {
+        user-dirs = {
           enable = pkgs.stdenv.isDarwin;
           target = "user-dirs.dirs";
           # Standard directories
