@@ -117,9 +117,6 @@
       };
     };
 
-    
-    
-
     ## Applications ##
     # - This configuration builds the following lightsaber...
 
