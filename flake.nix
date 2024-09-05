@@ -145,6 +145,20 @@
         stylix.nixosModules.stylix
         agenix.nixosModules.default
         nur.hmModules.nur
+        # User Configuration
+        {
+          parameters.user = {
+            username = "mguillen";
+            description = "Marc Guillen";
+            context = "0x01";
+            email = "marc@0x01.ooo";
+            theme = "monochrome";
+            enableLightsaber = true;
+            enableStyling = true;
+            enableExtra = false;
+            enableTest = false;
+          };
+        }
         # Base Modules
         {
           # Nix Config
