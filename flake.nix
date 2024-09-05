@@ -74,6 +74,20 @@
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
         nur.hmModules.nur
+        # User Configuration
+        {
+          parameters.user = {
+            username = "mguillen";
+            description = "Marc Guillen";
+            context = "work";
+            email = "mguillen@pictet.com";
+            theme = "gruvlight";
+            enableLigtsaber = true;
+            enableStyling = true;
+            enableExtra = true;
+            enableTest = false;
+          };
+        }
         # Base Modules
         {
           # Nix Config
