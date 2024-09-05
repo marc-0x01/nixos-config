@@ -153,7 +153,7 @@
     ++ lib.optionals config.parameters.user.enableStyling [
       # Theme
       ./themes/common.nix
-      ./themes/gruvlight.nix
+      ./themes/${config.parameters.user.theme}.nix
     ] 
   
     # Extra Desktop/Console Applications
