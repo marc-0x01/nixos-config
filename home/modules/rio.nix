@@ -5,7 +5,8 @@
   
   programs.rio = {
     enable = true;
-    package = pkgs.rio-bin;
+    # Main package currently broken, using own bin derivation on darwin
+    package = lib.mkIf pkgs.stdenv.isDarwin pkgs.rio-bin;
     settings = {
       cursor = "▇";
       blinking-cursor = true;
