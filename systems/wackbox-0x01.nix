@@ -186,9 +186,9 @@
   users = {
     defaultUserShell = pkgs.zsh;
     users.mguillen = {
-      name = "mguillen";
-      home = "/home/mguillen";
-      description = "Marc Guillen";
+      name = "${config.parameters.user.username}";
+      home = "/home/${config.parameters.user.username}";
+      description = "${config.parameters.user.description}";
       shell = pkgs.zsh;
       isNormalUser = true;
       extraGroups = [ 

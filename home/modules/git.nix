@@ -1,11 +1,11 @@
 # git: --distributed-even-if-your-workflow-isnt
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
   programs.git = {
     enable = true;
-    userName  = "Marc Guillen";
-    userEmail = "marc@0x01.ooo";
+    userName  = "${osConfig.parameters.user.description}";
+    userEmail = "${osConfig.parameters.user.email}";
     signing = {
       # TODO: add signing commit with minisign/rsign
       key = "";

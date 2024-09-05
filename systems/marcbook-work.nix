@@ -291,9 +291,9 @@
 
   # User account
   users.users.mguillen = {
-    name = "mguillen";
-    home = "/Users/mguillen";
-    description = "Marc Guillen";
+    name = "${config.parameters.user.username}";
+    home = "/Users/${config.parameters.user.username}";
+    description = "${config.parameters.user.description}";
     shell = pkgs.zsh;
   };
 

@@ -62,8 +62,6 @@ I mostly use *MacOS* as the main system for my work workstations and *NixOS* for
 
 🔜 TODO
 
-* [ ] Add __let..in__ for recurring variables such as __username__
-* [ ] Make `home-manager` more generic and support multiple targets
 * [ ] Move `devenv` in a separated repo
 * [ ] Harden wackbox-0x01 inspired by https://github.com/cynicsketch/nix-mineral[nix-mineral]
 * [ ] Integrate secrets with `agenix`

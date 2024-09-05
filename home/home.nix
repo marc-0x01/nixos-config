@@ -11,7 +11,7 @@
   };
 
   ## Actual Home and dotfiles configuration
-  home-manager.users.mguillen = {
+  home-manager.users.${config.parameters.user.username} = {
 
     # State Version, used for backward compatibility
     home.stateVersion = "24.05";
@@ -24,10 +24,10 @@
     home = {
 
       # Base Information
-      username = "mguillen";
+      username = "${config.parameters.user.username}";
       homeDirectory = {
-        "x86_64-linux" = "/home/mguillen";
-        "aarch64-darwin" = "/Users/mguillen";
+        "x86_64-linux" = "/home/${config.parameters.user.username}";
+        "aarch64-darwin" = "/Users/${config.parameters.user.username}";
       }."${pkgs.system}";
 
       # Extra directories to add to PATH
@@ -131,17 +131,12 @@
       ./modules/git.nix
       ./modules/ssh.nix
     ] 
-    
-    # Core Desktop Applications
-    # - My Console and Web Terminal
-    ++ lib.optionals pkgs.stdenv.isDarwin [
-      ./modules/alacritty.nix
-      ./modules/qutebrowser.nix
-    ] 
-    
+   
     # Core Console Applications
     # - For productivity 
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals config.parameters.user.enableLightsaber [
+      ./modules/alacritty.nix
+      ./modules/qutebrowser.nix
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
@@ -154,21 +149,21 @@
       ./modules/misc.nix
     ] 
 
-    # Extra Desktop/Console Applications
-    # Not yet in home-manager...
-    ++ lib.optionals pkgs.stdenv.isDarwin [
-      ./modules/extra.nix
-    ] 
-    
     # Apply styling of the applications
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals config.parameters.user.enableStyling [
       # Theme
       ./themes/common.nix
       ./themes/gruvlight.nix
     ] 
-    
+  
+    # Extra Desktop/Console Applications
+    # Not yet in home-manager...
+    ++ lib.optionals config.parameters.user.enableExtra [
+      ./modules/extra.nix
+    ]  
+
     # Currently testing those apps...
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals config.parameters.user.enableTest [
       ./modules/rio.nix
     ];
 

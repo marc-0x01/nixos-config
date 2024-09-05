@@ -68,6 +68,7 @@
       modules = [
         # Configurartion Modules
         ./common/nix-config.nix
+        ./common/user-config.nix
         ./systems/marcbook-work.nix
         # Modules
         home-manager.darwinModules.home-manager
