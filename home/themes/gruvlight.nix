@@ -6,10 +6,7 @@
     enable = true;
     # Theme apps by default
     autoEnable = true;
-    targets = {
-      # Exception due to bug on ruby ffi
-      gnome.enable = false;
-    };
+    targets = {};
     # Wallpaper!
     image = ./assets/wallpapers/gruv4-5k-3840x2160.jpeg;
     # Monochrome and dark

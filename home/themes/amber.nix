@@ -6,10 +6,7 @@
     enable = true;
     # Theme apps by default
     autoEnable = true;
-    targets = {
-      # Exception due to bug on ruby ffi
-      gnome.enable = false;
-    };
+    targets = {};
     # Wallpaper!
     image = pkgs.fetchurl {
       url = "https://images7.alphacoders.com/883/883131.jpg";
@@ -41,6 +38,8 @@
     opacity = {
        terminal = 0.95;
        desktop = 0.95;
+       applications = 0.95;
+       popups = 0.85;
     };
     # Fonts
     # TODO: Substitute with Benguiat fonts for an Avalon vibe
@@ -71,7 +70,7 @@
       };
       # Font Sizes by context
       sizes = {
-        terminal = 15;
+        terminal = 14;
       };
     };
   };

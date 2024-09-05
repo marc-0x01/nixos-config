@@ -6,10 +6,7 @@
     enable = true;
     # Theme apps by default
     autoEnable = true;
-    targets = {
-      # Exception due to bug on ruby ffi
-      gnome.enable = false;
-    };
+    targets = {};
     # Wallpaper!
     image = ./assets/wallpapers/monochrome1-5k-2880x1800.jpg;
     # Monochrome and dark
@@ -19,6 +16,8 @@
     opacity = {
        terminal = 0.85;
        desktop = 0.95;
+       applications = 0.95;
+       popups = 0.85;
     };
     # Fonts
     fonts = {
