@@ -58,7 +58,6 @@
     # TODO: find a way to source profile and nix automatically
     envFile.text = ''
       # Nushell Env File
-      $env.X01_SYSTEM = 'marcbook-work'
       # Indicators, almost none cause i am using starship
       $env.PROMPT_INDICATOR = {|| "" }
       $env.PROMPT_INDICATOR_VI_INSERT = {|| "" }
@@ -69,21 +68,28 @@
       $env.VISUAL = 'hx'
       $env.PAGER = 'less -R'
       # Nix
-      $env.NIX_PATH = $'/Users/($env.USER)/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels'
-      $env.NIX_PROFILES = $'/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/($env.USER) /Users/($env.USER)/.nix-profile'
+      $env.NIX_PATH = $'($env.HOME)/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels'
+      $env.NIX_PROFILES = $'/nix/var/nix/profiles/default /run/current-system/sw /etc/profiles/per-user/($env.USER) ($env.HOME)/.nix-profile'
       $env.NIX_REMOTE = 'daemon'
       $env.NIX_SSL_CERT_FILE = '/etc/ssl/certs/ca-certificates.crt'
-      $env.NIX_USER_CONF_FILES = $"/Users/($env.USER)/Devel/nix-config"
+      $env.NIX_USER_CONF_FILES = $"($env.HOME)/Devel/nix-config"
       $env.NIX_USER_CONF_REPOSITORY = $"github:/marc-0x01/nixos-config"
-      $env.TERMINFO_DIRS = $"/Users/($env.USER)/.nix-profile/share/terminfo:/etc/profiles/per-user/($env.USER)/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo"
+      $env.NIX_USER_DEV_REPOSITORY = $"github:/marc-0x01/dev-workspaces"
+      $env.TERMINFO_DIRS = $"($env.HOME)/.nix-profile/share/terminfo:/etc/profiles/per-user/($env.USER)/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo"
       # Path
       $env.PATH = (
         $env.PATH
         | split row (char esep)
-        | prepend '/nix/var/nix/profiles/default/bin'
-        | prepend '/run/current-system/sw/bin/'
-        | prepend $"/etc/profiles/per-user/($env.USER)/bin"
-        | prepend $"/Users/($env.USER)/.local/bin"
+        | append '/run/wrappers/bin'
+        | append $"($env.HOME)/.local/share/flatpak/exports/bin"
+        | append '/var/lib/flatpak/exports/bin'
+        | append $"/($env.HOME)/.nix-profile/bin"
+        | append '/nix/profile/bin'
+        | append $"($env.HOME)/.local/state/nix/profile/bin"
+        | append $"/etc/profiles/per-user/($env.USER)/bin"
+        | append '/nix/var/nix/profiles/default/bin'
+        | append '/run/current-system/sw/bin'
+        | append $"($env.HOME)/.local/bin"
       )
     '';
     shellAliases = {
@@ -123,12 +129,12 @@
       gb = "git b";
       gla = "git la";
       gui = "lazygit";
-      # Development sandboxes
-      nixdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#nix'";
-      rsdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#rust-stable'";
-      pydev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#python-stable'";
-      jsdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#javascript-stable'";
-      tfdev = "nix develop --impure $'($env.NIX_USER_CONF_REPOSITORY)#terraform-stable'";
+      # Development workspaces
+      nixdev = "nix develop --impure $'($env.NIX_USER_DEV_REPOSITORY)#nix'";
+      rsdev = "nix develop --impure $'($env.NIX_USER_DEV_REPOSITORY)#rust-stable'";
+      pydev = "nix develop --impure $'($env.NIX_USER_DEV_REPOSITORY)#python-stable'";
+      jsdev = "nix develop --impure $'($env.NIX_USER_DEV_REPOSITORY)#javascript-stable'";
+      tfdev = "nix develop --impure $'($env.NIX_USER_DEV_REPOSITORY)#terraform-stable'";
     }; 
   };
 
