@@ -1,7 +1,7 @@
 # Rio: A hardware-accelerated GPU terminal emulator focusing to run in desktops and browsers.
 # Replacement for Alacritty, currently in test
 
-{ pkgs, lib, config, osConfig nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
   
   programs.rio = {
     enable = true;
