@@ -61,38 +61,34 @@
     # TODO Move to a TOML maker and eventualy create a stylix module
     {
       window = {
-        opacity = 0.85;
+        opacity = with config.stylix.opacity; terminal;
         blur = false;
       };
-      fonts = {
-        family = "GohuFont 14 Nerd Font";
-        size = 14;
+      fonts = with config.stylix.fonts; {
+        family = monospace.name;
+        size = sizes.terminal;
       };
       navigation = {
         color-automation = [];
       };
-      colors = {
-        background = "#fbf1c7";
-        foreground = "#282828";
-        selection-background = "#d5c4a1";
-        selection-foreground = "#665c54";            
-        cursor = "#282828";
-        black = "#fbf1c7";
-        red = "#9d0006";
-        green = "#79740e";
-        yellow = "#b57614";
-        blue = "#076678";
-        magenta = "#8f3f71";
-        cyan = "#427b58";
-        white = "#3c3836";
-        light_black = "#9d8374";
-        light_red = "#cc241d";
-        light_green = "#98971a";
-        light_yellow = "#d79921";
-        light_blue = "#458588";
-        light_magenta = "#b16186";
-        light_cyan = "#689d69";
-        light_white = "#7c6f64";
+      colors = with config.lib.stylix.colors.withHashtag; {
+        background = base05;
+        foreground = base00;
+        selection-background = base02;
+        selection-foreground = base05;            
+        cursor = base05;
+        black = base00;
+        white = base05;
+        inherit red green yellow blue magenta cyan;
+        light_black = base03;
+        light_white = base07;
+        light_red = bright-red;
+        light_green = bright-green;
+        light_yellow = yellow;
+        light_blue = bright-blue;
+        light_magenta = bright-magenta;
+        light_cyan = bright-cyan;
+        
       };
     };
   };
