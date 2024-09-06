@@ -81,7 +81,7 @@
             description = "Marc Guillen";
             context = "work";
             email = "mguillen@pictet.com";
-            theme = "gruvlight";
+            theme = "gruvdark";
             enableLightsaber = true;
             enableStyling = true;
             enableExtra = true;
