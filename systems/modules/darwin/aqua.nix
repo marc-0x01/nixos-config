@@ -56,14 +56,7 @@
     enable = true;
     skhdConfig = ''
       # Window new
-      alt - return : /Users/mguillen/.local/bin/wm-open-term.sh 
-      alt - b : /Users/mguillen/.local/bin/wm-open-web-browser.sh
-      alt - u : /Users/mguillen/.local/bin/wm-open-music-player.sh
-      alt - e : /Users/mguillen/.local/bin/wm-open-file-manager.sh
-      alt - o : /Users/mguillen/.local/bin/wm-open-digital-garden.sh
-      alt - c : /Users/mguillen/.local/bin/wm-open-code-editor.sh
-      shift + alt - l : /Users/mguillen/.local/bin/wm-lock.sh
-      shift + alt - e : /Users/mguillen/.local/bin/wm-shutdown.sh
+      alt - return : alacritty &
       # Windows close
       alt - w : yabai -m window --close
       # Windows Float Unfloat
