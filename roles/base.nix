@@ -24,6 +24,7 @@
 
     # Vim: Editor
     # Should be there anyway in any system
+    # TODO: After 23.05 it should be standardized, watch out
 
     # Tmux: Terminal Multiplexor
     tmux = {
