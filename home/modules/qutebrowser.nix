@@ -94,39 +94,40 @@
         "l" = "scroll right";
         # content
         "<Return>" = "selection-follow";
-        "<Meta-r>" = "reload";
+        "<Ctrl-r>" = "reload";
         # history
         "H" = "back";
-        "<Meta-Left>" = "back";
+        "<Alt-Left>" = "back";
         "L" = "forward";
-        "<Meta-Right>" = "forward";
+        "<Alt-Right>" = "forward";
         # tab
         "J" = "tab-next";
-        "<Meta-Down>" = "tab-next";
+        "<Alt-Down>" = "tab-next";
         "K" = "tab-prev";
-        "<Meta-Up>" = "tab-prev";
+        "<Alt-Up>" = "tab-prev";
         "o" = "cmd-set-text :open ";
         "O" = "cmd-set-text :open -t ";
-        "<Meta-t>" = "open -t";
+        "<Ctrl-t>" = "open -t";
         "dd" = "tab-close";
-        "<Meta-w>" = "tab-close";
-        "<Meta-1>" = "tab-focus 1";
-        "<Meta-2>" = "tab-focus 2";
-        "<Meta-3>" = "tab-focus 3";
-        "<Meta-4>" = "tab-focus 4";
-        "<Meta-5>" = "tab-focus 5";
-        "<Meta-6>" = "tab-focus 6";
-        "<Meta-7>" = "tab-focus 7";
-        "<Meta-8>" = "tab-focus 8";
-        "<Meta-Backspace>" = "tab-focus last";
-        "<Meta-p>" = "tab-pin";
-        "<Meta-m>" = "tab-mute";
+        "u" = "undo";
+        "<Ctrl-w>" = "tab-close";
+        "<Alt-1>" = "tab-focus 1";
+        "<Alt-2>" = "tab-focus 2";
+        "<Alt-3>" = "tab-focus 3";
+        "<Alt-4>" = "tab-focus 4";
+        "<Alt-5>" = "tab-focus 5";
+        "<Alt-6>" = "tab-focus 6";
+        "<Alt-7>" = "tab-focus 7";
+        "<Alt-8>" = "tab-focus 8";
+        "<Alt-Backspace>" = "tab-focus last";
+        "<Ctrl-p>" = "tab-pin";
+        "<Ctrl-m>" = "tab-mute";
         # search
-        "<Meta-f>" = "cmd-set-text /";
+        "<Ctrl-f>" = "cmd-set-text /";
         "n" = "search-next";
         "p" = "search-prev";
         # bookmarks
-        "<meta-b>" = "bookmark-add";
+        "<Ctrl-b>" = "bookmark-add";
         # zoom
         "+" = "zoom-in";
         "-" = "zoom-out";
