@@ -4,7 +4,7 @@
 #  * OSX: rm -rf ~/Library/Caches/org.Zellij-Contributors.Zellij
 #  * Linux: rm -rf ~/.cache/zellij
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
   programs.zellij = {
     enable = true;
