@@ -25,7 +25,7 @@
         dynamic_title = true;
         dynamic_padding = true;
         padding = {
-          x = 10;
+          x = 20;
           y = 10;
         };
       };
