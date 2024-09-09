@@ -11,6 +11,7 @@
     # Desktop Apps
     obsidian                  # Digital Garden and noote taking
     jetbrains.gateway         # Remote development, alternative to vim in a professional environment
+    vlc                       # Videolan player, a stample to play anything    
 
     # Utils
     uutils-coreutils-noprefix # Better coreutils in rust, harmonize on darwin (*)
