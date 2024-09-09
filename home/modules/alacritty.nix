@@ -21,7 +21,7 @@
           general = "Alacritty";
         };
         startup_mode = "Maximized";
-        decorations = "ButtonLess";
+        decorations = "Transparent";
         dynamic_title = true;
         dynamic_padding = true;
         padding = {
@@ -52,7 +52,9 @@
       live_config_reload = true;
       # Keyboard and bindings
       keyboard = {
-        bindings = [];
+        bindings = [
+          { key = "Enter"; mods = "Control"; action = "CreateNewWindow"; }
+        ];
       };
     };
   };
