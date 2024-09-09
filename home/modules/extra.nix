@@ -11,11 +11,7 @@
     # Desktop Apps
     obsidian                      # Digital Garden and noote taking
     jetbrains.gateway             # Remote development, alternative to vim in a professional environment
-    if pkgs.stdenv.isDarwin then  # Videolan player, a stample to play anything  
-      vlc-bin                       # Using vlc-bin on darwin, some codex lib not available
-    else 
-      vlc  
-
+ 
     # Utils
     uutils-coreutils-noprefix     # Better coreutils in rust, harmonize on darwin (*)
     ouch                          # Compression swiss-army knife (ouch)
@@ -28,6 +24,16 @@
     # Terminal
     steampipe                     # Query like it's 1992 (steampipe)
     
+  ] ++ lib.Optional pkgs.stdenv.isLinux [
+    # Specific to Linux
+
+      vlc                         # Videolan, the swiss army knift to playing medias
+
+  ] ++ lib.Optional pkgs.stdenv.isDarwin [
+    # Specific to Darwin
+
+      vlc-bin                     # Using vlc-bin on darwin, some codex lib not available
+
   ];
 
 }
