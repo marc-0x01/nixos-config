@@ -25,8 +25,8 @@
         dynamic_title = true;
         dynamic_padding = true;
         padding = {
-          x = 20;
-          y = 10;
+          x = 10;
+          y = 20;
         };
       };
       # Cursor configuration
