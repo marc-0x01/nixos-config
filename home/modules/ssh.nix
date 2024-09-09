@@ -14,8 +14,8 @@
     extraConfig = "";
     # Specify per-host settings
     matchBlocks = {
-      # Personnal profiles
-      "github.com" = {
+      # Personnal prof1iles
+      "github.com-0x01" = {
         host = "github.com"; 
         compression = true;
         user = "marc-0x01";
@@ -30,12 +30,12 @@
         identityFile = "~/.ssh/id-ed25519.key";
       };
       # Professional profiles
-      "github.com-pro" = {
+      "github.com-work" = {
         host = "github.com"; 
         compression = true;
         user = "mguillen";
         identitiesOnly = true;
-        identityFile = "~/.ssh/id-ed25519-pro.key";
+        identityFile = "~/.ssh/id-ed25519-work.key";
       };
     };
   };

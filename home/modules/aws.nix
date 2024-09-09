@@ -16,7 +16,7 @@
   };
 
   # Script to generate SSO credentials
-  # Using a separated file as it is not managed by Nix
+  # Using a separated file as it is not managed by the standard module
   # aws-setup.sh <region> <start_url> ~./aws/config-<orga>
   # then set AWS_CONFIG_FILE to ~./aws/config-<orga>
   home.file = {

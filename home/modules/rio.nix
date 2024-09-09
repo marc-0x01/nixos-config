@@ -21,7 +21,7 @@
       confirm-before-quit = false;
       window = {
         mode = "Maximized";
-        decorations = "Buttonless";
+        decorations = "Transparent";
       };
       renderer = {
         performance = "High";
@@ -72,8 +72,8 @@
         color-automation = [];
       };
       colors = with config.lib.stylix.colors.withHashtag; {
-        background = base05;
-        foreground = base00;
+        background = base00;
+        foreground = base05;
         selection-background = base02;
         selection-foreground = base05;            
         cursor = base05;
