@@ -24,12 +24,12 @@
     # Terminal
     steampipe                     # Query like it's 1992 (steampipe)
     
-  ] ++ lib.Optional pkgs.stdenv.isLinux [
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
     # Specific to Linux
 
       vlc                         # Videolan, the swiss army knift to playing medias
 
-  ] ++ lib.Optional pkgs.stdenv.isDarwin [
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
     # Specific to Darwin
 
       vlc-bin                     # Using vlc-bin on darwin, some codex lib not available
