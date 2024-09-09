@@ -9,21 +9,24 @@
   home.packages = with pkgs; [
 
     # Desktop Apps
-    obsidian                  # Digital Garden and noote taking
-    jetbrains.gateway         # Remote development, alternative to vim in a professional environment
-    vlc                       # Videolan player, a stample to play anything    
+    obsidian                      # Digital Garden and noote taking
+    jetbrains.gateway             # Remote development, alternative to vim in a professional environment
+    if pkgs.stdenv.isDarwin then  # Videolan player, a stample to play anything  
+      vlc-bin                       # Using vlc-bin on darwin, some codex lib not available
+    else 
+      vlc  
 
     # Utils
-    uutils-coreutils-noprefix # Better coreutils in rust, harmonize on darwin (*)
-    ouch                      # Compression swiss-army knife (ouch)
-    rage                      # A simple, secure and modern encryption tool (age)
-    xh                        # Replacement for httpie, curl (xh)
-    du-dust                   # More intuitive du (dust)
-    macchina                  # System info fetcher (macchina)
-    rsign2                    # Signing cli compatible with minisign (rsign)
+    uutils-coreutils-noprefix     # Better coreutils in rust, harmonize on darwin (*)
+    ouch                          # Compression swiss-army knife (ouch)
+    rage                          # A simple, secure and modern encryption tool (age)
+    xh                            # Replacement for httpie, curl (xh)
+    du-dust                       # More intuitive du (dust)
+    macchina                      # System info fetcher (macchina)
+    rsign2                        # Signing cli compatible with minisign (rsign)
 
     # Terminal
-    steampipe                 # Query like it's 1992 (steampipe)
+    steampipe                     # Query like it's 1992 (steampipe)
     
   ];
 
