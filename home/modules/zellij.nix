@@ -10,7 +10,7 @@
     enable = true;
     settings = {
       # Base settings
-      default_shell = "nu";
+      default_shell = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu";
       mouse_mode = true;
       # Clipboard
       copy_on_select = true;
