@@ -41,9 +41,9 @@
 ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝
   </pre>
 	<h1>NixOS Configurations</h1>
-	<p style="text-align: center"  align="center">
-		<i><b>My NixOS 💻 systems and 🏠 dotfiles configurations!</b></i>
-    <i>🚀 Checkout my https://github.com/dro-id/dev-workspaces[dev workspaces] also on Nix!</i>
+	<p style="text-align: center" align="center">
+		<i><b>My NixOS 💻 systems and 🏠 dotfiles configurations!</b></i></br>
+    		<i>🚀 Checkout my <a href="https://github.com/dro-id/dev-workspaces">dev-workspaces</a> also on Nix!</i>
 	</p>
 </div>
 ++++
