@@ -41,11 +41,6 @@
       url = "github:danth/stylix/release-24.05";
     }; 
 
-    # Used by devenv for development environments
-    devenv = {
-      url = "github:cachix/devenv";
-    };
-
     # Rust complete toolchain, rustup replacement
     fenix = {
       url = github:nix-community/fenix;
@@ -193,47 +188,6 @@
                         (attrNames (readDir path)));
         }
       ];
-    };
-
-    ### Entrypoint for devenv
-    # TODO: Move to another repo using forAllSystems  
-    # run with 
-    # $ nix develop --impure .#<devenv>
-
-    devShells.aarch64-darwin.nix = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-      modules = [ ./devenv/nix/nix.nix ];
-    };
-
-    devShells.aarch64-darwin.rust-nightly = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-      modules = [ ./devenv/rs/rust-nightly.nix ];
-    };
-
-    devShells.aarch64-darwin.rust-stable = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-      modules = [ ./devenv/rs/rust-stable.nix ];
-    };
-
-    devShells.aarch64-darwin.python-stable = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-      modules = [ ./devenv/py/python-stable.nix ];
-    };
-
-    devShells.aarch64-darwin.javascript-stable = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-      modules = [ ./devenv/js/nodejs-lts.nix ];
-    };
-
-    devShells.aarch64-darwin.terraform-stable = devenv.lib.mkShell {
-      inherit inputs;
-      pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
-      modules = [ ./devenv/tf/terraform-stable.nix ];
     };
 
   };
