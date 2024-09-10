@@ -52,7 +52,7 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nur, agenix, nix-darwin,
-              home-manager, stylix, devenv, fenix, ... } @ inputs: { 
+              home-manager, stylix, fenix, ... } @ inputs: { 
 
     ## Entrypoint for marcbook-work
     # run with 
