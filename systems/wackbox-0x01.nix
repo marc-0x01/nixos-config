@@ -164,6 +164,10 @@
 
   # Additional system-wide Packages
   environment.systemPackages = with pkgs; [
+    # Nix exclusive
+    nix-index
+    comma
+    # Debug hardware
     pciutils
     usbutils
   ];
