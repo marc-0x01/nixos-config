@@ -6,6 +6,7 @@
     enable = true;
     configFile.text = ''
       # Nushell Config File
+      # Also adding some missing readline classic
       $env.config = {
         show_banner: false
         use_ansi_coloring: false
@@ -52,6 +53,22 @@
           metric: true
           format: auto
         }
+        keybindings: [
+          {
+            name: clear_line
+            modifier: control
+            keycode: char_u
+            mode: vi_insert
+            event: { edit: Clear }
+          }
+          {
+            name: clear_line_forward
+            modifier: control
+            keycode: char_k
+            mode: vi_insert
+            event: { edit: ClearToLineEnd }
+          }
+        ]
       }
       
     '';
