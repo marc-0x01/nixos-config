@@ -8,10 +8,7 @@
     autoEnable = true;
     targets = {};
     # Wallpaper!
-    image = pkgs.fetchurl {
-      url = "https://images7.alphacoders.com/883/883131.jpg";
-      sha256 = "d382f82c88cc646003c4c63a3fe08fe5505a14a13d9fdb72b936d5ec4a01a293";
-    };
+    image = ./assets/wallpapers/amber1-5k-2880x1800.jpg;
     # Amber, old school
     base16Scheme = rec {
       scheme = "Amber Screen";
@@ -36,7 +33,7 @@
     polarity = "dark";
     # Opacities
     opacity = {
-       terminal = 0.95;
+       terminal = 0.85;
        desktop = 0.95;
        applications = 0.95;
        popups = 0.85;
