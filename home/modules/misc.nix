@@ -1,6 +1,6 @@
 # Misc additional applications
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
   programs = {
 
