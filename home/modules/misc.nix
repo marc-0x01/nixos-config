@@ -46,6 +46,7 @@
     rbw = {
       enable = true;
       settings = {
+        email = "${osConfig.parameters.user.secondary-email}";
         pinentry = pkgs.pinentry-tty;
         lock_timeout = 3600;
       };

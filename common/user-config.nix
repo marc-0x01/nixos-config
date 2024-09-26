@@ -27,6 +27,14 @@ in {
       '';
     };
 
+    secondary-email = mkOption {
+      type = types.str;
+      default = cfg.email; 
+      description = ''
+        The user alternative email adresss.
+      '';
+    };
+
     description = mkOption {
       type = types.str;
       default = "Marc Guillen"; 

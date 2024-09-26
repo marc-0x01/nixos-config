@@ -76,6 +76,7 @@
             description = "Marc Guillen";
             context = "work";
             email = "mguillen@pictet.com";
+            secondary-email = "marc@0x01.ooo";
             theme = "gruvdark";
             enableLightsaber = true;
             enableStyling = true;
