@@ -7,8 +7,8 @@
     userName  = "${osConfig.parameters.user.description}";
     userEmail = "${osConfig.parameters.user.email}";
     signing = {
-      # TODO: add signing commit with minisign/rsign
-      key = "";
+      # Signing with SSH, easier
+      key = "~/.ssh/id-ed25519-pub.key";
       signByDefault = false;
     };
     # Aliases at git level, use: git xxx
@@ -51,6 +51,7 @@
     lfs.enable = false;
     extraConfig = {
       init.defaultBranch = "main";
+      gpg.format = "ssh";
       core.editor = "hx";
     };
   };

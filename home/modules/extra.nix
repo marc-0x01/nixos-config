@@ -27,7 +27,7 @@
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     # Specific to Linux
 
-      vlc                         # Videolan, the swiss army knift to playing medias
+      vlc                         # Videolan, the swiss army knife to playing medias
 
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
     # Specific to Darwin

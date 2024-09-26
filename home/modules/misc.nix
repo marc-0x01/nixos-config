@@ -45,6 +45,10 @@
     # Rbw: Bitwarden cli (rbw)
     rbw = {
       enable = true;
+      settings = {
+        pinentry = pkgs.pinentry-tty;
+        lock_timeout = 3600;
+      };
     };          
     
   };

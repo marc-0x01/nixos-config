@@ -40,4 +40,14 @@
     };
   };
 
+  # Script to fetch keys from vault
+  home.file = {
+    ".local/bin/ssh-setup.sh" = {
+      enable = true;
+      executable = true;
+      source = ./scripts/ssh-setup.sh;
+      target = "${config.home.homeDirectory}/.local/bin/ssh-setup.sh";
+    };
+  };
+
 }
