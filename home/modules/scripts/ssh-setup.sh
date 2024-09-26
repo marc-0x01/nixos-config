@@ -7,15 +7,14 @@ SSHDIR="$HOME/.ssh"
 
 cd $SSHDIR
 
-echo
-echo -n "Login to the vault... "
+echo "*** Setup SSH keys from the Vault ***"
 out=$(rbw login)
 if [ $? -ne 0 ];
 then
-    echo "Failed"
+    echo "Login Failed"
     exit 1
 else
-    echo "Succeeded"
+    echo "Logging Succeeded"
 fi
 
 echo -n "Unlocking the vault... "
@@ -38,7 +37,6 @@ else
     echo "Succeeded"
 fi
 
-echo
 echo -n "Locking and purging database... "
 out=$(rbw purge)
 if [ $? -ne 0 ];
@@ -49,7 +47,6 @@ else
     echo "Succeeded"
 fi
 
-echo
 echo -n "Done "
 echo
 exit 0
