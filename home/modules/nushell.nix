@@ -91,7 +91,8 @@
       $env.NIX_SSL_CERT_FILE = '/etc/ssl/certs/ca-certificates.crt'
       $env.NIX_USER_CONF_FILES = $"($env.HOME)/Devel/nix-config"
       $env.NIX_USER_CONF_REPOSITORY = $"github:/marc-0x01/nixos-config"
-      $env.NIX_USER_DEV_REPOSITORY = $"github:/marc-0x01/dev-workspaces"
+      $env.NIX_USER_DEV_FILES = $"($env.HOME)/Devel/dev-workspaces"
+      $env.NIX_USER_DEV_REPOSITORY = $"github:/dro-id/dev-workspaces"
       $env.TERMINFO_DIRS = $"($env.HOME)/.nix-profile/share/terminfo:/etc/profiles/per-user/($env.USER)/share/terminfo:/run/current-system/sw/share/terminfo:/nix/var/nix/profiles/default/share/terminfo:/usr/share/terminfo"
       # Path
       $env.PATH = (

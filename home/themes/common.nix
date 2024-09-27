@@ -12,7 +12,7 @@
       target = "${config.home.homeDirectory}/.config/sketchybar/color-scheme.sh";
       text = ''
         #!/bin/bash
-        ## Bar olors derived from base16
+        ## Bar colors derived from base16
         export TRANSPARENT=0xff
         export DEFAULT=0xff${config.lib.stylix.colors.base05}
         export BAR_COLOR=0xff${config.lib.stylix.colors.base00}

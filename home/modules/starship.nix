@@ -12,14 +12,13 @@
       add_newline = false;
       scan_timeout = 10;
       format = "$all";
-      # Tweeak Nix-shell for devenv
+      # Tweak Nix-shell for devenv
       nix_shell = {
         format = "in [$symbol$state( \($name\))]($style) ";
         pure_msg = "";
         impure_msg = "!";
       };
     };
-
   };
 
 }

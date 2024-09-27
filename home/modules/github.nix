@@ -10,6 +10,7 @@
       gh-eco
     ];
     settings = {
+      # As good as you can get for now
     };
   };
 

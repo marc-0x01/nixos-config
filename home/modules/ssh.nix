@@ -33,7 +33,7 @@
       "github.com-work" = {
         host = "github.com"; 
         compression = true;
-        user = "mguillen";
+        user = "mguillen_pictet";
         identitiesOnly = true;
         identityFile = "~/.ssh/id-ed25519-work.key";
       };
