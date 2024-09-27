@@ -55,25 +55,18 @@
         }
         keybindings: [
           {
-            name: kill-line
+            name: cut_line_forward
             modifier: control
             keycode: char_k
             mode: vi_insert
             event: { edit: CutToLineEnd }
           }
           {
-            name: cut_line_forward
+            name: kill-line
             modifier: control
             keycode: char_u
             mode: vi_insert
             event: { edit: CutFromLineStart }
-          }
-          {
-            name: undo
-            modifier: control
-            keycode: char__
-            mode: vi_insert
-            event: { edit: Undo }
           }
         ]
       }

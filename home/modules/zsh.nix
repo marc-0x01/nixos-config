@@ -37,14 +37,13 @@
     bindkey "^b" backward-char
     bindkey "^a" beginning-of-line
     bindkey "^e" end-of-line
-    bindkey "^k" kill-line
     bindkey "^u" backward-kill-line
+    bindkey "^k" kill-line
     bindkey "^l" clear-screen
     bindkey "^p" up-line-or-history
     bindkey "^n" down-line-or-history
     bindkey "^r" history-search-backward
     bindkey "^g" send-break
-    bindkey "^_" undo
     '';
   };
 
