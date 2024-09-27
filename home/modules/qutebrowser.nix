@@ -16,6 +16,7 @@
         title_format = "qutebrowser{title_sep}{current_title} ({host})";
       };
       input = {
+        forward_unbound_keys = "auto";
         spatial_navigation = true;
         insert_mode = { 
           auto_load = true;
@@ -74,6 +75,15 @@
         default_page  = "about:blank";
         start_pages = "https://start.duckduckgo.com";
       };
+      # Color overrides
+      colors = with config.lib.stylix.colors.withHashtag; {
+        statusbar = { 
+          passthrough = {
+            bg = lib.mkForce base00;
+            fg = lib.mkForce base05;
+          };
+        };
+      };
     };
     # Command Aliases
     aliases = {};
@@ -85,6 +95,7 @@
         "/" = "cmd-set-text /";
         ":" = "cmd-set-text :";
         # enter modes
+        "§§" = "mode-enter passthrough";
         "i" = "mode-enter insert";
         "v" = "mode-enter caret";
         # page navigation
@@ -175,7 +186,7 @@
         "n" = "prompt-accept no";
       };
       passthrough = {
-        "<Escape>" = "mode-leave";
+        "§§" = "mode-leave";
       };
       register = {
         "<Escape>" = "mode-leave";
