@@ -93,7 +93,11 @@
     # Print: enable CUPS
     printing = {
       enable = true;
-      drivers = []; 
+      webInterface = true;
+      drivers = [];
+      cups-pdf = {
+        enable = true;
+      }; 
     };
 
     # eOOM: Early out of memory prevention
