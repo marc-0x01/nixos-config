@@ -68,6 +68,13 @@
             mode: vi_insert
             event: { edit: CutFromLineStart }
           }
+          {
+            name: undo
+            modifier: control
+            keycode: char__
+            mode: vi_insert
+            event: { edit: Undo }
+          }
         ]
       }
       
