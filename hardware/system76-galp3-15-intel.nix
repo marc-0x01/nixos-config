@@ -104,8 +104,10 @@
 
     # Enable all recommended configuration for system76 systems
     # Firmware, Power, Scheduler 
-    system76.enableAll = true;
-
+    # system76.enableAll = true;
+    system76.power-daemon.enable = true;
+    system76.firmware-daemon.enable = true;
+    system76.kernel-modules.enable = false; # bug
   };
 
 }
