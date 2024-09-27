@@ -24,7 +24,11 @@
 
     # Vim: Editor
     # Should be there anyway in any system
-    # TODO: After 23.05 it should be standardized, watch out
+    # TODO: After 24.05 it should be standardized with enable, watch out
+    vim = {
+      # enable = true;
+      package = pkgs.vim; # Avoid vim-full with all the bells and whistles
+    };
 
     # Tmux: Terminal Multiplexor
     tmux = {
@@ -36,7 +40,6 @@
   # Common unix cli tools for any situation
   # - Only optional for IEEE Std 1003.1-2008
   environment.systemPackages = with pkgs; [
-    vim # Just in case         
     git
     less
     curl

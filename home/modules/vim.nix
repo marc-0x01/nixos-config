@@ -5,6 +5,7 @@
   # Still there...
   programs.vim = {
     enable = true;
+    packageConfigurable = pkgs.vim; # not vim-full
   };
   
   # ... But we will use nvim as a replacement
