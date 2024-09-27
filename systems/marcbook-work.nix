@@ -8,6 +8,9 @@
     system = "aarch64-darwin";
   };
 
+  # State Version, Don't change!
+  system.stateVersion = 5;
+
   # Auto upgrade the nix deamon and packages, required on darwin
   services.nix-daemon.enable = true;
 
