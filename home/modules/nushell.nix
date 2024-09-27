@@ -55,18 +55,18 @@
         }
         keybindings: [
           {
-            name: clear_line
-            modifier: control
-            keycode: char_u
-            mode: vi_insert
-            event: { edit: Clear }
-          }
-          {
-            name: clear_line_forward
+            name: kill-line
             modifier: control
             keycode: char_k
             mode: vi_insert
-            event: { edit: ClearToLineEnd }
+            event: { edit: CutToLineEnd }
+          }
+          {
+            name: cut_line_forward
+            modifier: control
+            keycode: char_u
+            mode: vi_insert
+            event: { edit: CutFromLineStart }
           }
         ]
       }
