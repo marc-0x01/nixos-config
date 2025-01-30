@@ -39,6 +39,7 @@
 
     # Taskwarrior: Task management (task)
     taskwarrior = {
+      package = pkgs.taskwarrior3;
       enable = true;
     };  
     

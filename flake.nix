@@ -8,7 +8,7 @@
 
     # Used by the core system config
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.05";
+      url = "github:NixOS/nixpkgs/nixos-24.11";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -21,7 +21,7 @@
 
     # Used by nix-darwin for Apple Systems
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/master";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,13 +32,13 @@
 
     # Used by home-manager, well to manages home
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Used for styling apps, Unix Porn
     stylix = {
-      url = "github:danth/stylix/release-24.05";
+      url = "github:danth/stylix/release-24.11";
     }; 
 
     # Rust complete toolchain, rustup replacement
@@ -68,7 +68,7 @@
         # Modules
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
-        nur.hmModules.nur
+        #nur.modules.homeManager.default
         # User Configuration
         {
           parameters.user = {
@@ -95,7 +95,7 @@
           };
           # Nix Overlays
           nixpkgs.overlays = [
-            nur.overlay
+            nur.overlays.default
             (final: prev: {
               # Better keep it on closer to the edge
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
@@ -115,7 +115,8 @@
           # Home Manager Config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = 
+          home-manager.sharedModules =
+	  #nur.modules.homeManager.default 
           # Adding custom modules, until merged in currrent release
             let path = ./overlays/hm; in with builtins;
             map (n: import (path + ("/" + n)))
@@ -141,7 +142,7 @@
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
         agenix.nixosModules.default
-        nur.hmModules.nur
+        #nur.modules.homeManager.default
         # User Configuration
         {
           parameters.user = {
@@ -167,7 +168,7 @@
           };
           # Nix Overlays
           nixpkgs.overlays = [
-            nur.overlay
+            nur.overlays.default
             (final: prev: {
               # Better keep it on closer to the edgeß
               qutebrowser = nixpkgs-unstable.legacyPackages."x86_64-linux".qutebrowser;
@@ -181,7 +182,8 @@
           # Home Manager Config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = 
+          home-manager.sharedModules =
+	  #nur.modules.homeManager.default 
           # Adding custom modules, until merged in currrent release
             let path = ./overlays/hm; in with builtins;
             map (n: import (path + ("/" + n)))

@@ -137,7 +137,7 @@
       wvous-bl-corner = 13; # Lock Screen
       wvous-br-corner = 1;  # Disable
       # Mission Control
-      expose-group-by-app = true;
+      expose-group-apps = true;
       expose-animation-duration = 0.1;
       # Do not rearrange spaces based on use
       mru-spaces = false;
