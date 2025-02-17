@@ -12,7 +12,6 @@
         use_ansi_coloring: false
         bracketed_paste: true
         edit_mode: vi
-        shell_integration: true
         ls: {
           use_ls_colors: false
           clickable_links: true

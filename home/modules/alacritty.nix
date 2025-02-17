@@ -5,13 +5,19 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      # General
+      general = {
+	live_config_reload = true;
+      };
       # Shell
-      shell = {
-        program = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu";
-        args = [
-          "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
-          "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"
-        ];
+      terminal = {
+        shell = {
+          program = "/etc/profiles/per-user/${osConfig.parameters.user.username}/bin/nu";
+          args = [
+            "--config ${config.home.homeDirectory}/.config/nushell/config.nu"
+            "--env-config ${config.home.homeDirectory}/.config/nushell/env.nu"
+          ];
+        };
       };
       # Window Configuration
       window = {
@@ -48,8 +54,6 @@
       selection = {
         save_to_clipboard = true;
       };
-      # Live reload the configuration
-      live_config_reload = true;
       # Keyboard and bindings
       keyboard = {
         bindings = [
