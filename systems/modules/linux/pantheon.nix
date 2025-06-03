@@ -62,10 +62,7 @@
   };
 
   # Additional Programs
-  programs = {
-    # Provides additional options to tweaks
-    pantheon-tweaks.enable = true;
-  };  
+  programs = { };  
 
   # Default Environment
   environment = {
@@ -86,9 +83,10 @@
 
     # Related Pantheon or X Applications
     systemPackages = with pkgs;[
-      xclip         # Access X clipboard from cli
-      torrential    # Torrent client
-      oneko         # Just melancoly ;)
+      pantheon-tweaks  # Additional options
+      xclip            # Access X clipboard from cli
+      torrential       # Torrent client
+      oneko            # Just melancoly ;)
     ];
 
   };

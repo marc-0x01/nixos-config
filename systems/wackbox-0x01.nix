@@ -8,7 +8,7 @@
   };
 
   # State Version, Don't change!
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 
   # Locale
   i18n = {
@@ -66,15 +66,6 @@
 
   };
 
-  # Sound
-  sound = {
-    enable = true;
-    mediaKeys = {
-      enable = !config.services.xserver.enable;
-      volumeStep = "5%";
-    }; 
-  };
-
   # Vitualization
   virtualisation = {
     libvirtd = {           # Machine emulation and vitualizer
@@ -89,6 +80,18 @@
 
   # Common Services
   services = {
+
+    # Sound
+    pipewire = {
+      enable = true;
+      audio = {
+        enable = true;
+      };
+      # Enable PulseAudio emulation
+      pulse = {
+        enable = true;
+      };
+    };
 
     # Print: enable CUPS
     printing = {

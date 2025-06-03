@@ -74,18 +74,18 @@
     };
 
     # Graphics
-    opengl = {
+    graphics = {
       enable = true;
       extraPackages = with pkgs; [
         # Open GL, Vulkan and VAAPI drivers
-        onevpl-intel-gpu
+        vpl-gpu-rt
       ];
     };
 
     # Audio
+    # Disabling pulse, using pipewire
     pulseaudio = {
-      enable = true;
-      support32Bit = true;
+      enable = false;
     };
 
     # Bluetooth
