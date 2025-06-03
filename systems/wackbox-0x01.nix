@@ -130,6 +130,12 @@
         ];
     };
 
+    # Local LLM service
+    # Considered as a basic like virtualization
+    ollama = {
+      enable = true;
+    };
+
     # Other daemon...
     thermald.enable = true;         # Temperature
 

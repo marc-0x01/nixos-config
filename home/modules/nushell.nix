@@ -122,6 +122,8 @@
       dust = "dust -r";
       diff = "difft";
       about = "macchina -i=en0";
+      # Overrides
+      docker = "podman";
       # List
       ll = "ls -l";
       la = "ls -la";

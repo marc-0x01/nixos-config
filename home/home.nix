@@ -14,7 +14,7 @@
   home-manager.users.${config.parameters.user.username} = {
 
     # State Version, used for backward compatibility
-    home.stateVersion = "24.05";
+    home.stateVersion = "24.11";
 
     # Let Home Manager install and manage itself
     programs.home-manager.enable = true;
@@ -57,6 +57,7 @@
         tree="tree --dirsfirst -F";
         meow="cat";       # just because you can
         man="echo woman"; # just because you can
+        docker="podman";
         # ls
         ll="ls -l";
         la="ls -la";

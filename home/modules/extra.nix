@@ -23,6 +23,7 @@
 
     # Terminal
     steampipe                     # Query like it's 1992 (steampipe)
+    oterm                         # Text based terminal client for Ollama
     
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     # Specific to Linux
