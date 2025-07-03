@@ -91,7 +91,7 @@
             allowUnfree = true;
             allowBroken = false;
             allowInsecure = false;
-            allowUnsupportedSystem = false;
+            allowUnsupportedSystem = true;
           };
           # Nix Overlays
           nixpkgs.overlays = [
