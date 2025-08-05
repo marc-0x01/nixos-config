@@ -23,7 +23,7 @@
     fonts = {
       serif = {
         name = "ShureTechMono Nerd Font";
-        package = pkgs.nerd-fonts.share-tech-mono;
+        package = pkgs.nerd-fonts.shure-tech-mono;
       };
       sansSerif = {
         name = "ShureTechMono Nerd Font";
