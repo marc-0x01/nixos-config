@@ -11,8 +11,8 @@
   # State Version, Don't change!
   system.stateVersion = 5;
 
-  # Auto upgrade the nix deamon and packages, required on darwin
-  services.nix-daemon.enable = true;
+  # Primary user for system-wide settings that require user context
+  system.primaryUser = config.parameters.user.username;
 
  # Networking
   networking = {
@@ -57,7 +57,7 @@
   security = {
     pam = { 
       # TouchId when you need to provide Sudo password
-      enableSudoTouchIdAuth = true; 
+      services.sudo_local.touchIdAuth = true; 
     }; 
   };
 
