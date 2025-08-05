@@ -27,11 +27,11 @@
       };
       sansSerif = {
         name = "ShureTechMono Nerd Font";
-        package = pkgs.nerd-fonts.share-tech-mono;
+        package = pkgs.nerd-fonts.shure-tech-mono;
       };
       monospace = {
         name = "ShureTechMono Nerd Font";
-        package = pkgs.nerd-fonts.share-tech-mono;
+        package = pkgs.nerd-fonts.shure-tech-mono;
       };
       emoji = {
         name = "Symbols Font 14 Nerd Font";
