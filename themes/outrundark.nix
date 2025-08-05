@@ -8,7 +8,7 @@
     autoEnable = true;
     targets = {};
     # Wallpaper!
-    image = ./assets/wallpapers/outrun1-4k-3840x2160.png;
+    image = ./assets/wallpapers/outrun1-4k-3840x2160.jpg;
     # Monochrome and dark
     base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";
     polarity = "dark";

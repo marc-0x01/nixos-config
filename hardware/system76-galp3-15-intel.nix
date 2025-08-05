@@ -82,12 +82,6 @@
       ];
     };
 
-    # Audio
-    # Disabling pulse, using pipewire
-    pulseaudio = {
-      enable = false;
-    };
-
     # Bluetooth
     bluetooth = {
       enable = true;

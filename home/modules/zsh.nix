@@ -29,7 +29,7 @@
       plugins = [];
     };
     # Config
-    initExtra = ''
+    initContent = ''
     ## Make sure that core bindings are there
     export KEYTIMEOUT=1
     bindkey -v
