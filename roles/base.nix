@@ -62,13 +62,13 @@
   stylix = {
 
     # Dummy image
-    image = pkgs.fetchurl {
+    image = lib.mkDefault (pkgs.fetchurl {
       url = "https://placehold.co/600x400/FFF/FFF/jpeg";
       sha256 = "b522de69bcb6a6db707ae7257df595aa1a63d108c5b698296346db1c220d4b8c";
-    };
+    });
 
     # The actual base16 scheme
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/summerfruit-light.yaml";
+    base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/summerfruit-light.yaml";
 
   };
 

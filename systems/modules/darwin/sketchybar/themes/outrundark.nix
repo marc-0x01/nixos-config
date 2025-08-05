@@ -1,76 +1,6 @@
-# Amber theme, inspired by Avalon
+# Gruvbox dark theme based on base16
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }: {
-
-  stylix = {
-    enable = true;
-    # Theme apps by default
-    autoEnable = true;
-    targets = {};
-    # Wallpaper!
-    image = ./assets/wallpapers/amber1-5k-2880x1800.jpg;
-    # Amber, old school
-    base16Scheme = rec {
-      scheme = "Amber Screen";
-      author = "Marc Guillen (https://github.com/marc-0x01)";
-      base00 = "282828"; # ----
-      base01 = "2e1c00"; # ---
-      base02 = "9e6c00"; # --
-      base03 = "be8200"; # -
-      base04 = "de9900"; # +
-      base05 = "ffb000"; # ++
-      base06 = "ffb940"; # +++
-      base07 = "ffc15d"; # ++++
-      base08 = base03;
-      base09 = base04;
-      base0A = base03;
-      base0B = base05;
-      base0C = base02;
-      base0D = base04;
-      base0E = base05;
-      base0F = base02;
-    };
-    polarity = "dark";
-    # Opacities
-    opacity = {
-       terminal = 0.85;
-       desktop = 0.95;
-       applications = 0.95;
-       popups = 0.85;
-    };
-    # Fonts
-    # TODO: Substitute with Benguiat fonts for an Avalon vibe
-    fonts = {
-      serif = {
-        name = "Terminess Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["Terminus"];
-        };
-      };
-      sansSerif = {
-        name = "Terminess Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["Terminus"];
-        };
-      };
-      monospace = {
-        name = "Terminess Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["Terminus"];
-        };
-      };
-      emoji = {
-        name = "Symbols Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["NerdFontsSymbolsOnly"];
-        };
-      };
-      # Font Sizes by context
-      sizes = {
-        terminal = 14;
-      };
-    };
-  };
 
   # (darwin) Sketchy Bar configuration
   home.file = {
@@ -93,9 +23,9 @@
           color=$TRANSPARENT
         ## Defaults
         sketchybar --default \
-          icon.font="Symbols Nerd Font:Regular:15.0" \
+          icon.font="Symbols Font 14 Nerd Font:Regular:15.0" \
           icon.color=$DEFAULT \
-          label.font="GTerminess Nerd Font:Regular:15.0" \
+          label.font="ShureTechMono Nerd Font:Regular:15.0" \
           label.color=$DEFAULT \
           background.color=$ITEM_BG_COLOR \
           background.corner_radius=5 \

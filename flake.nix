@@ -8,7 +8,7 @@
 
     # Used by the core system config
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.11";
+      url = "github:NixOS/nixpkgs/nixos-25.05";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -21,7 +21,7 @@
 
     # Used by nix-darwin for Apple Systems
     nix-darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      url = "github:LnL7/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -32,13 +32,13 @@
 
     # Used by home-manager, well to manages home
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Used for styling apps, Unix Porn
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/release-25.05";
     }; 
 
     # Rust complete toolchain, rustup replacement
@@ -77,9 +77,7 @@
             context = "work";
             email = "mguillen@pictet.com";
             secondary-email = "marc@0x01.ooo";
-            theme = "outrundark";
             enableLightsaber = true;
-            enableStyling = true;
             enableExtra = true;
             enableTest = false;
           };
@@ -150,9 +148,7 @@
             description = "Marc Guillen";
             context = "0x01";
             email = "marc@0x01.ooo";
-            theme = "monochrome";
             enableLightsaber = true;
-            enableStyling = true;
             enableExtra = false;
             enableTest = false;
           };

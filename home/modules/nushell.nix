@@ -112,7 +112,6 @@
     shellAliases = {
       # Programs
       cls = "clear";
-      tree = "tree -NFC -dirsfirst";
       grep = "rg";
       btm = "btm -T";
       top = "btm -b";

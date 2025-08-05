@@ -51,15 +51,6 @@ in {
       '';
     };
 
-    theme = mkOption {
-      type = types.str;
-      default = "gruvdark"; 
-      description = ''
-        The theme desired for the user.
-      '';
-    };
-
-
     # Configuration flags
     
     enableLightsaber = mkOption { 
@@ -67,14 +58,6 @@ in {
       default = true;
       description = ''
         Enable the full lightsaber configuration. 
-      '';
-    };
-
-    enableStyling = mkOption { 
-      type = types.bool;
-      default = true;
-      description = ''
-        Enable the styling of applications with stylix. 
       '';
     };
 

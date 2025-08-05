@@ -110,7 +110,7 @@
 
   # sketchybar: Highly flexible, customizable, fast and powerful status bar replacement for people that like playing with shell scripts
   services.sketchybar = {
-    enable = true;
+    enable = false;
     # All in one config
     config = ''
       ## General Appearance and Defaults
@@ -144,7 +144,5 @@
       sketchybar --update
     '';
   };
-
-  
 
 }

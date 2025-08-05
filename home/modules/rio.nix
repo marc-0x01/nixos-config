@@ -54,43 +54,8 @@
       developer = {
         log-level = "OFF";
       };
-    } // 
-    
-    # Theme
-    # Rio is not yet in Stylix, for now generating theme from the stylix colors
-    # TODO Move to a TOML maker and eventualy create a stylix module
-    {
-      window = {
-        opacity = with config.stylix.opacity; terminal;
-        blur = false;
-      };
-      fonts = with config.stylix.fonts; {
-        family = monospace.name;
-        size = sizes.terminal;
-      };
-      navigation = {
-        color-automation = [];
-      };
-      colors = with config.lib.stylix.colors.withHashtag; {
-        background = base00;
-        foreground = base05;
-        selection-background = base02;
-        selection-foreground = base05;            
-        cursor = base05;
-        black = base00;
-        white = base05;
-        inherit red green yellow blue magenta cyan;
-        light_black = base03;
-        light_white = base07;
-        light_red = bright-red;
-        light_green = bright-green;
-        light_yellow = yellow;
-        light_blue = bright-blue;
-        light_magenta = bright-magenta;
-        light_cyan = bright-cyan;
-        
-      };
-    };
+    }; 
+
   };
 
 }

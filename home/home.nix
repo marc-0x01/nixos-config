@@ -149,13 +149,6 @@
       ./modules/ncspot.nix
       ./modules/misc.nix
     ] 
-
-    # Apply styling of the applications
-    ++ lib.optionals config.parameters.user.enableStyling [
-      # Theme
-      ./themes/common.nix
-      ./themes/${config.parameters.user.theme}.nix
-    ] 
   
     # Extra Desktop/Console Applications
     # Not yet in home-manager...

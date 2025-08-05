@@ -1,56 +1,6 @@
-# Gruvbox dark theme based on base16
+# Amber theme, inspired by Avalon
 
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }: {
-
-  stylix = {
-    enable = true;
-    # Theme apps by default
-    autoEnable = true;
-    targets = {};
-    # Wallpaper!
-    image = ./assets/wallpapers/outrun1-4k-3840x2160.png;
-    # Monochrome and dark
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/outrun-dark.yaml";
-    polarity = "dark";
-    # Opacities
-    opacity = {
-       terminal = 0.85;
-       desktop = 0.95;
-       applications = 0.95;
-       popups = 0.85;
-    };
-    # Fonts
-    fonts = {
-      serif = {
-        name = "ShureTechMono Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["ShareTechMono"];
-        };
-      };
-      sansSerif = {
-        name = "ShureTechMono Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["ShareTechMono"];
-        };
-      };
-      monospace = {
-        name = "ShureTechMono Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["ShareTechMono"];
-        };
-      };
-      emoji = {
-        name = "Symbols Font 14 Nerd Font";
-        package = pkgs.nerdfonts.override {
-          fonts = ["NerdFontsSymbolsOnly"];
-        };
-      };
-      # Font Sizes by context
-      sizes = {
-        terminal = 14;
-      };
-    };
-  };
 
   # (darwin) Sketchy Bar configuration
   home.file = {
@@ -73,9 +23,9 @@
           color=$TRANSPARENT
         ## Defaults
         sketchybar --default \
-          icon.font="Symbols Font 14 Nerd Font:Regular:15.0" \
+          icon.font="Symbols Nerd Font:Regular:15.0" \
           icon.color=$DEFAULT \
-          label.font="ShureTechMono Nerd Font:Regular:15.0" \
+          label.font="GTerminess Nerd Font:Regular:15.0" \
           label.color=$DEFAULT \
           background.color=$ITEM_BG_COLOR \
           background.corner_radius=5 \

@@ -173,6 +173,8 @@
     ./modules/linux/pantheon.nix
     # Apply home settings, OS agnostic
     ../home/home.nix
+    # Additional Theme configuration (optional)
+    ../themes/monochrome.nix
   ];
 
   # Additional system-wide Packages
@@ -191,11 +193,7 @@
     packages = with pkgs; [
       monoid
       font-awesome
-      (nerdfonts.override {
-        fonts = [
-          "Monoid"
-        ];
-      })
+      nerd-fonts.monoid
     ];
   };
 
