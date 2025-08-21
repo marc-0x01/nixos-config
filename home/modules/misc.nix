@@ -24,7 +24,7 @@
 
     # Ripgrep: Better grep (rg)
     ripgrep  = {
-      enable = true;
+      enable = false; # Deactivate because of a python issue
     };      
 
     # TheFuck: Correct latest command (fuck)
@@ -32,17 +32,8 @@
       enable = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
-    };
+    }; 
 
-
-    ## Utilities
-
-    # Taskwarrior: Task management (task)
-    taskwarrior = {
-      package = pkgs.taskwarrior3;
-      enable = true;
-    };  
-    
     # Rbw: Bitwarden cli (rbw)
     rbw = {
       enable = true;
@@ -51,7 +42,7 @@
         pinentry = pkgs.pinentry-tty;
         lock_timeout = 3600;
       };
-    };          
+    };         
     
   };
 
