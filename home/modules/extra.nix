@@ -1,8 +1,8 @@
 # Extra Applications
 
-{ pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
+{ pkgs, lib, config, osConfig, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
-  # Extra packages not yet in home-manager
+  # Extra packages, not yet in home-manager
   # Look for new addition or rust alternatives: 
   # lolcrab, charasay
 
@@ -23,7 +23,6 @@
 
     # Terminal
     steampipe                     # Query like it's 1992 (steampipe)
-    oterm                         # Text based terminal client for Ollama
     
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     # Specific to Linux

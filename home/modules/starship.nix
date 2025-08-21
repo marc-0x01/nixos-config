@@ -11,6 +11,7 @@
     settings = {
       add_newline = false;
       scan_timeout = 10;
+      command_timeout = 750;
       format = "$all";
       # Tweak Nix-shell for devenv
       nix_shell = {

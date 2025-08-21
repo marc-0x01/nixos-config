@@ -42,6 +42,13 @@
   sudo nix-store --gc
 ----
 
+* Or do it all in one on a time basis
+[source,bash]
+----
+  nix-collect-garbage --delete-older-than 180d
+----
+
+
 * Optimize manually the store (avoid on darwin, it can create a mess with links)
 [source,bash]
 ----
