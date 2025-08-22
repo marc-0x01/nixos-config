@@ -11,6 +11,9 @@
   # State Version, Don't change!
   system.stateVersion = 5;
 
+  # nix-darwin group ID, change if needed
+  ids.gids.nixbld = 30000;
+
   # Primary user for system-wide settings that require user context
   system.primaryUser = config.parameters.user.username;
 
