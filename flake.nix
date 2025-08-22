@@ -68,7 +68,6 @@
         # Modules
         home-manager.darwinModules.home-manager
         stylix.darwinModules.stylix
-        #nur.modules.homeManager.default
         # User Configuration
         {
           parameters.user = {
@@ -78,7 +77,7 @@
             email = "mguillen@pictet.com";
             secondary-email = "marc@0x01.ooo";
             enableLightsaber = true;
-            enableExtra = true;
+            enableExtra = false;
             enableTest = false;
           };
         }
@@ -114,7 +113,6 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.sharedModules =
-	  #nur.modules.homeManager.default 
           # Adding custom modules, until merged in currrent release
             let path = ./overlays/hm; in with builtins;
             map (n: import (path + ("/" + n)))
@@ -166,7 +164,7 @@
           nixpkgs.overlays = [
             nur.overlays.default
             (final: prev: {
-              # Better keep it on closer to the edgeß
+              # Better keep it on closer to the edge
               qutebrowser = nixpkgs-unstable.legacyPackages."x86_64-linux".qutebrowser;
               # Emerging also close to the edge
               rio = nixpkgs-unstable.legacyPackages."x86_64-linux".rio;
