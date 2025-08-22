@@ -3,7 +3,7 @@
 { pkgs, lib, config, nixpkgs, nixpkgs-unstable, home-manager, ... }: {
 
   programs.yazi = {
-    enable = true; 
+    enable = false; 
     # Integrations
     enableZshIntegration = true;
     enableNushellIntegration = true;
