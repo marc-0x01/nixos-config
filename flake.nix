@@ -98,6 +98,7 @@
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
+              firefox = nixpkgs-unstable.legacyPackages."aarch64-darwin".firefox;
               # Emerging also close to the edge
               rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
               helix = nixpkgs-unstable.legacyPackages."aarch64-darwin".helix;

@@ -136,6 +136,7 @@
     ++ lib.optionals config.parameters.user.enableLightsaber [
       ./modules/alacritty.nix
       ./modules/qutebrowser.nix
+      ./modules/firefox.nix
       ./modules/nushell.nix
       ./modules/starship.nix
       ./modules/direnv.nix
