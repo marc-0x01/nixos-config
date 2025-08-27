@@ -97,7 +97,6 @@
               # Better keep it on closer to the edge
               yabai = nixpkgs-unstable.legacyPackages."aarch64-darwin".yabai;
               skhd = nixpkgs-unstable.legacyPackages."aarch64-darwin".skhd;
-              sketchybar = nixpkgs-unstable.legacyPackages."aarch64-darwin".sketchybar;
               qutebrowser = nixpkgs-unstable.legacyPackages."aarch64-darwin".qutebrowser;
               # Emerging also close to the edge
               rio = nixpkgs-unstable.legacyPackages."aarch64-darwin".rio;
