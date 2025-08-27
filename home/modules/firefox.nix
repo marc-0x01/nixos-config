@@ -22,7 +22,7 @@
           ];
         };
 
-        # Bookmarks (new format for Home Manager)
+        # Bookmarks
         bookmarks = {
           force = true;
           settings = [
@@ -88,20 +88,31 @@
           
           # Performance
           "browser.cache.disk.enable" = true;
-          "browser.cache.disk.capacity" = 1048576; # 1GB cache
+          "browser.cache.disk.capacity" = 1048576;          # 1GB cache
           "browser.cache.memory.enable" = true;
-          "browser.cache.memory.capacity" = 524288; # 512MB memory cache
+          "browser.cache.memory.capacity" = 524288;         # 512MB memory cache
           "browser.sessionhistory.max_total_viewers" = 4;
           "browser.tabs.animate" = false;
           "browser.fullscreen.animate" = false;
           
           # Appearance & UI
-          "browser.toolbars.bookmarks.visibility" = "always";
+          "browser.toolbars.bookmarks.visibility" = "newtab";
+          "browser.tabs.firefox-view" = false;
           "browser.tabs.tabClipWidth" = 140;
           "browser.tabs.tabMinWidth" = 76;
           "browser.uidensity" = 1; # Compact density
           "browser.compactmode.show" = true;
           "widget.use-xdg-desktop-portal.file-picker" = 1;
+          
+          # Extensions
+          "extensions.unifiedExtensions.enabled" = true;    # Use unified extensions menu
+          "extensions.toolbar.visible" = false;             # Hide extension buttons from toolbar
+          
+          # Overflow
+          "browser.tabs.tabmanager.enabled" = false;
+          "browser.tabs.overflow" = "scroll"; 
+          "browser.tabs.scrollIntoView" = true; 
+          "browser.tabs.warnOnClose" = false;
           
           # Downloads
           "browser.download.useDownloadDir" = true;
@@ -109,8 +120,10 @@
           "browser.download.manager.addToRecentDocs" = false;
           "browser.download.animateNotifications" = false;
           
-          # New tab page
-          "browser.newtabpage.enabled" = true;
+          # Homepage and new tab page
+          "browser.startup.homepage" = "http://www.perdu.com";
+          "browser.newtab.url" = "http://www.perdu.com";
+          "browser.newtabpage.enabled" = false; # Disable default new tab page
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.newtabpage.activity-stream.feeds.snippets" = false;
@@ -203,6 +216,45 @@
           .urlbarView {
             margin-inline: 0 !important;
             width: auto !important;
+          }
+          
+          /* Remove spacers around URL field */
+          #nav-bar .toolbarspring {
+            display: none !important;
+          }
+          
+          /* Remove flexible spacers in toolbar */
+          #nav-bar toolbarspring {
+            display: none !important;
+          }
+          
+          /* Compact URL bar container */
+          #urlbar-container {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+          
+          /* Remove gaps between toolbar items */
+          #nav-bar toolbarbutton {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+          
+          /* Hide extension buttons from toolbar */
+          #nav-bar .webextension-browser-action {
+            display: none !important;
+          }
+          
+          /* Hide unified extensions button if desired */
+          #unified-extensions-button {
+            display: none !important;
+          }
+          
+          /* Hide extension overflow menu */
+          #nav-bar-overflow-button {
+            display: none !important;
           }
           
           /* Custom scrollbars */
