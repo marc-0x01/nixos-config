@@ -39,7 +39,9 @@
       # Environment variables to always set at login
       sessionVariables = {};
 
+      # Shell Integration and aliased
       # Common aliases that are compatible across all shells
+      shell.enableShellIntegration = true;
       shellAliases = {
         # shorcuts
         c="clear";
@@ -48,20 +50,16 @@
         j="jobs -l";
         # overrides
         more="less";
-        mkdir="mkdir -p";
-        du="du -kh";
-        df="df -kTh";
         rm="rm -i";
         cp="cp -i";
         mv="mv -i";
-        tree="tree --dirsfirst -F";
         meow="cat";       # just because you can
         man="echo woman"; # just because you can
         docker="podman";
         # ls
         ll="ls -l";
         la="ls -la";
-        lm="la | less";
+        lm="ls -la | less";
         # cd 
         ".."="cd ..";
         "..."="cd ../..";

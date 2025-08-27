@@ -49,8 +49,7 @@
           file_format: sqlite
         }
         filesize: {
-          metric: true
-          format: auto
+          unit: metric
         }
         keybindings: [
           {
