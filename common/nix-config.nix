@@ -21,9 +21,12 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
     extra-platforms = x86_64-darwin aarch64-darwin
-    auto-optimise-store = false
+    auto-optimise-store = true
     connect-timeout = 5
     log-lines = 25
+    fallback = true
+    warn-dirty = false
+    keep-outputs = true
   '';
 
   nix.settings = {
@@ -34,7 +37,7 @@
 
     # Increase download buffer size to prevent buffer full warnings
     download-buffer-size = 134217728; # 128MB (default is 64MB)
-    
+  
     # Binary caches for faster builds
     substituters = [
       "https://cache.nixos.org/"
